@@ -1,21 +1,12 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
-\contentsline {section}{\numberline {2}Descrizione del bacino e nozioni teoriche}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Il fiume Boite ed il suo bacino}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}La briglia filtrante}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Linea segnalatrice di probabilità pluviometrica}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Calcolo della portata di picco}{5}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Progetto della sezione di un canale}{6}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Elaborazione dati}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Dati storici di precipitazione}{8}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Calcolo della LSPP}{8}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Calcolo della portata di picco}{9}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Dimensionamento della sezione del canale}{10}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Risultati}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Altezza di precipitazione}{11}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Portata di picco}{11}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Profondità di moto uniforme}{11}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Energia specifica e larghezza limite}{11}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusioni}{11}{section.5}%
-\contentsline {section}{Bibliografia}{12}{section*.15}%
+\contentsline {section}{\numberline {2}Identificazione e delimitazione del bacino idrografico sede dell'intervento}{3}{section.2}%
+\contentsline {section}{\numberline {3}Morfometria del bacino}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Rapporto di biforcazione e prima legge di Horton}{3}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Elaborazione statistico-probabilistica delle pioggie intense della stazione di riferimento per il bacino in esame (analisi degli afflussi)}{5}{section.4}%
+\contentsline {section}{\numberline {5}Calcolo delle portate di progetto (analisi dei deflussi di piena)}{5}{section.5}%
+\contentsline {section}{\numberline {6}Definizione dell'intervento di sistemazione e trasporto solido atteso}{5}{section.6}%
+\contentsline {section}{\numberline {7}Progettazione di un'opera di consolidamento tipo}{5}{section.7}%
+\contentsline {section}{\numberline {8}Dimensionamento della controbriglia a valle della briglia cardine}{5}{section.8}%
+\contentsline {section}{\numberline {9}Disegno in scala dell'opera progettata}{5}{section.9}%

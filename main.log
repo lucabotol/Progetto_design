@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.1)  4 OCT 2024 15:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.1)  4 OCT 2024 17:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -673,7 +673,9 @@ Package biblatex Info: ... and expl3
 Package: xparse 2024-08-16 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
-)))
+)) (C:\Users\nicob\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+))
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
@@ -803,7 +805,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 Package biblatex Info: Reference section=0 on input line 7.
 Package biblatex Info: Reference segment=0 on input line 7.
  (front_page.tex
-<immagini/Logo_Università_Padova.svg.png, id=79, 186.6975pt x 186.6975pt>
+<immagini/Logo_Università_Padova.svg.png, id=43, 186.6975pt x 186.6975pt>
 File: immagini/Logo_Università_Padova.svg.png Graphic file (type png)
 <use immagini/Logo_Università_Padova.svg.png>
 Package pdftex.def Info: immagini/Logo_Università_Padova.svg.png  used on input line 3.
@@ -813,11 +815,11 @@ Package pdftex.def Info: immagini/Logo_Università_Padova.svg.png  used on input
 [1
 
 {C:/Users/nicob/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./immagini/Logo_Università_Padova.svg.png>]) (abstarct.tex (main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
  (C:\Users\nicob\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
  (C:\Users\nicob\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
@@ -826,59 +828,51 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ) (report.tex
 
-[2] (corpo/Introduzione.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
+[2] (corpo/1_introduzione.tex) (corpo/2_identificazione_bacino.tex) (corpo/3_morfometria.tex
+<immagini/ordine_horton.png, id=72, 311.1625pt x 142.5325pt>
+File: immagini/ordine_horton.png Graphic file (type png)
+<use immagini/ordine_horton.png>
+Package pdftex.def Info: immagini/ordine_horton.png  used on input line 12.
+(pdftex.def)             Requested size: 233.3713pt x 106.8991pt.
 
- []
 
-) (corpo/descrizione_bacino_briglie.tex
+[3 <./immagini/ordine_horton.png>]
+<immagini/legge_horton.png, id=86, 591.20876pt x 354.32375pt>
+File: immagini/legge_horton.png Graphic file (type png)
+<use immagini/legge_horton.png>
+Package pdftex.def Info: immagini/legge_horton.png  used on input line 47.
+(pdftex.def)             Requested size: 443.40547pt x 265.74216pt.
+) (corpo/4_analisi_afflussi.tex) (corpo/5_deflussi_piena.tex) (corpo/6_def_intervento.tex) (corpo/7_prog_opera.tex) (corpo/8_controbriglia.tex) (corpo/9_disegno_opera.tex)) (biblio.tex
 
-[3]
-
-[4]
+[4 <./immagini/legge_horton.png>]
 
 [5]
 
-[6]) (corpo/elaborazione_dati.tex
+LaTeX Warning: Empty bibliography on input line 5.
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
-
- []
-
-
-
-[8]
-
-[9]) (corpo/risultati.tex
-
-[10]) (corpo/conclusioni.tex)) (biblio.tex
-
-[11])
-
-[12] (main.aux)
+) (main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 575B500BB46DCE6EE93C2E997F1988AD;3605.
+(rerunfilecheck)             Checksum: A533167DC90BEE162BEF1AEB1182F90C;3549.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25201 strings out of 473898
- 489824 string characters out of 5726479
- 1304103 words of memory out of 5000000
- 47680 multiletter control sequences out of 15000+600000
- 568312 words of font info for 75 fonts, out of 8000000 for 9000
+ 24956 strings out of 473898
+ 486028 string characters out of 5726479
+ 1286234 words of memory out of 5000000
+ 47484 multiletter control sequences out of 15000+600000
+ 565488 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,10n,84p,743b,1817s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\nicob\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (12 pages, 299432 bytes).
+ 80i,9n,84p,876b,1817s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\nicob\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nicob/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (5 pages, 158344 bytes).
 PDF statistics:
- 345 PDF objects out of 1000 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
