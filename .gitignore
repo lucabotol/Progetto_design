@@ -17,4 +17,4 @@
 *.fdb_latexmk
 
 *.synctex.gz
-.run.xml
+*.run.xml
