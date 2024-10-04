@@ -1,0 +1,61 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{fiume_boite}{misc}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Fiume Boite - Wikipedia}
+      \verb{urlraw}
+      \verb https://it.wikipedia.org/wiki/Boite
+      \endverb
+      \verb{url}
+      \verb https://it.wikipedia.org/wiki/Boite
+      \endverb
+    \endentry
+    \entry{prov_bolz}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Briglie filtranti e di trattenuta - Prov. Auton. di Bolzano}
+      \verb{urlraw}
+      \verb https://pericoli-naturali.provincia.bz.it/it/briglie-filtranti-e-di-trattenuta-colate
+      \endverb
+      \verb{url}
+      \verb https://pericoli-naturali.provincia.bz.it/it/briglie-filtranti-e-di-trattenuta-colate
+      \endverb
+    \endentry
+    \entry{r_quadro}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{R quadro - Wikipedia}
+      \verb{urlraw}
+      \verb https://it.wikipedia.org/wiki/Coefficiente_di_determinazione
+      \endverb
+      \verb{url}
+      \verb https://it.wikipedia.org/wiki/Coefficiente_di_determinazione
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
