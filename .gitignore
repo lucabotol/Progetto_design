@@ -18,3 +18,6 @@
 
 *.synctex.gz
 *.run.xml
+
+*.json
+*.vscode.dev
