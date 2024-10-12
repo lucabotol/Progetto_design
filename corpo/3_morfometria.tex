@@ -38,6 +38,53 @@ Interpolando i valori degli ordini dei segmenti, con la loro numerosità e con i
     \label{legge_horton}
 \end{figure}
 
+\subsection{Coefficiente di forma di Gravelius}
+Il coefficiente di forma di Gravelius è un parametro che indica quanto la forma di un bacino sia compatta.\\
+Questo indicatore confronta le misure di area e perimetro del bacino in analisi, con le misure che avrebbe un cerchio di uguale superficie; quindi, più l'indice tende ad uno e maggiore sarà la compattezza dell'area studiata.\\
+Al fine di applicare la relativa formula, è necessario conoscere i valori di perimetro del bacino (lunghezza dello spartiacque), e l'area della superficie dell'intera area di studio.\\
+La formula dell'indicatore è:
+\begin{equation}
+    F = \frac{0.28 \cdot P}{\sqrt{A}}
+    \label{gravelius}
+\end{equation}
+
+\subsection{Indice di compattezza $F_c$}
+Proprio come per l'indice precedente, questa formula permette di comprendere la forma del bacino.\\
+Al contrario del coefficiente precedente, che utilizza il valore del perimetro, questa formula necessita di conoscere la lunghezza del reticolo idrografico del bacino, oltre che alla superficie drenante interna allo spartiacque.\\
+La formula dell'indicatore è:
+\begin{equation}
+    F_c = \frac{L}{\sqrt{A}}
+    \label{compatezza}
+\end{equation}
+
+\subsection{Indice di Melton}
+L'indice di Melton quantifica l'energia potenziale (gravitativa) del bacino.\\
+La formula è applicabile conoscendo il dislivello di quota tra quella massima del bacino e quella dell'apice del cono di deiezione, oltre che l'area totale del bacino. 
+\begin{equation}
+    Me = \frac{\Delta H}{\sqrt{A}}
+    \label{melton}
+\end{equation}
+Questo fattore è importate per valutare i processi di trasporto solido che potrebbero avvenire; infatti, se questo valore è maggiore (o uguale) a 0.5, l'energia potenziale dei sedimenti potrebbe da dare luogo a fenomeni di trasporto, come per esempio le colate detritiche.
+
+\subsection{Densità di drenaggio}
+Questo indicatore, anche detto \textit{``drainage density"}, mette in relazione la lunghezza complessiva di tutti i rami del reticolo idrografico e l'area del bacino.\\
+Tale valore è molto influenzato dalla quantità pluviometrica annua, dalle caratteristiche del suolo (litologia ed erodibilità) e dalla destinazione d'uso dell'area (copertura vegetale, impermeabilizzazione antropica,\dots).\\
+La formula è:
+\begin{equation}
+    D_r = \frac{\Sigma L_i}{A}
+    \label{drenaggio}
+\end{equation}
+
+\subsection{Quota media del bacino}
+Questo valore quantifica l'altezza media del bacino rispetto alla sezione di chiusura, ponderando l'area.\\
+Dal punto di vista geometrico, la quota media del bacino è il valore che, se introdotto nell'asse delle ordinate, crea un rettangolo di area uguale a quella sottesa alla curva ipsografica, aventi entrambi gli stessi valori in ascissa.\\
+La formula è:
+\begin{equation}
+    H_m = h_m - h_0 = \frac{\Sigma (\bar{h}_i - h_0) \cdot A_i}{A}
+    \label{quota_media}
+\end{equation}
+
+
 \subsection{Caratteristiche del bacino idrografico}
 Successivamente ad aver analizzato in modo completo il bacino idrografico, è possibile redigere una tabella riassuntiva.
 \begin{table}[H] \centering
@@ -50,13 +97,13 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     Quota massima & $h_{max}$&  $\left[m s.m.\right]$       &          \\
     Quota della sezione di chiusura & $h_0$ & $\left[m s.m.\right]$        &             \\ 
     Quota apice del conoide &$h_{ap}$& $\left[m s.m.\right]$ & \\ 
-    Quota media& $h_m$ & $\left[m s.m.\right]$ & \\ 
+    Quota media& $H_m$ & $\left[m s.m.\right]$ & \\ 
     Rilievo del bacino:& $h_{max} - h_o$ & $\left[m\right]$ & \\ 
     Lunghezza del reticolo idrografico& $L_r$& $\left[m\right]$ & \\ 
     Pendenza media del bacino& $i_m$ & $\left[\%\right]$ & \\ 
     Pendenza media del bacino& $i_m$& $\left[ ^\circ \right]$ & \\ 
     Coefficiente di forma di Gravelius& F& $\left[\frac{0.28 \cdot P}{A^{0.5}} \right]$ & \\  
-    Indice di compattezza &$I_{c \left(\frac{L}{A^0.5}\right)}$ & & \\ 
+    Indice di compattezza &$F_c$  & $ \left[\frac{L}{A^{0.5}}\right]$ & \\ 
     Numero di Melton& & $\left[-\right]$ & \\ 
     Densità di drenaggio &$D_r$& $\left[\si{\km^{-1}}\right]$& \\ 
     $N_1$& & & \\ 
