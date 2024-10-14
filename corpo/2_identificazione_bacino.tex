@@ -1,18 +1,34 @@
 \section{Identificazione e delimitazione del bacino idrografico sede dell'intervento}
 Il bacino idrografico d'interesse per questa relazione è quello relativo al torrente Sigismondi, con punto di chiusura a INSERIRE PUNTO CHIUSURA\\
 Al fine di individuare il bacino idrografico del punto considerato sulla CTP (Carta Tecnica Provinciale), è necessario delineare la linea spartiacque.\\
-Per fare ciò occorre tenere in considerazione l'andamento delle creste dei versanti ed in cui l'acqua che vi scorre tenderà ad andare verso il punto di chiusura.\\
-Un metodo alternativo a quello appena descritto, che necessita della CTP, è quello che implica l'utilizzo di un software GIS (Geographic information system).\\
+Per fare ciò, occorre tenere in considerazione l'andamento delle creste dei versanti ed in cui l'acqua che vi scorre tenderà ad andare verso il punto di chiusura.\\
+Un metodo alternativo a quello appena descritto, che necessita della cartografia tradizionale, è quello che implica l'utilizzo di un software GIS (Geographic information system).\\
 Immettendo nel programma (Qgis nel nostro caso) il modello digitale del terreno (DTM) dell'area di nostro interesse, è possibile estrarre informazioni utili per l'analisi spaziale, come per esempio la lunghezza dello spartiacque, la superficie totale, etc.\\
-Il DTM è semplificabile come un file raster (ovvero non vettoriale) che attribuisce ad ogni coordinata geografica del terreno (2 coordinate) la relativa quota altimetrica. Generalmente, tale modello viene prodotto partendo da rilievi svolti tramite foto-satelliti o sensori posti su droni. La loro fruizione è possibile nella maggior parte dei casi poichè vengono resi disponibili nei geoportali territoriali (Provincia di Trento in questo caso).\\
+Il DTM è semplificabile come un file raster (ovvero non vettoriale) che attribuisce ad ogni punto geografico del terreno (2 coordinate) la relativa quota altimetrica. Generalmente, tale modello viene prodotto partendo da rilievi svolti tramite foto-satelliti o sensori posti su droni; la loro fruizione è quasi spesso libera poiché vengono resi disponibili nei geoportali territoriali (Provincia di Trento in questo caso).\\
 Quindi, partendo dal modello digitale del terreno dell'area d'interesse è possibile cominciare l'attività di analisi.\\
 \begin{figure}[H]\centering
     \includegraphics[scale=.50]{immagini/dtm_qgis.PNG}
     \caption{Rappresentazione del DTM dell'area di studio.}
     \label{dtm_qgis}
 \end{figure}
-Il software Qgis, per mostrare graficamente la variazione di livello, permette di colorare in modo differente le quote .....
-Dal reticolo idrografico di un bacino è possibile svolgere alcune considerazioni, come per esempio quella riguardante i suoi segmenti.\\
+\noindent Il software Qgis, per semplificare la visione della variazione di livello, permette di assegnare colori omogenei a punti con quote simili.\\ 
+Durante la campagna di rilevamento dei punti, o nel successivo processo di analisi dei dati, inevitabilmente vengono a crearsi delle celle con depressioni locali, detti ``pits", ovvero errori. Questo fenomeno, anomalo nella realtà, viene modificato dal software GIS mediante un filtraggio (detto ``deppittaggio").\\
+Successivamente a questa modifica, le quote altimetriche delle celle vengono analizzate, in modo da determinare la direzione di deflusso dell'acqua (\textit{flow direction}) verso la sezione di chiusura, secondo la massima pendenza verso valle.\\
+In questo modo, è possibile conoscere per ogni cella la superficie drenante del bacino che la attraversa (\textit{upslope area}).\\
+Per delimitare la rete idrografica del bacino, al fine di estrarre la mappa del bacino, è necessario porre un'area di soglia, ovvero la superficie minima drenante che ogni cella del bacino deve avere, al fine di essere considerata in questo processo.\\
+Attraverso la determinazione della sezione di chiusura, nel nostro caso vincolata dal progetto, il software GIS permette di estrarre il bacino idrografico complessivo.\\
+\begin{figure}[H]\centering
+    \includegraphics[scale=.50]{immagini/bacino_qgis.PNG}
+    \caption{Rappresentazione del bacino idrografico e della sua sezione di chiusura.}
+    \label{bacino_qgis}
+\end{figure}
+\noindent Per migliorare la visione, e comprendere meglio il territorio in analisi, è possibile simulare il fenomeno di ombreggiamento creato dal sole sui versanti e sulle valli.
+\begin{figure}[H]\centering
+    \includegraphics[scale=.75]{immagini/bacino_ombreggiatura_qgis.PNG}
+    \caption{Rappresentazione del bacino idrografico, della sua sezione di chiusura e dell'effetto di ombreggiamento.}
+    \label{bacino_ombreggiatura_qgis}
+\end{figure}
+\noindent Dal reticolo idrografico di un bacino è possibile svolgere alcune considerazioni, come per esempio quella riguardante i suoi segmenti.\\
 A seconda del numero di segmenti di cui è formato il reticolo, il bacino assume lo stesso valore di ordine, detto ``ordine del bacino" ed indicato con la lettera $k$.\\
 Secondo il metodo di Horton-Strahler, l'attribuzione dell'ordine al segmento del reticolo idrografico avviene mediante tre regole: 
 \begin{enumerate}
