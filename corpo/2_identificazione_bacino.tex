@@ -16,6 +16,7 @@ Durante la campagna di rilevamento dei punti, o nel successivo processo di anali
 Successivamente a questa modifica, le quote altimetriche delle celle vengono analizzate, in modo da determinare la direzione di deflusso dell'acqua (\textit{flow direction}) verso la sezione di chiusura, secondo la massima pendenza verso valle.\\
 In questo modo, è possibile conoscere per ogni cella la superficie drenante del bacino che la attraversa (\textit{upslope area}).\\
 Per delimitare la rete idrografica del bacino, al fine di estrarre la mappa del bacino, è necessario porre un'area di soglia, ovvero la superficie minima drenante che ogni cella del bacino deve avere, al fine di essere considerata in questo processo.\\
+Per estrarre il reticolo corretto, ovvero concorde con la CTP, è necessario svolgere dei tentativi; il compromesso migliore lo si trova imponendo un limite di area di 60000 $m^2$ (6 $ha$). Il reticolo idrografico estratto può essere osservato nella figura \ref{bacino_reticolo_qgis}.\\
 Attraverso la determinazione della sezione di chiusura, nel nostro caso vincolata dal progetto, il software GIS permette di estrarre il bacino idrografico complessivo.\\
 \begin{figure}[H]\centering
     \includegraphics[scale=.50]{immagini/bacino_qgis.PNG}
@@ -24,10 +25,18 @@ Attraverso la determinazione della sezione di chiusura, nel nostro caso vincolat
 \end{figure}
 \noindent Per migliorare la visione, e comprendere meglio il territorio in analisi, è possibile simulare il fenomeno di ombreggiamento creato dal sole sui versanti e sulle valli.
 \begin{figure}[H]\centering
-    \includegraphics[scale=.75]{immagini/bacino_ombreggiatura_qgis.PNG}
+    \includegraphics[scale=.50]{immagini/bacino_ombreggiatura_qgis.PNG}
     \caption{Rappresentazione del bacino idrografico, della sua sezione di chiusura e dell'effetto di ombreggiamento.}
     \label{bacino_ombreggiatura_qgis}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.60]{immagini/bacino_reticolo_ombreg_qgis.PNG}
+    \caption{Rappresentazione del bacino e del reticolo idrografico, con indicazione della sezione di chiusura.}
+    \label{bacino_reticolo_qgis}
+    \end{figure}
+
 \noindent Dal reticolo idrografico di un bacino è possibile svolgere alcune considerazioni, come per esempio quella riguardante i suoi segmenti.\\
 A seconda del numero di segmenti di cui è formato il reticolo, il bacino assume lo stesso valore di ordine, detto ``ordine del bacino" ed indicato con la lettera $k$.\\
 Secondo il metodo di Horton-Strahler, l'attribuzione dell'ordine al segmento del reticolo idrografico avviene mediante tre regole: 
