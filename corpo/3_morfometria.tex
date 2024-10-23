@@ -15,7 +15,7 @@ Dove:
     \item $u$ è l'ordine del tratto di reticolo considerato.
 \end{itemize}
 La prima legge di Horton inoltre, evidenzia come all'aumentare dell'ordine dei tratti, la lunghezza dei segmenti e le aree dei sottobacini aumentino, mentre cala la loro numerosità.\\
-Nel caso del reticolo idrografico della CTP preso da noi in esame, i parametri sono: 
+\paragraph{Reticolo idrografico, secondo la CTP} Nel caso del reticolo idrografico della CTP preso da noi in esame, i parametri sono: 
 
 \begin{table}[H] \centering
     \caption{\textcolor{red}{Caratteristiche di biforcazione del reticolo idrografico ed applicazione della prima legge di Horton, secondo i dati ricavati dalla CTP.}}
@@ -30,13 +30,40 @@ Nel caso del reticolo idrografico della CTP preso da noi in esame, i parametri s
 \bottomrule    
 \end{tabular}
 \end{table}
-\noindent Il rapporto di biforcazione medio $\bar{R}_b$, secondo il ragionamento svolta sulla CTP è pari a \num{2.3}.\\
+\noindent Il rapporto di biforcazione medio $\bar{R}_b$, secondo il ragionamento svolto sulla CTP è pari a \num{2.3}.\\
 Interpolando i valori degli ordini dei segmenti, con la loro numerosità e con il parametro ricavato dalla prima legge di Horton, si ottiene un grafico caratteristico:
 \begin{figure}[H]\centering
     \includegraphics[scale=.75]{immagini/legge_horton.png}
     \caption{Relazione tra l'ordine del tratto, la sua numerosità e la funzione di Horton.}
     \label{legge_horton}
 \end{figure}
+
+\paragraph{Reticolo idrografico, secondo il DTM} Nel caso dello studio del reticolo idrografico mediante l'utilizzo di Qgis e del relativo file DTM, i parametri estratti sono i seguenti:
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Caratteristiche di biforcazione del reticolo idrografico ed applicazione della prima legge di Horton, secondo i dati ricavati dal DTM.}}
+    \label{tab:rapp_biforcazione_2_horton}
+    \begin{tabular}{ cccc }
+\toprule
+    Ordine u & Segmenti Nu & Rapp. di biforcazione Rb & Nu (prima legge di Horton) \\
+\midrule    
+    1        & 12          &   /        & 12.3                        \\
+    2        & 3           & 4.0       & 3.5                        \\
+    3        & 1           & 3.0      & 1.0                       \\
+\bottomrule    
+\end{tabular}
+\end{table}
+
+\noindent Il rapporto di biforcazione medio $\bar{R}_b$, secondo il ragionamento svolto sul DTM è pari a \num{3.5}.\\
+Interpolando i valori degli ordini dei segmenti, con la loro numerosità e con il parametro ricavato dalla prima legge di Horton, si ottiene un grafico caratteristico:
+\begin{figure}[H]\centering
+    \includegraphics[scale=.75]{immagini/legge_horton_qgis.png}
+    \caption{Relazione tra l'ordine del tratto, la sua numerosità e la funzione di Horton.}
+    \label{legge_horton_qgis}
+\end{figure}
+
+\vspace{1cm}
+In entrambi i casi, la prima legge di Horton viene soddisfatta, poichè la funzione del grafico interpola correttamente i dati reali del reticolo idrografico.\\
+Lo scostamento dei dati nei due casi è dovuto alla differente estrazione del reticolo idrografico nei due metodi.
 
 \subsection{Coefficiente di forma di Gravelius}
 Il coefficiente di forma di Gravelius è un parametro che indica quanto la forma di un bacino sia compatta.\\
@@ -105,12 +132,12 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     \toprule
     Superficie planimetrica & A &  $\left[km^2\right]$ & 2.01 \\ 
     Perimetro & P & $\left[m\right]$        &      8690       \\ 
-    Quota massima & $h_{max}$&  $\left[m s.m.\right]$       &    2085      \\
+    Quota massima & $h_{max}$&  $\left[m s.m.\right]$       &    2084.6     \\
     Quota della sezione di chiusura & $h_0$ & $\left[m s.m.\right]$        &       1186      \\ 
     Quota apice del conoide &$h_{ap}$& $\left[m s.m.\right]$ & \\ 
     Quota media& $H_m$ & $\left[m s.m.\right]$ & \\ 
-    Rilievo del bacino:& $h_{max} - h_o$ & $\left[m\right]$ &   901 \\ 
-    Lunghezza del reticolo idrografico& $L_r$& $\left[m\right]$ & \\ 
+    Rilievo del bacino:& $h_{max} - h_o$ & $\left[m\right]$ &   (901) \\ 
+    Lunghezza del reticolo idrografico& $L_r$& $\left[m\right]$ & 5294,1 \\ 
     Pendenza media del bacino& $i_m$ & $\left[\%\right]$ & \\ 
     Pendenza media del bacino& $i_m$& $\left[ ^\circ \right]$ & \\ 
     Coefficiente di forma di Gravelius& F& $\left[\frac{0.28 \cdot P}{A^{0.5}} \right]$ & \\  
