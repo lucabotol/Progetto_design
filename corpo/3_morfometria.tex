@@ -111,6 +111,43 @@ La formula è:
     \label{quota_media}
 \end{equation}
 
+I calcoli, svolti in un foglio di calcolo elettronico, sono qui sotto riportati.
+
+\begin{table}[H]
+    \begin{tabular}{cccccccc}
+        \toprule
+    Quote (m s.l.m.) & n° celle & $A_i$ ($m^2$) & $A_i$ ($km^2$) & $Hi_{min}$ & $Hi_{max}$ & $Hi_{media}$ & $A_i \cdot Hi_{media}$ \\
+   \midrule
+    1183-1200                 & 261      & 261     & 0.000261 & 1183   & 1200   & 1192     & 0.311         \\
+    1200-1250                 & 4874     & 4874    & 0.004874 & 1200   & 1250   & 1225     & 5.971         \\
+    1250-1300                 & 27605    & 27605   & 0.027605 & 1250   & 1300   & 1275     & 35.196        \\
+    1300-1350                 & 57101    & 57101   & 0.057101 & 1300   & 1350   & 1325     & 75.659        \\
+    1350-1400                 & 108630   & 108630  & 0.10863  & 1350   & 1400   & 1375     & 149.366       \\
+    1400-1450                 & 138207   & 138207  & 0.138207 & 1400   & 1450   & 1425     & 196.944       \\
+    1450-1500                 & 160541   & 160541  & 0.160541 & 1450   & 1500   & 1475     & 236.797       \\
+    1500-1550                 & 164185   & 164185  & 0.164185 & 1500   & 1550   & 1525     & 250.381       \\
+    1550-1600                 & 199048   & 199048  & 0.199048 & 1550   & 1600   & 1575     & 313.500       \\
+    1600-1650                 & 178951   & 178951  & 0.178951 & 1600   & 1650   & 1625     & 290.794       \\
+    1650-1700                 & 175437   & 175437  & 0.175437 & 1650   & 1700   & 1675     & 293.856       \\
+    1700-1750                 & 158025   & 158025  & 0.158025 & 1700   & 1750   & 1725     & 272.592       \\
+    1750-1800                 & 152704   & 152704  & 0.152704 & 1750   & 1800   & 1775     & 271.049       \\
+    1800-1850                 & 150620   & 150620  & 0.15062  & 1800   & 1850   & 1825     & 274.881       \\
+    1850-1900                 & 115773   & 115773  & 0.115773 & 1850   & 1900   & 1875     & 217.074       \\
+    1900-1950                 & 114122   & 114122  & 0.114122 & 1900   & 1950   & 1925     & 219.684       \\
+    1950-2000                 & 82232    & 82232   & 0.082232 & 1950   & 2000   & 1975     & 162.408       \\
+    2000-2050                 & 18149    & 18149   & 0.018149 & 2000   & 2050   & 2025     & 36.752        \\
+    2050-2085                 & 1317     & 1317    & 0.001317 & 2050   & 2085   & 2067     & 2.723        \\
+    \bottomrule
+\end{tabular}
+    \end{table}
+Dove:
+\begin{itemize}
+    \item Quote: fasce di quota, secondo le linee di livello ortometriche;
+    \item n° celle: numero di celle del raster, contenute in ogni fascia di quota;
+    \item $A_i$: area di territorio ricadente in ogni fascia di quota;
+\end{itemize}
+Considerando le celle da 1 $m^2$, l
+
 \subsection{Pendenza media dei versanti del bacino $i_m$}
 L'indicatore in questione evidenzia, in modo mediato, la pendenza dei versanti del bacino.\\
 Per calcolare tale numero si utilizza il Metodo Harlvord-Horton, mediante la formula:
@@ -135,11 +172,11 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     Quota massima & $h_{max}$&  $\left[m s.m.\right]$       &    2084.6     \\
     Quota della sezione di chiusura & $h_0$ & $\left[m s.m.\right]$        &       1186      \\ 
     Quota apice del conoide &$h_{ap}$& $\left[m s.m.\right]$ & \\ 
-    Quota media& $H_m$ & $\left[m s.m.\right]$ & \\ 
-    Rilievo del bacino:& $h_{max} - h_o$ & $\left[m\right]$ &   (901) \\ 
+    Quota media& $H_m$ & $\left[m s.m.\right]$ & 1646    \\ 
+    Rilievo del bacino:& $h_{max} - h_o$ & $\left[m\right]$ &   901 \\ 
     Lunghezza del reticolo idrografico& $L_r$& $\left[m\right]$ & 5294,1 \\ 
-    Pendenza media del bacino& $i_m$ & $\left[\%\right]$ & \\ 
-    Pendenza media del bacino& $i_m$& $\left[ ^\circ \right]$ & \\ 
+    Pendenza media del bacino& $i_m$ & $\left[\%\right]$ & 54.19    \\ 
+    Pendenza media del bacino& $i_m$& $\left[ ^\circ \right]$ & 28.45   \\ 
     Coefficiente di forma di Gravelius& F& $\left[\frac{0.28 \cdot P}{A^{0.5}} \right]$ & \\  
     Indice di compattezza &$F_c$  & $ \left[\frac{L}{A^{0.5}}\right]$ & \\ 
     Numero di Melton& & $\left[-\right]$ & \\ 
