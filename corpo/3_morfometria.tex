@@ -144,9 +144,12 @@ Dove:
 \begin{itemize}
     \item Quote: fasce di quota, secondo le linee di livello ortometriche;
     \item n° celle: numero di celle del raster, contenute in ogni fascia di quota;
-    \item $A_i$: area di territorio ricadente in ogni fascia di quota;
+    \item $A_i$: area di territorio ricadente in ogni fascia di quota (sia in $m^2$ che in $km^2$);
+    \item $Hi_{min}$ e $Hi_{max}$: quota minima e massima della fascia di quota;
+    \item $Hi_{media}$: valore altimetrico medio per ogni fascia di quota;
+    \item $A_i \cdot Hi_{media}$: altezza media di ogni fascia altimetrica, soppesata per la propria estensione.
 \end{itemize}
-Considerando le celle da 1 $m^2$, l
+Considerando che le celle hanno estensione 1 $m^2$, l'area di ogni fascia di quota equivale (in $m^2$) al proprio numero di quadrati della matrice.
 
 \subsection{Pendenza media dei versanti del bacino $i_m$}
 L'indicatore in questione evidenzia, in modo mediato, la pendenza dei versanti del bacino.\\
