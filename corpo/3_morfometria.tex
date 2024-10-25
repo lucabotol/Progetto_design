@@ -71,7 +71,7 @@ Questo indicatore confronta le misure di area e perimetro del bacino in analisi,
 Al fine di applicare la relativa formula, è necessario conoscere i valori di perimetro del bacino (lunghezza dello spartiacque), e l'area della superficie dell'intera area di studio.\\
 La formula dell'indicatore è:
 \begin{equation}
-    F = \frac{0.28 \cdot P}{\sqrt{A}}
+    F = \frac{0.28 \cdot P}{\sqrt{A}} = \frac{0.28 \cdot 8.690}{2.01} = 1.21
     \label{gravelius}
 \end{equation}
 
@@ -80,7 +80,7 @@ Proprio come per l'indice precedente, questa formula permette di comprendere la 
 Al contrario del coefficiente precedente, che utilizza il valore del perimetro, questa formula necessita di conoscere la lunghezza del reticolo idrografico del bacino, oltre che alla superficie drenante interna allo spartiacque.\\
 La formula dell'indicatore è:
 \begin{equation}
-    F_c = \frac{L}{\sqrt{A}}
+    F_c = \frac{L}{\sqrt{A}} = \frac{5.290}{\sqrt{2.01}} = 1.42
     \label{compatezza}
 \end{equation}
 
@@ -98,8 +98,16 @@ Questo indicatore, anche detto \textit{``drainage density"}, mette in relazione 
 Tale valore è molto influenzato dalla quantità pluviometrica annua, dalle caratteristiche del suolo (litologia ed erodibilità) e dalla destinazione d'uso dell'area (copertura vegetale, impermeabilizzazione antropica,\dots).\\
 La formula è:
 \begin{equation}
-    D_r = \frac{\Sigma L_i}{A}
+    D_r = \frac{\Sigma L_i}{A} = \frac{5.290}{2.01} = 2.63 km^{-1}
     \label{drenaggio}
+\end{equation}
+
+\subsection{Indice di torrenzialità}
+Questo indice rapporta il numero dei rami del reticolo con l'area totale del bacino idrografico.
+La formula è:
+\begin{equation}
+I_t = \frac{N}{A} = \frac{16}{2.01} = 7.96 \hspace{3pt}\frac{n. segmenti}{km^2} 
+\label{torrenzialità}
 \end{equation}
 
 \subsection{Quota media del bacino}
@@ -111,7 +119,7 @@ La formula è:
     \label{quota_media}
 \end{equation}
 
-I calcoli, svolti in un foglio di calcolo elettronico, sono qui sotto riportati.
+\noindent I calcoli, svolti in un foglio di calcolo elettronico, sono qui sotto riportati.
 
 \begin{table}[H]
     \begin{tabular}{cccccccc}
@@ -140,7 +148,7 @@ I calcoli, svolti in un foglio di calcolo elettronico, sono qui sotto riportati.
     \bottomrule
 \end{tabular}
     \end{table}
-Dove:
+\noindent Dove:
 \begin{itemize}
     \item Quote: fasce di quota, secondo le linee di livello ortometriche;
     \item n° celle: numero di celle del raster, contenute in ogni fascia di quota;
@@ -149,7 +157,22 @@ Dove:
     \item $Hi_{media}$: valore altimetrico medio per ogni fascia di quota;
     \item $A_i \cdot Hi_{media}$: altezza media di ogni fascia altimetrica, soppesata per la propria estensione.
 \end{itemize}
-Considerando che le celle hanno estensione 1 $m^2$, l'area di ogni fascia di quota equivale (in $m^2$) al proprio numero di quadrati della matrice.
+Considerando che le celle hanno estensione 1 $m^2$, l'area di ogni fascia di quota equivale (in $m^2$) al proprio numero di quadrati della matrice.\\
+Essendo che l'area totale del bacino è di 2.01 $km^2$, la formula \ref{quota_media}, ricavata dal foglio di calcolo elettronico, restituisce il valore di 1646 $m$ sul livello del mare.
+
+\subsection{Curva ipsometrica del bacino}
+Al fine di valutare la condizione di dinamica temporale del bacino, risulta utile valutare le curve ipsometriche dello stesso.\\
+Osservando l'andamento della curva che lega l'area del bacino e la quota ortometrica (siano queste dimensionali o adimensionali), è possibile capire se l'ara studiata è in una condizione giovanile (dove prevale l'erosione), maturità (equilibrio) o senilità.
+\begin{figure}[H] \centering
+          \includegraphics[scale=0.7]{immagini/curva_ipsografica_dimens.png}
+        \caption{Curva ipsografica dimensionale del bacino. In ascissa è indicato il valore di area cumulata, ed in ordinata la relativa quota ortometrica.}
+\end{figure}    
+\begin{figure}[H] \centering
+        \includegraphics[scale=0.8]{immagini/curva_ipsografica_adimens.png}
+        \caption{Curva ipsografica adimensionale del bacino. Al contrario dell'altro grafico, i valori degli assi sono adimensionali, ovvero rapportati con i massimi della serie.}
+\end{figure}
+Mediante entrambi i grafici è possibile osservare come il bacino si trovi in uno stato di equilibrio.\\
+Mediante la bisettrice, nel secondo grafico, si può apprezzare maggiormente come, verso monte del bacino, l'erosione sia stata maggiore rispetto che a valle.
 
 \subsection{Pendenza media dei versanti del bacino $i_m$}
 L'indicatore in questione evidenzia, in modo mediato, la pendenza dei versanti del bacino.\\
@@ -180,12 +203,12 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     Lunghezza del reticolo idrografico& $L_r$& $\left[m\right]$ & 5294,1 \\ 
     Pendenza media del bacino& $i_m$ & $\left[\%\right]$ & 54.19    \\ 
     Pendenza media del bacino& $i_m$& $\left[ ^\circ \right]$ & 28.45   \\ 
-    Coefficiente di forma di Gravelius& F& $\left[\frac{0.28 \cdot P}{A^{0.5}} \right]$ & \\  
-    Indice di compattezza &$F_c$  & $ \left[\frac{L}{A^{0.5}}\right]$ & \\ 
+    Coefficiente di forma di Gravelius& F& $\left[\frac{0.28 \cdot P}{A^{0.5}} \right]$ & 1.21\\  
+    Indice di compattezza &$F_c$  & $ \left[\frac{L}{A^{0.5}}\right]$ & 1.42\\ 
     Numero di Melton& & $\left[-\right]$ & \\ 
-    Densità di drenaggio &$D_r$& $\left[\si{\km^{-1}}\right]$& \\ 
+    Densità di drenaggio &$D_r$& $\left[\si{\km^{-1}}\right]$& 2.63 \\ 
     $N_1$& & & 12 \\ 
-    Indice di torrenzialità& &$\left[\frac{n. segmenti }{km^2}\right]$ & \\  
+    Indice di torrenzialità& &$\left[\frac{n. segmenti }{km^2}\right]$ & 7.96 \\  
     Ordine di bacino& $k$ & $\left[-\right]$ & 3 \\ 
     Rapporto di biforcazione medio& $R_b$ & $\left[-\right]$ &  3.5 \\  
     Pendenza media del collettore principale & & $\left[\frac{m}{m}\right]$ & \\  
