@@ -1,1 +1,1 @@
-In questa relazione si andrà ad esporre i procedimenti necessari per l'analisi e la progettazione di un intervento di sistemazione e consolidamento idraulico, in un bacino idrografico della Provincia di Trento (Val dei Mocheni).
+In questa relazione si andrà ad esporre i procedimenti necessari per l'analisi e la progettazione di un intervento di sistemazione e consolidamento idraulico, in un bacino idrografico della Provincia di Trento (Valle dei Mocheni).
