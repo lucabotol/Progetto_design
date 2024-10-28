@@ -89,7 +89,7 @@ La formula dell'indicatore è:
 L'indice di Melton quantifica l'energia potenziale (gravitativa) del bacino.\\
 La formula è applicabile conoscendo il dislivello di quota tra quella massima del bacino e quella dell'apice del cono di deiezione, oltre che l'area totale del bacino. 
 \begin{equation}
-    Me = \frac{\Delta H}{\sqrt{A}}
+    Me = \frac{\Delta H}{\sqrt{A}} = \frac{2084.6-1186}{\sqrt{2.01 \cdot 10^6}} = 0.634
     \label{melton}
 \end{equation}
 Questo fattore è importate per valutare i processi di trasporto solido che potrebbero avvenire; infatti, se questo valore è maggiore (o uguale) a 0.5, l'energia potenziale dei sedimenti potrebbe da dare luogo a fenomeni di trasporto, come per esempio le colate detritiche.
@@ -201,6 +201,16 @@ Il seguente grafico indica come l'area del bacino idrografico venga suddivisa in
     \caption{Istogramma indicante le distribuzioni delle aree del bacino.}
 \end{figure}
 
+\subsection{Profilo altimetrico del torrente}
+Il profilo altimetrico del torrente (che nel nostro caso è il corso principale del bacino idrografico) indica l'andamento ortometrico, in funzione della propria lunghezza cumulata.
+\begin{figure}[H] \centering
+    \includegraphics[scale=0.8]{immagini/prof_coll_princ.png}
+    \caption{Profilo longitudinale del collettore del bacino idrografico.}
+\end{figure}
+Il grafico è stato ricavato mediante l'utilizzo di un foglio elettronico di calcolo, utilizzando i dati provenienti da Qgis.\\
+Inoltre, mediante tali dati è possibile ricavare la pendenza media del tratto principale del corso idraulico (28.94\%, oppure 16.14°) e la sua lunghezza totale (2401 $m$).
+
+
 \subsection{Caratteristiche del bacino idrografico}
 Successivamente ad aver analizzato in modo completo il bacino idrografico, è possibile redigere una tabella riassuntiva.
 \begin{table}[H] \centering
@@ -212,7 +222,7 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     Perimetro & P & $\left[m\right]$        &      8690       \\ 
     Quota massima & $h_{max}$&  $\left[m s.m.\right]$       &    2084.6     \\
     Quota della sezione di chiusura & $h_0$ & $\left[m s.m.\right]$        &       1186      \\ 
-    Quota apice del conoide &$h_{ap}$& $\left[m s.m.\right]$ & \\ 
+    Quota apice del conoide &$h_{ap}$& $\left[m s.m.\right]$ & 1186\\ 
     Quota media& $H_m$ & $\left[m s.m.\right]$ & 1646    \\ 
     Rilievo del bacino:& $h_{max} - h_o$ & $\left[m\right]$ &   901 \\ 
     Lunghezza del reticolo idrografico& $L_r$& $\left[m\right]$ & 5294,1 \\ 
@@ -220,13 +230,13 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     Pendenza media del bacino& $i_m$& $\left[ ^\circ \right]$ & 28.45   \\ 
     Coefficiente di forma di Gravelius& F& $\left[\frac{0.28 \cdot P}{A^{0.5}} \right]$ & 1.21\\  
     Indice di compattezza &$F_c$  & $ \left[\frac{L}{A^{0.5}}\right]$ & 1.42\\ 
-    Numero di Melton& & $\left[-\right]$ & \\ 
+    Numero di Melton& & $\left[-\right]$ & 0.634\\ 
     Densità di drenaggio &$D_r$& $\left[\si{\km^{-1}}\right]$& 2.63 \\ 
     $N_1$& & & 12 \\ 
     Indice di torrenzialità& &$\left[\frac{n. segmenti }{km^2}\right]$ & 7.96 \\  
     Ordine di bacino& $k$ & $\left[-\right]$ & 3 \\ 
     Rapporto di biforcazione medio& $R_b$ & $\left[-\right]$ &  3.5 \\  
-    Pendenza media del collettore principale & & $\left[\frac{m}{m}\right]$ & \\  
+    Pendenza media del collettore principale & & $\left[\frac{m}{m}\right]$ & 0.289\\  
     \bottomrule
 \end{tabular}
 \end{table}
