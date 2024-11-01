@@ -9,6 +9,7 @@ Essendo che si andrà a svolgere i calcoli considerando solamente i massimi annu
 \end{itemize} 
 
 \subsection{Verifica preliminare mediante \textit{Plotting position}}
+\label{sec_plotting_position}
 Prima di svolgere l'adattamento della serie pluviometrica misurata a quella degli estremi di Gumbel, occorre valutare se tali valori si adattano correttamente lungo la retta di distribuzione teorica.\\
 Ad ogni misura della serie, posta in ordine crescente, viene attribuito un valore a seconda della propria posizione nel campione, secondo il metodo di Weibull $(P_{em}= \frac{i}{N+1})$ o Hazen $\left(P_{em}=\frac{i-0.5}{N}\right)$. Entrambi questi parametri correlano l'evento di precipitazione con la probabilità di non superamento dell'evento (anche indicato come $P$).\\
 Utilizzando il valore ricavato da uno di questi metodi, viene calcolata una variabile d'appoggio ($y$), secondo la formula $y = -ln(-ln(P))$, essendo che $P(x)= e ^{-e^ {-y}}$.\\
@@ -34,4 +35,31 @@ y = -ln(-ln(1-\frac{1}{T_r}))
 \end{equation}
 Partendo da questo calcolo della variabile d'appoggio, è possibile ricavare l'altezza di precipitazione mediante la formula \ref{h_tr}.
 
+\subsection{Test statistico di Matalas}
+Similmente a come è stata svolta la verifica grafica (\ref{sec_plotting_position}), è necessario accertarsi che l'asimmetria ($G$) della serie osservata (storica) non differisca eccessivamente dalla serie teorica.\\
+La procedura del test statistico è:
+\begin{itemize}
+\item calcolo del coefficiente di asimmetria $G$, mediante \ref{coef_asimmetria};
+\item estrapolazione dei parametri $E(y)$ e $\sigma(y)$, in funzione di N;
+\item verifica della disequazione \ref{disequazione_matalas}.
+\end{itemize}
+\begin{equation}
+    G = \frac{m_3}{m_2^{\frac{3}{2}}} = N^{\frac{1}{2}} \frac{\sum_{i=1,N}(x_i - x_m)^3}{\left[\sum_{i=1,N}(x_i-x_m)^2\right]^{\frac{3}{2}}}
+    \label{coef_asimmetria}
+\end{equation}
+\begin{equation}
+    |G - E (y)| < 2 \sigma(y)
+    \label{disequazione_matalas}
+\end{equation}
+\noindent Dove:
+\begin{itemize}
+    \item $G$: coefficiente di asimmetria del campione;
+    \item $E(y)$: coefficiente di asimmetria del campione perfetto, che segue l'andamento di Gumbel;
+    \item $\sigma (y)$: deviazione standard del campione.
+\end{itemize}
+Nel caso in cui la disequazione fosse corretta, è possibile accettare la distribuzione di probabilità di Gumbel. In caso contrario occorrerebbe provare un'altra distribuzione teorica di probabilità.
 
+\subsection{LSPP - Linee segnalatrici di probabilità pluviometrica}
+Dopo aver ottenuto le quantità di precipitazioni teoriche, per ogni durata di evento pluviometrico e per diversi tempi di ritorno, è possibile creare un grafico che metta in relazione tutti questi parametri.\\
+La curva risultate ha un andamento caratteristico che segue la funzione $h=at^n$, con $a$ che dipende dal tempo di ritorno T e con $n$ che risulta essere una costante per la stazione di rilevamento dei dati (in Italia generalmente è tra 0.20 e 0.55). Il parametro $n$ ha un valore sempre inferiore ad 1 perchè all'aumentare del tempo dell'evento pluviometrico, l'intensità di pioggia cala.\\
+Nel caso in cui gli assi del grafico avessero entrambi la scala logaritmica, la linea interpolatrice dei punti sarebbe una retta.
