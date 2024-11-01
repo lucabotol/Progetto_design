@@ -1,17 +1,38 @@
 \section{Elaborazione statistico-probabilistica delle pioggie intense della stazione di riferimento per il bacino in esame (analisi degli afflussi)}
-In questo capitolo della relazione si condurrà un'analisi statistico-probabilistica degli eventi pluviometrici del bacino. In particolare, si utilizzerà il metodo dei momenti di Gumbel.\\
-Successivamente, verrà effettuata la verifica dell'adattamento della serie di valori pluviometrici alla distribuzione (di Gumbel nel nostro caso) prescelta. Per fare ciò, si utilizzerà il test di Matalas.\\
-Infine, si svolgeranno i calcoli per determinare la Linea Segnalatrice di Possibilità Pluviometrica (LSPP).
+In questo capitolo della relazione si condurrà un'analisi statistico-probabilistica degli eventi pluviometrici del bacino. In particolare, si utilizzerà la distribuzione di probabilità dei valori estremi (legge di Gumbel).\\
+Successivamente, verrà effettuata la verifica dell'adattamento della serie di valori pluviometrici alla distribuzione, facendo ricorso al test di Matalas.\\
+Infine, si svolgeranno i calcoli per determinare la Linea Segnalatrice di Possibilità Pluviometrica (LSPP).\\
+Essendo che si andrà a svolgere i calcoli considerando solamente i massimi annuali di precipitazione, occorre che tali valori debbano: 
+\begin{itemize}
+    \item essere relativi ad un certo periodo di tempo (almeno 30 anni);
+    \item essere \textit{casuali, omogenei, indipendenti e stazionari}.
+\end{itemize} 
 
 \subsection{Verifica preliminare mediante \textit{Plotting position}}
-Prima di svolgere l'adattamento della serie pluviometrica misurata a quella degli estremi di Gumbel, occorre valutare preliminarmente se tali valori si adattano correttamente lungo la retta di distribuzione.\\
-In pratica, viene verificata se l'altezza di precipitazione $h$ segue linearmente la variabile di appoggio $y$.\\
-La procedura 
+Prima di svolgere l'adattamento della serie pluviometrica misurata a quella degli estremi di Gumbel, occorre valutare se tali valori si adattano correttamente lungo la retta di distribuzione teorica.\\
+Ad ogni misura della serie, posta in ordine crescente, viene attribuito un valore a seconda della propria posizione nel campione, secondo il metodo di Weibull $(P_{em}= \frac{i}{N+1})$ o Hazen $\left(P_{em}=\frac{i-0.5}{N}\right)$. Entrambi questi parametri sono correlati con la probabilità di non superamento dell'evento (anche indicato come $P$).\\
+Utilizzando il valore ricavato da uno di questi metodi, viene calcolata una variabile d'appoggio ($y$), secondo la formula $y = -ln(-ln(P))$.\\
 
-\subsection{Regolarizzazione secondo Gumbel (metodo dei momenti)}
-Al fine di interpretare la serie storica degli eventi pluviometrici, occorre adattare i valori ad una certa distribuzione di probabilità.\\
-I dati della serie campionaria devono: 
-\begin{itemize}
-    \item riguardare i massimi annuali di precipitazioni di un certo periodo (almeno 30 anni);
-    \item essere \textit{casuali, omogenei, indipendenti e stazionari}.
-\end{itemize}
+Successivamente, utilizzando i parametri $y$ (appena calcolato), $\alpha$ e $u$, questi ultimi basati sul campione, si riesce a ricavare l'altezza di precipitazione dell'evento, regolarizzata secondo la distribuzione di Gumbel, secondo la formula inversa di $y = \alpha (h - u)$.\\
+\begin{equation}
+    \alpha = \left(\frac{1.283}{\sigma(h)}\right)
+\end{equation}
+\begin{equation}
+    u = \left( h_m - \frac{0.5772}{\alpha} \right)
+\end{equation}
+\begin{equation}
+    h = \frac{y}{\alpha}+u
+    \label{h_tr}
+\end{equation}
+Al fine di verificare visivamente la bontà degli allineamenti delle distribuzioni, della serie osservata e della serie attesa (teorica), occorre creare un grafico, dove in ascissa si pone il valore del parametro $y$ ed in ordinata si pongono i valori delle relative precipitazioni.\\
+Maggiore è l'allineamento tra le due distribuzioni e migliore sarà la distribuzione della serie osservata.
+
+\subsection{Calcolo delle altezze di pioggia per il $T_r$ di riferimento}
+Successivamente ad aver verificato che l'allineamento tra le due distribuzioni sia apprezzabile, occorre svolgere il calcolo delle altezze di pioggia, dati dei tempi di ritorno.\\
+Essendo che $y = -ln(-ln(P))$ e $P = 1-\frac{1}{T_r}$, allora 
+\begin{equation}
+y = -ln(-ln(1-\frac{1}{T_r}))
+\end{equation}
+Partendo da questo calcolo della variabile d'appoggio, è possibile ricavare l'altezza di precipitazione mediante la formula \ref{h_tr}.
+
+
