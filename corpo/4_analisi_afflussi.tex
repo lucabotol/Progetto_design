@@ -10,10 +10,9 @@ Essendo che si andrà a svolgere i calcoli considerando solamente i massimi annu
 
 \subsection{Verifica preliminare mediante \textit{Plotting position}}
 Prima di svolgere l'adattamento della serie pluviometrica misurata a quella degli estremi di Gumbel, occorre valutare se tali valori si adattano correttamente lungo la retta di distribuzione teorica.\\
-Ad ogni misura della serie, posta in ordine crescente, viene attribuito un valore a seconda della propria posizione nel campione, secondo il metodo di Weibull $(P_{em}= \frac{i}{N+1})$ o Hazen $\left(P_{em}=\frac{i-0.5}{N}\right)$. Entrambi questi parametri sono correlati con la probabilità di non superamento dell'evento (anche indicato come $P$).\\
-Utilizzando il valore ricavato da uno di questi metodi, viene calcolata una variabile d'appoggio ($y$), secondo la formula $y = -ln(-ln(P))$.\\
-
-Successivamente, utilizzando i parametri $y$ (appena calcolato), $\alpha$ e $u$, questi ultimi basati sul campione, si riesce a ricavare l'altezza di precipitazione dell'evento, regolarizzata secondo la distribuzione di Gumbel, secondo la formula inversa di $y = \alpha (h - u)$.\\
+Ad ogni misura della serie, posta in ordine crescente, viene attribuito un valore a seconda della propria posizione nel campione, secondo il metodo di Weibull $(P_{em}= \frac{i}{N+1})$ o Hazen $\left(P_{em}=\frac{i-0.5}{N}\right)$. Entrambi questi parametri correlano l'evento di precipitazione con la probabilità di non superamento dell'evento (anche indicato come $P$).\\
+Utilizzando il valore ricavato da uno di questi metodi, viene calcolata una variabile d'appoggio ($y$), secondo la formula $y = -ln(-ln(P))$, essendo che $P(x)= e ^{-e^ {-y}}$.\\
+\noindent Successivamente, utilizzando i parametri $y$ (appena calcolato), $\alpha$ e $u$, quest'ultimi basati sul campione, si riesce a ricavare l'altezza di precipitazione dell'evento, regolarizzata secondo la distribuzione di Gumbel, secondo la formula inversa di $y = \alpha (h - u)$.
 \begin{equation}
     \alpha = \left(\frac{1.283}{\sigma(h)}\right)
 \end{equation}
@@ -24,7 +23,7 @@ Successivamente, utilizzando i parametri $y$ (appena calcolato), $\alpha$ e $u$,
     h = \frac{y}{\alpha}+u
     \label{h_tr}
 \end{equation}
-Al fine di verificare visivamente la bontà degli allineamenti delle distribuzioni, della serie osservata e della serie attesa (teorica), occorre creare un grafico, dove in ascissa si pone il valore del parametro $y$ ed in ordinata si pongono i valori delle relative precipitazioni.\\
+Al fine di verificare visivamente la bontà degli allineamenti delle distribuzioni della serie osservata e della serie attesa (teorica), occorre creare un grafico dove, in ascissa si pone il valore del parametro $y$ ed in ordinata si pongono i valori delle relative precipitazioni.\\
 Maggiore è l'allineamento tra le due distribuzioni e migliore sarà la distribuzione della serie osservata.
 
 \subsection{Calcolo delle altezze di pioggia per il $T_r$ di riferimento}
