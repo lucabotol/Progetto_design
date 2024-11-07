@@ -102,7 +102,7 @@ delta scelto             & 5.0 \\
 
 \begin{figure}[H]\centering
     \includegraphics[scale=.6]{immagini/freq_piogg_rel_05ore.png}
-    \caption{Frequenze di pioggia relativa (suddivise per classi omogenee), relative ad un evento di durata 0.5 ore.}
+    \caption{Distribuzione delle frequenze relative di pioggia (suddivise per classi omogenee), di un evento di durata 0.5 ore.}
   \label{freq_rel_piogg_05ore}
 \end{figure}
 
@@ -181,6 +181,7 @@ Partendo da questo calcolo della variabile d'appoggio, è possibile ricavare l'a
     \end{figure}
 
 \begin{table}[H] \centering
+    \caption{\textcolor{red}{Altezze di pioggia attese per il $T_r$ di riferimento e durata di 0.5 ore.}}
         \begin{tabular}{ccc}
         \toprule
         Tr (anni) & y     & h attesa (mm) \\
@@ -239,6 +240,7 @@ Come anticipato precedentemente, in questa sezione vengono riportati solamente i
 I procedimenti per le seguenti durate sono i medesimi utilizzati per la durata di 0.5 ore.
 \subsubsection{Durata di 1 ora}
 \begin{table}[H] \centering
+    \caption{\textcolor{red}{Valori di probabilità di non superamento dell'evento (calcolata mediante Weibull e Hazen) e relativo valore del parametro d'appoggio $y$, riferito ad una durata di precipitazione di 1 ora.}}
     \begin{tabular}{cccccc}
         &  & \multicolumn{2}{c}{\textbf{Plotting Position}} & \multicolumn{2}{c}{\textbf{Y -ln( -ln (1- 1/Tr))}}\\
         \toprule
@@ -284,9 +286,136 @@ I procedimenti per le seguenti durate sono i medesimi utilizzati per la durata d
     \bottomrule          
     \end{tabular}
     \end{table}
+    
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Principali parametri statistici riferiti alla serie pluviometrica di durata 1 ora.}}
+        \begin{tabular}{cc}
+    \toprule
+        deviazione standard ($\sigma$)   & 7.5  \\
+        media (xm)                & 25.3 \\
+        $\alpha$                & 0.2  \\
+        u                & 21.9 \\
+        N                & 37.0 \\
+        minimo ($x_{min}$)             & 13.8 \\
+        massimo ($x_{max}$)            & 49.8 \\
+        varianza ($\sigma ^2$)             & 56.6 \\
+        coeff. Variazione (CV)    & 0.30 \\
+        mediana ($x_{mediana}$)        & 24.2 \\
+        numero di classi (k)      & 5.5  \\
+        k scelto:                 & 6.0  \\
+        verifica (Iman e Canover) & 64.0 \\
+        delta classe ($\Delta$)          & 6.0  \\
+        delta scelto             & 7.0 \\
+        \bottomrule 
+ \end{tabular}
+\end{table}
+
+\begin{figure}[H]\centering
+    \includegraphics[scale=.6]{immagini/freq_piogg_rel_1ora.png}
+    \caption{Distribuzione delle frequenze relative di pioggia (suddivise per classi omogenee), di un evento di durata 1 ora.}
+  \label{freq_rel_piogg_05ore}
+\end{figure}
+
+\begin{figure}[H]\centering
+    \includegraphics[scale=.6]{immagini/freq_piogg_cum_1ora.png}
+    \caption{Frequenze di pioggia cumulata, relative ad un evento di durata 1 ora.}
+  \label{freq_cum_piogg_05ore}
+\end{figure}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Valori di altezza di pioggia attesa (teorica), calcolata mediante la variabile d'appoggio $y$ di Weibull o di Hazen.}}
+    \begin{tabular}{cccc}
+ & & \multicolumn{2}{c}{$h = Y/\alpha + u$}       \\
+ \toprule
+    \textbf{n} & \textbf{h (mm)  1 ora} & \textbf{h mediante Weibull} & \textbf{h mediante Hazen} \\
+\midrule
+    n         & h (mm)     1 ora & h\_calc Weib   & h\_calc Hazen  \\
+    1         & 13.8             & 14.322         & 13.335         \\
+    2         & 14.4             & 15.562         & 15.063         \\
+    3         & 16.2             & 16.431         & 16.082         \\
+    4         & 17               & 17.136         & 16.864         \\
+    5         & 17.6             & 17.748         & 17.525         \\
+    6         & 17.8             & 18.301         & 18.112         \\
+    7         & 19.2             & 18.812         & 18.650         \\
+    8         & 19.4             & 19.294         & 19.154         \\
+    9         & 19.4             & 19.755         & 19.633         \\
+    10        & 20.6             & 20.201         & 20.094         \\
+    11        & 20.6             & 20.635         & 20.542         \\
+    12        & 21.2             & 21.062         & 20.982         \\
+    13        & 21.6             & 21.484         & 21.416         \\
+    14        & 21.8             & 21.904         & 21.848         \\
+    15        & 23.6             & 22.324         & 22.279         \\
+    16        & 23.6             & 22.746         & 22.712         \\
+    17        & 23.8             & 23.172         & 23.149         \\
+    18        & 24               & 23.605         & 23.593         \\
+    19        & 24.2             & 24.045         & 24.045         \\
+    20        & 24.4             & 24.496         & 24.509         \\
+    21        & 24.4             & 24.960         & 24.985         \\
+    22        & 24.8             & 25.439         & 25.479         \\
+    23        & 25.8             & 25.937         & 25.992         \\
+    24        & 26.8             & 26.456         & 26.528         \\
+    25        & 27               & 27.002         & 27.093         \\
+    26        & 27.6             & 27.579         & 27.692         \\
+    27        & 28               & 28.193         & 28.332         \\
+    28        & 28.8             & 28.853         & 29.022         \\
+    29        & 30.2             & 29.569         & 29.774         \\
+    30        & 30.2             & 30.355         & 30.605         \\
+    31        & 30.4             & 31.231         & 31.539         \\
+    32        & 31.2             & 32.225         & 32.610         \\
+    33        & 31.6             & 33.382         & 33.877         \\
+    34        & 34.2             & 34.777         & 35.438         \\
+    35        & 37.8             & 36.548         & 37.496         \\
+    36        & 42.6             & 39.008         & 40.576         \\
+    37        & 49.8             & 43.153         & 47.100        
+    \end{tabular}
+    \end{table}
+
+\begin{figure}[H]\centering
+        \includegraphics[scale=.5]{immagini/plot_pos_weib_1ora.png}
+        \caption{Plotting position mediante Weibull.}
+      \label{plot_pos_weib_1ora}
+ \end{figure}
+
+\begin{figure}[H]\centering
+        \includegraphics[scale=.5]{immagini/plot_pos_hazen_1ora.png}
+        \caption{Plotting position mediante Hazen.}
+      \label{plot_pos_hazen_1ora}
+\end{figure}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Altezze di pioggia attese per il $T_r$ di riferimento e durata di 1 ora.}}
+        \begin{tabular}{ccc}
+        \toprule
+        Tr (anni) & y     & h attesa (mm) \\
+        \midrule
+        2 & 0.367 & 24.0  \\
+        5 & 1.500 & 30.7  \\
+        10  & 2.250 & 35.1          \\
+        30  & 3.384 & 41.7          \\
+        50  & 3.902 & 44.8          \\
+        100 & 4.600 & 48.9          \\
+        200 & 5.296 & 53.0          \\         
+        \bottomrule
+        \end{tabular}
+\end{table}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Parametri per l'esecuzione del test statistico di Matalas, relativi alla durata di precipitazione di 1 ora.}}
+    \begin{tabular}{cc}
+    \toprule
+    media                  & 25.28 \\
+    $N ^{0.5}$             &  6.083\\
+    G                      & 1.158 \\
+    G - E                  &  0.277\\
+    2 $\sigma$             & 1.069 \\
+    TEST                   & Vero \\
+    \bottomrule
+    \end{tabular}
+\end{table}
 
 \subsubsection{Durata di 3 ore}
 \begin{table}[H] \centering
+    \caption{\textcolor{red}{Valori di probabilità di non superamento dell'evento (calcolata mediante Weibull e Hazen) e relativo valore del parametro d'appoggio $y$, riferito ad una durata di precipitazione di 3 ore.}}
 \begin{tabular}{cccccc}
     &  & \multicolumn{2}{c}{\textbf{Plotting Position}} & \multicolumn{2}{c}{\textbf{Y -ln( -ln (1- 1/Tr))}}\\
     \toprule
@@ -333,9 +462,135 @@ I procedimenti per le seguenti durate sono i medesimi utilizzati per la durata d
     \end{tabular}
     \end{table}
 
+\begin{table}[H] \centering
+        \caption{\textcolor{red}{Principali parametri statistici riferiti alla serie pluviometrica di durata 3 ore.}}
+     \begin{tabular}{cc}
+        \toprule
+    deviazione standard ($\sigma$) & 10.3 \\
+    media ($x_m$)              & 34.1 \\
+    $\alpha$            &  0.1 \\
+    $u$           & 29.4\\
+    N                & 37 \\
+    minimo ($x_{min}$)      & 18.6 \\
+    massimo ($x_{max}$)     & 75.4 \\
+    varianza ($\sigma^2$)            & 106.7 \\
+    coeff. variazione (CV)    &  0.3\\
+    mediana ($x_{mediana}$)        & 33.2 \\
+    numero di classi (k)      & 5.5  \\
+    k scelto                 &  6.0 \\
+    verifica (Iman e Canover) & 64.0 \\
+    delta classe ($\Delta$)          & 9.5  \\
+    delta scelto             & 10.0 \\
+            \bottomrule
+            \end{tabular}
+    \end{table}
+
+\begin{figure}[H]\centering
+        \includegraphics[scale=.6]{immagini/freq_piogg_rel_3ore.png}
+        \caption{Distribuzione delle frequenze relative di pioggia (suddivise per classi omogenee), di un evento di durata 3 ore.}
+      \label{freq_rel_piogg_05ore}
+\end{figure}
+    
+\begin{figure}[H]\centering
+        \includegraphics[scale=.6]{immagini/freq_piogg_cum_3ore.png}
+        \caption{Frequenze di pioggia cumulata, relative ad un evento di durata 3 ore.}
+      \label{freq_cum_piogg_05ore}
+\end{figure}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Valori di altezza di pioggia attesa (teorica), calcolata mediante la variabile d'appoggio $y$ di Weibull o di Hazen.}}
+    \begin{tabular}{cccc}
+ & & \multicolumn{2}{c}{$h = Y/\alpha + u$}       \\
+ \toprule
+    \textbf{n} & \textbf{h (mm)  3 ore} & \textbf{h mediante Weibull} & \textbf{h mediante Hazen} \\
+\midrule
+    1          & 18.6                      & 19.035                & 17.681                 \\
+    2          & 19.6                      & 20.737                & 20.053                 \\
+    3          & 21.8                      & 21.929                & 21.450                 \\
+    4          & 21.8                      & 22.897                & 22.524                 \\
+    5          & 23.4                      & 23.738                & 23.431                 \\
+    6          & 24.6                      & 24.496                & 24.237                 \\
+    7          & 24.8                      & 25.198                & 24.975                 \\
+    8          & 25.4                      & 25.860                & 25.666                 \\
+    9          & 26.8                      & 26.492                & 26.324                 \\
+    10         & 27.8                      & 27.104                & 26.957                 \\
+    11         & 28                        & 27.700                & 27.572                 \\
+    12         & 30.4                      & 28.286                & 28.176                 \\
+    13         & 30.4                      & 28.865                & 28.771                 \\
+    14         & 31.2                      & 29.441                & 29.364                 \\
+    15         & 31.8                      & 30.018                & 29.955                 \\
+    16         & 32.8                      & 30.597                & 30.550                 \\
+    17         & 33                        & 31.182                & 31.150                 \\
+    18         & 33.2                      & 31.775                & 31.759                 \\
+    19         & 33.2                      & 32.380                & 32.380                 \\
+    20         & 33.8                      & 32.999                & 33.016                 \\
+    21         & 34                        & 33.635                & 33.670                 \\
+    22         & 35.4                      & 34.293                & 34.347                 \\
+    23         & 35.8                      & 34.975                & 35.051                 \\
+    24         & 35.8                      & 35.688                & 35.787                 \\
+    25         & 35.8                      & 36.437                & 36.562                 \\
+    26         & 36                        & 37.229                & 37.384                 \\
+    27         & 36.2                      & 38.072                & 38.262                 \\
+    28         & 37.2                      & 38.978                & 39.209                 \\
+    29         & 38.2                      & 39.960                & 40.241                 \\
+    30         & 38.4                      & 41.039                & 41.382                 \\
+    31         & 41.4                      & 42.241                & 42.663                 \\
+    32         & 41.6                      & 43.606                & 44.134                 \\
+    33         & 44.8                      & 45.194                & 45.872                 \\
+    34         & 45.8                      & 47.108                & 48.015                 \\
+    35         & 46                        & 49.538                & 50.840                 \\
+    36         & 50.6                      & 52.914                & 55.066                 \\
+    37         & 75.4                      & 58.603                & 64.020                
+    \end{tabular}
+    \end{table}
+
+    \begin{figure}[H]\centering
+        \includegraphics[scale=.5]{immagini/plot_pos_weib_3ore.png}
+        \caption{Plotting position mediante Weibull.}
+      \label{plot_pos_weib_3ore}
+ \end{figure}
+
+\begin{figure}[H]\centering
+        \includegraphics[scale=.5]{immagini/plot_pos_hazen_3ore.png}
+        \caption{Plotting position mediante Hazen.}
+      \label{plot_pos_hazen_3ore}
+\end{figure}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Altezze di pioggia attese per il $T_r$ di riferimento e durata di 3 ore.}}
+        \begin{tabular}{ccc}
+        \toprule
+        Tr (anni) & y     & h attesa (mm) \\
+        \midrule
+        2 & 0.367 & 32.4  \\
+        5 & 1.500 & 41.5  \\
+        10  & 2.250 & 47.5          \\
+        30  & 3.384 & 56.7          \\
+        50  & 3.902 & 60.8          \\
+        100 & 4.600 & 66.5          \\
+        200 & 5.296 & 72.1          \\         
+        \bottomrule
+        \end{tabular}
+\end{table}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Parametri per l'esecuzione del test statistico di Matalas, relativi alla durata di precipitazione di 3 ore.}}
+    \begin{tabular}{cc}
+    \toprule
+    media                  & 34.08 \\
+    $N ^{0.5}$             &  6.083\\
+    G                      & 1.680 \\
+    G - E                  &  0.799\\
+    2 $\sigma$             & 1.069 \\
+    TEST                   & Vero \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
 \subsubsection{Durata di 6 ore}
 \begin{table}[H] \centering
-    \begin{tabular}{cccccc}
+    \caption{\textcolor{red}{Valori di probabilità di non superamento dell'evento (calcolata mediante Weibull e Hazen) e relativo valore del parametro d'appoggio $y$, riferito ad una durata di precipitazione di 6 ore.}}
+\begin{tabular}{cccccc}
         &  & \multicolumn{2}{c}{\textbf{Plotting Position}} & \multicolumn{2}{c}{\textbf{Y -ln( -ln (1- 1/Tr))}}\\
         \toprule
            \textbf{n} & \textbf{h [mm] 1 ora} & \textbf{P Weibull   n/N+1} & \textbf{P Hazen  (n-0,5)/N} & \textbf{y Weibull} & \textbf{y Hazen}\\
@@ -376,13 +631,225 @@ I procedimenti per le seguenti durate sono i medesimi utilizzati per la durata d
     34         & 58.2                        & 0.895                      & 0.905                       & 2.196                   & 2.309                   \\
     35         & 65.4                        & 0.921                      & 0.932                       & 2.498                   & 2.660                   \\
     36         & 71.6                        & 0.947                      & 0.959                       & 2.918                   & 3.185                   \\
-    37         & 130.2                       & 0.974                      & 0.986                       & 3.624                   & 4.297                  
+    37         & 130.2                       & 0.974                      & 0.986                       & 3.624                   & 4.297   \\
+    \bottomrule               
     \end{tabular}
     \end{table}
 
-\subsection{LSPP - Linee segnalatrici di probabilità pluviometrica}
-Dopo aver ottenuto le quantità di precipitazioni teoriche, per ogni durata di evento pluviometrico e per diversi tempi di ritorno, è possibile creare un grafico che metta in relazione tutti questi parametri.\\
-La curva risultate ha un andamento caratteristico che segue la funzione $h=at^n$, con $a$ che dipende dal tempo di ritorno T e con $n$ che risulta essere una costante per la stazione di rilevamento dei dati (in Italia generalmente è tra 0.20 e 0.55). Il parametro $n$ ha un valore sempre inferiore ad 1 perchè all'aumentare del tempo dell'evento pluviometrico, l'intensità di pioggia cala.\\
-Nel caso in cui gli assi del grafico avessero entrambi la scala logaritmica, la linea interpolatrice dei punti sarebbe una retta.
+\begin{table}[H] \centering
+        \caption{\textcolor{red}{Principali parametri statistici riferiti alla serie pluviometrica di durata 6 ore.}}
+     \begin{tabular}{cc}
+        \toprule
+    deviazione standard ($\sigma$) &  10.8\\
+    media ($x_m$)              &  43.0\\
+    $\alpha$            &  0.1 \\
+    $u$           & 38.2\\
+    N                &  37\\
+    minimo ($x_{min}$)             & 25.0 \\
+    massimo ($x_{max}$)            &  71.6\\
+    varianza ($\sigma^2$)            &  117.7\\
+    coeff. variazione (CV)    & 0.24 \\
+    mediana ($x_{mediana}$)        &42.4  \\
+    numero di classi (k)      &  5.4 \\
+    k scelto                 &  6.0 \\
+    verifica (Iman e Canover) &  64.0\\
+    delta classe ($\Delta$)          & 7.8  \\
+    delta scelto             & 8.0 \\
+            \bottomrule
+            \end{tabular}
+    \end{table}
 
+\begin{figure}[H]\centering
+        \includegraphics[scale=.6]{immagini/freq_piogg_rel_6ore.png}
+        \caption{Distribuzione delle frequenze relative di pioggia (suddivise per classi omogenee), di un evento di durata 6 ore.}
+      \label{freq_rel_piogg_05ore}
+\end{figure}
+    
+\begin{figure}[H]\centering
+        \includegraphics[scale=.6]{immagini/freq_piogg_cum_6ore.png}
+        \caption{Frequenze di pioggia cumulata, relative ad un evento di durata 6 ore.}
+      \label{freq_cum_piogg_05ore}
+\end{figure}    
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Valori di altezza di pioggia attesa (teorica), calcolata mediante la variabile d'appoggio $y$ di Weibull o di Hazen.}}
+    \begin{tabular}{cccc}
+ & & \multicolumn{2}{c}{$h = Y/\alpha + u$}       \\
+ \toprule
+    \textbf{n} & \textbf{h (mm)  6 ore} & \textbf{h mediante Weibull} & \textbf{h mediante Hazen} \\
+\midrule
+    1          & 25                          & 27.245                & 25.823                 \\
+    2          & 26.4                        & 29.033                & 28.315                 \\
+    3          & 26.8                        & 30.285                & 29.782                 \\
+    4          & 27.8                        & 31.302                & 30.910                 \\
+    5          & 30.4                        & 32.185                & 31.863                 \\
+    6          & 32.6                        & 32.981                & 32.709                 \\
+    7          & 32.8                        & 33.719                & 33.485                 \\
+    8          & 33                          & 34.414                & 34.211                 \\
+    9          & 33.6                        & 35.079                & 34.901                 \\
+    10         & 35.6                        & 35.721                & 35.566                 \\
+    11         & 37.2                        & 36.347                & 36.213                 \\
+    12         & 37.6                        & 36.963                & 36.847                 \\
+    13         & 37.8                        & 37.571                & 37.473                 \\
+    14         & 38.4                        & 38.176                & 38.095                 \\
+    15         & 39.4                        & 38.782                & 38.716                 \\
+    16         & 41.8                        & 39.390                & 39.341                 \\
+    17         & 41.8                        & 40.005                & 39.971                 \\
+    18         & 42.2                        & 40.628                & 40.611                 \\
+    19         & 42.6                        & 41.263                & 41.263                 \\
+    20         & 44.4                        & 41.913                & 41.931                 \\
+    21         & 44.8                        & 42.582                & 42.618                 \\
+    22         & 45                          & 43.272                & 43.329                 \\
+    23         & 46.6                        & 43.990                & 44.069                 \\
+    24         & 47.2                        & 44.738                & 44.842                 \\
+    25         & 48                          & 45.525                & 45.657                 \\
+    26         & 48.8                        & 46.357                & 46.520                 \\
+    27         & 50.6                        & 47.242                & 47.442                 \\
+    28         & 51.4                        & 48.194                & 48.437                 \\
+    29         & 51.4                        & 49.226                & 49.521                 \\
+    30         & 51.8                        & 50.359                & 50.719                 \\
+    31         & 52.8                        & 51.622                & 52.065                 \\
+    32         & 53.2                        & 53.055                & 53.610                 \\
+    33         & 55.6                        & 54.723                & 55.436                 \\
+    34         & 58.2                        & 56.734                & 57.687                 \\
+    35         & 65.4                        & 59.287                & 60.654                 \\
+    36         & 71.6                        & 62.833                & 65.093                 \\
+    37         & 130.2                       & 68.809                & 74.499                
+    \end{tabular}
+    \end{table}
+
+\begin{figure}[H]\centering
+        \includegraphics[scale=.5]{immagini/plot_pos_weib_6ore.png}
+        \caption{Plotting position mediante Weibull.}
+      \label{plot_pos_weib_6ore}
+ \end{figure}
+
+\begin{figure}[H]\centering
+        \includegraphics[scale=.5]{immagini/plot_pos_hazen_6ore.png}
+        \caption{Plotting position mediante Hazen.}
+      \label{plot_pos_hazen_6ore}
+\end{figure}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Altezze di pioggia attese per il $T_r$ di riferimento e durata di 6 ore.}}
+        \begin{tabular}{ccc}
+        \toprule
+        Tr (anni) & y     & h attesa (mm) \\
+        \midrule
+        2 & 0.367 & 41.3  \\
+        5 & 1.500 & 50.8  \\
+        10  & 2.250 & 57.2          \\
+        30  & 3.384 & 66.8          \\
+        50  & 3.902 & 71.2          \\
+        100 & 4.600 & 77.1          \\
+        200 & 5.296 & 82.9          \\         
+        \bottomrule
+        \end{tabular}
+\end{table}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Parametri per l'esecuzione del test statistico di Matalas, relativi alla durata di precipitazione di 6 ore.}}
+    \begin{tabular}{cc}
+    \toprule
+    media                  & 43.04 \\
+    $N ^{0.5}$             &  6.000\\
+    G                      & 0.434 \\
+    G - E                  &  0.447\\
+    2 $\sigma$             & 1.069 \\
+    TEST                   & Vero \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{LSPP - Linee segnalatrici di probabilità pluviometrica}
+Dopo aver ottenuto le quantità di precipitazioni teoriche, per ogni durata di evento pluviometrico e per diversi tempi di ritorno, è possibile creare un grafico che metta in relazione tutti questi parametri.
+
+\begin{table}[H]\centering
+    \caption{\textcolor{red}{Tabella riassuntiva delle altezze di pioggia previste per determinate durate e per determinati tempi di ritorno.}}
+    \begin{tabular}{ccccccc}
+    \toprule
+    \multirow{2}{*}{\textbf{durata t (ore)}} & \multicolumn{6}{c}{\textbf{Altezza di pioggia attesa h (mm) per Tr}} \\
+  & \textbf{2 anni} & \textbf{5 anni} & \textbf{30 anni} & \textbf{50 anni} & \textbf{100 anni} & \textbf{200 anni} \\
+    \textbf{0.5}                             & 19.83           & 25.30           & 34.38            & 36.88            & 40.25             & 43.60             \\
+    \textbf{1}                               & 24.05           & 30.69           & 41.75            & 44.78            & 48.88             & 52.96             \\
+    \textbf{3}                               & 32.38           & 41.50           & 56.67            & 60.84            & 66.46             & 72.06             \\
+    \textbf{6}                               & 41.26           & 50.85           & 66.78            & 71.16            & 77.06             & 82.94            \\
+    \bottomrule
+    \end{tabular}
+    \label{altezze_critiche_pioggia}
+    \end{table}
+
+La curva risultate ha un andamento caratteristico che segue la funzione $h=at^n$, con $a$ che dipende dal tempo di ritorno T e con $n$ che risulta essere una costante per la stazione di rilevamento dei dati (in Italia generalmente è tra 0.20 e 0.55). Il parametro $n$ ha un valore sempre inferiore ad 1 perchè all'aumentare del tempo dell'evento pluviometrico, l'intensità di pioggia cala.\\
+Essendo che:
+\begin{equation}
+    h=at^n \rightarrow \log h = \log a + n \log t \rightarrow H=A+nT
+    \label{formula_LSPP}
+\end{equation}
+Mediante l'equazione $H = \log h$, possiamo calcolare il valore di H della tabella \ref{altezze_critiche_pioggia}:
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Tabella riassuntiva delle altezze di pioggia previste per determinate durate e per determinati tempi di ritorno, in scala logaritmica.}}
+    \begin{tabular}{ccccccc}
+        \toprule
+    \multirow{2}{*}{\textbf{T}} & \multicolumn{6}{c}{\textit{\textbf{H = log h}}}                                                            \\ & \textbf{2 anni} & \textbf{5 anni} & \textbf{30 anni} & \textbf{50 anni} & \textbf{100 anni} & \textbf{200 anni} \\
+    \textbf{-0.301}             & 1.297           & 1.403           & 1.536            & 1.567            & 1.605             & 1.639             \\
+    \textbf{0.000}              & 1.381           & 1.487           & 1.621            & 1.651            & 1.689             & 1.724             \\
+    \textbf{0.477}              & 1.510           & 1.618           & 1.753            & 1.784            & 1.823             & 1.858             \\
+    \textbf{0.778}              & 1.616           & 1.706           & 1.825            & 1.852            & 1.887             & 1.919  \\
+    \bottomrule          
+    \end{tabular}
+    \end{table}
+Nel caso in cui gli assi del grafico avessero entrambi la scala logaritmica, la linea interpolatrice dei punti sarebbe una retta.\\
+Invertendo la formula della LSPP \ref{formula_LSPP}, è possibile calcolarsi i valori dei rimanenti parametri:
+\begin{table}[H] \centering
+    \begin{tabular}{ccccccc}
+    \toprule
+ & \textbf{2 anni} & \textbf{5 anni} & \textbf{30 anni} & \textbf{50 anni} & \textbf{100 anni} & \textbf{200 anni} \\
+    \textit{A} & 1.382  & 1.487  & 1.620  & 1.650  & 1.688  & 1.722  \\
+    \textit{a} & 24.080 & 30.679 & 41.647 & 44.659 & 48.722 & 52.771 \\
+    \textit{n} & 0.291  & 0.280  & 0.269  & 0.267  & 0.264  & 0.262  \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+Riassumendo, le equazioni delle LSPP per la nostra area di studio, possiedono i parametri numerici:
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Parametri a e n per poter ricavare la funzione LSPP, dato un certo tempo di ritorno e di durata di pioggia.}}
+    \begin{tabular}{ccc}
+    \toprule
+    \multirow{2}{*}{\textbf{Tempo di ritorno (anni)}} & \multicolumn{2}{c}{\textbf{LSPP}} \\
+     & \textbf{a}      & \textbf{n}      \\
+    2                                                 & 24.080          & 0.291           \\
+    5                                                 & 30.679          & 0.280           \\
+    30                                                & 41.647          & 0.269           \\
+    50                                                & 44.659          & 0.267           \\
+    100                                               & 48.722          & 0.264           \\
+    200                                               & 52.771          & 0.262   \\
+    \bottomrule       
+    \end{tabular}
+    \end{table}
+
+Per le durate di precipitazione già studiate in questa relazione (0.5, 1, 3 e 6 ore), la LSPP attribuisce le seguenti altezze di pioggia:
+
+\begin{table}[H]\centering
+    \caption{\textcolor{red}{Calcolo per le principali durate temporali dell'altezza di precipitazione prevista per un dato tempo di ritorno (mediante l'equazione LSPP).}}
+    \begin{tabular}{ccccccc}
+        \toprule
+    \multirow{2}{*}{\textbf{$T_p$ (ore)}} & \multicolumn{6}{c}{\textit{\textbf{h calcolata (mm)}}}  \\
+    & \textbf{Tr=2anni} & \textbf{Tr=5anni} & \textbf{Tr=30anni} & \textbf{Tr=50anni} & \textbf{Tr=100anni} & \textbf{Tr=200anni} \\
+    \textbf{0.5}                           & 19.68                & 25.27                & 34.56                 & 37.12                 & 40.56                  & 44.00                  \\
+    \textbf{1}                             & 24.08                & 30.68                & 41.65                 & 44.66                 & 48.72                  & 52.77                  \\
+    \textbf{3}                             & 33.15                & 41.72                & 55.96                 & 59.87                 & 65.14                  & 70.40                  \\
+    \textbf{6}                             & 40.55                & 50.66                & 67.43                 & 72.04                 & 78.25                  & 84.43           \\
+    \bottomrule      
+    \end{tabular}
+    \end{table}
+
+Conoscendo i parametri delle funzioni matematiche delle LSPP, è possibile vedere graficamente l'andamento di tali curve, creando un apposito grafico.
+
+\begin{figure}[H]\centering
+        \includegraphics[scale=.75]{immagini/LSPP.png}
+        \caption{Grafico della LSPP per ogni tempo di ritorno studiato.}
+      \label{LSPP}
+\end{figure}
 
