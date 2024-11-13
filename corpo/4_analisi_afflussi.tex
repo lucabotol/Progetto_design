@@ -14,7 +14,7 @@ In particolare, essendo la procedura di calcolo uguale per ogni serie numerica, 
 Prima di svolgere l'adattamento della serie pluviometrica misurata a quella degli estremi di Gumbel, occorre valutare se tali valori si adattano correttamente lungo la retta di distribuzione teorica.\\
 Ad ogni misura della serie, posta in ordine crescente, viene attribuito un valore a seconda della propria posizione nel campione, secondo il metodo di Weibull $(P_{em}= \frac{i}{N+1})$ o Hazen $\left(P_{em}=\frac{i-0.5}{N}\right)$. Entrambi questi parametri correlano l'evento di precipitazione con la probabilità di non superamento dell'evento (anche indicato come $P$).\\
 Utilizzando il valore ricavato da uno di questi metodi, viene calcolata una variabile d'appoggio ($y$), secondo la formula $y = -ln(-ln(P))$, essendo che $P(x)= e ^{-e^ {-y}}$.\\
-\noindent Successivamente, utilizzando i parametri $y$ (appena calcolato), $\alpha$ e $u$, quest'ultimi basati sul campione, si riesce a ricavare l'altezza di precipitazione dell'evento, regolarizzata secondo la distribuzione di Gumbel, secondo la formula inversa di $y = \alpha (h - u)$.
+Successivamente, utilizzando i parametri $y$ (appena calcolato), $\alpha$ e $u$, quest'ultimi basati sul campione, si riesce a ricavare l'altezza di precipitazione dell'evento, regolarizzata secondo la distribuzione di Gumbel, secondo la formula inversa di $y = \alpha (h - u)$.
 \begin{equation}
     \alpha = \left(\frac{1.283}{\sigma(h)}\right)
 \end{equation}
@@ -93,12 +93,17 @@ coeff. variazione (CV)    & 0.30 \\
 mediana ($x_{mediana}$)        & 20.0 \\
 numero di classi (k)      & 5.5  \\
 k scelto                 & 6.0  \\
-verifica (Iman e Canover) & 64.0 \\
+verifica (Iman e Conover) & 64.0 \\
 delta classe ($\Delta$)          & 4.5  \\
 delta scelto             & 5.0 \\
         \bottomrule
         \end{tabular}
 \end{table}    
+
+La varianza ($\sigma ^2$) è un fattore che indica come i valori della serie si discostano dal quello medio (o da uno atteso).\\
+La deviazione standard ($\sigma$), in modo simile alla variazione, indica la dispersione della serie rispetto alla media; al contrario dell'indice statistico precedente, questo valore ha la stessa unità di misura della serie numerica, permettendo quindi il reciproco confronto.\\
+La verifica di Iman e Conover ($2^k>N$) permette valutare se il numero di classi scelto per suddividere la serie è sufficientemente alto, per non averne un numero troppo basso e con un'alta densità di valori.\\
+Il delta della classe ($\Delta$) indica la differenza tra il massimo valore della classe ed il minimo.
 
 \begin{figure}[H]\centering
     \includegraphics[scale=.6]{immagini/freq_piogg_rel_05ore.png}
@@ -113,7 +118,7 @@ delta scelto             & 5.0 \\
 \end{figure}
 
 \subsection{Calcolo delle altezze di pioggia per il $T_r$ di riferimento}
-Successivamente ad aver verificato che l'allineamento tra le due distribuzioni sia apprezzabile, occorre svolgere il calcolo delle altezze di pioggia, dati dei tempi di ritorno.\\
+Successivamente ad aver verificato che l'allineamento tra le due distribuzioni è apprezzabile, occorre svolgere il calcolo delle altezze di pioggia, dati dei tempi di ritorno.\\
 Essendo che $y = -ln(-ln(P))$ e $P = 1-\frac{1}{T_r}$, allora 
 \begin{equation}
 y = -ln\left(-ln\left(1-\frac{1}{T_r}\right)\right)
@@ -213,7 +218,7 @@ La procedura del test statistico è:
     |G - E (y)| < 2 \sigma(y)
     \label{disequazione_matalas}
 \end{equation}
-\noindent Dove:
+Dove:
 \begin{itemize}
     \item $G$: coefficiente di asimmetria del campione;
     \item $E(y)$: coefficiente di asimmetria del campione perfetto, che segue l'andamento di Gumbel;
@@ -303,12 +308,14 @@ I procedimenti per le seguenti durate sono i medesimi utilizzati per la durata d
         mediana ($x_{mediana}$)        & 24.2 \\
         numero di classi (k)      & 5.5  \\
         k scelto:                 & 6.0  \\
-        verifica (Iman e Canover) & 64.0 \\
+        verifica (Iman e Conover) & 64.0 \\
         delta classe ($\Delta$)          & 6.0  \\
         delta scelto             & 7.0 \\
         \bottomrule 
  \end{tabular}
 \end{table}
+
+
 
 \begin{figure}[H]\centering
     \includegraphics[scale=.6]{immagini/freq_piogg_rel_1ora.png}
@@ -478,7 +485,7 @@ I procedimenti per le seguenti durate sono i medesimi utilizzati per la durata d
     mediana ($x_{mediana}$)        & 33.2 \\
     numero di classi (k)      & 5.5  \\
     k scelto                 &  6.0 \\
-    verifica (Iman e Canover) & 64.0 \\
+    verifica (Iman e Conover) & 64.0 \\
     delta classe ($\Delta$)          & 9.5  \\
     delta scelto             & 10.0 \\
             \bottomrule
@@ -652,7 +659,7 @@ I procedimenti per le seguenti durate sono i medesimi utilizzati per la durata d
     mediana ($x_{mediana}$)        &42.4  \\
     numero di classi (k)      &  5.4 \\
     k scelto                 &  6.0 \\
-    verifica (Iman e Canover) &  64.0\\
+    verifica (Iman e Conover) &  64.0\\
     delta classe ($\Delta$)          & 7.8  \\
     delta scelto             & 8.0 \\
             \bottomrule
@@ -779,7 +786,7 @@ Dopo aver ottenuto le quantità di precipitazioni teoriche, per ogni durata di e
     \label{altezze_critiche_pioggia}
     \end{table}
 
-La curva risultate ha un andamento caratteristico che segue la funzione $h=at^n$, con $a$ che dipende dal tempo di ritorno T e con $n$ che risulta essere una costante per la stazione di rilevamento dei dati (in Italia generalmente è tra 0.20 e 0.55). Il parametro $n$ ha un valore sempre inferiore ad 1 perchè all'aumentare del tempo dell'evento pluviometrico, l'intensità di pioggia cala.\\
+La curva interpolatrice ha un andamento caratteristico che segue la funzione $h=at^n$, con $a$ che dipende dal tempo di ritorno T e con $n$ che risulta essere una costante per la stazione di rilevamento dei dati (in Italia generalmente è tra 0.20 e 0.55). Il parametro $n$ è un valore sempre inferiore ad 1 perchè all'aumentare del tempo dell'evento pluviometrico, l'intensità di pioggia cala.\\
 Essendo che:
 \begin{equation}
     h=at^n \rightarrow \log h = \log a + n \log t \rightarrow H=A+nT
