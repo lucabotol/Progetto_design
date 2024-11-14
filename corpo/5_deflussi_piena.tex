@@ -45,19 +45,19 @@ Per il calcolo della velocità di reticolo dell'acqua nel bacino, è necessario 
 Svolgendo la formula \ref{vel_reticolo}, imponendo un coefficiente medio di 7.5, il risultato è $4.05 \frac{m}{s}$.\\
 Conoscendo la lunghezza del collettore principale, è possibile ricavare il tempo di corrivazione della componente del reticolo idrografico.\\
 In modo analogo, il calcolo della velocità dell'acqua nel versante avviene conoscendo la pendenza del tratto di terreno, ovvero il rapporto tra la differenza di quota (2084.3 m-1883 m) e la sua distanza, ricavata dal GIS, di 445.16 m.\\
-Applicando la formula \ref{vel_versante}, applicando un coefficiente di 0.1, la velocità di versante risulta essere di $0.07 \frac{m}{s}$.\\
+Applicando la formula \ref{vel_versante}, applicando un coefficiente di 0.15, la velocità di versante risulta essere di $0.10 \frac{m}{s}$.\\
 Anche in questo caso, il tempo di corrivazione nel versante è ricavabile invertendo la formula della velocità.
 I tempi di percorrenza dell'acqua sono:
 \begin{table}[H] \centering
     \begin{tabular}{ccc}
         \toprule
     \textbf{$T_v$} & \textbf{$T_r$} & {\color[HTML]{000000} } \\
-    6619.91     & 592.90      & sec                     \\
-    1.84        & 0.16        & ore       \\
+    4413.28     & 592.90      & sec                     \\
+    1.23        & 0.16        & ore       \\
     \bottomrule             
     \end{tabular}
     \end{table}
-Il tempo di corrivazione totale, ovvero la somma dei due parziali, risulta essere pari a 120.21 minuti (ovvero 2 ore).
+Il tempo di corrivazione totale, ovvero la somma dei due parziali, risulta essere pari a 83.44 minuti (ovvero 1.39 ore).
 
 \subsubsection{Metodo empirico di Giandotti}
 Il metodo di Giandotti, per il calcolo del tempo di corrivazione del bacino, richiede l'applicazione della relativa formula:
@@ -124,7 +124,7 @@ Dopo aver applicato diversi metodi per il calcolo del tempo di corrivazione, ris
         \toprule
   Metodo di calcolo   & $T_c$ in minuti & $T_c$ in ore\\
      \midrule
-   Cinematico  & 120.21 & 2.00\\
+   Cinematico  & 83.44 & 1.39\\
    Giandotti  & 34.356 & 0.573\\
    Ferro (I)  & 18.19 & 0.30\\
    Ferro (II)  &57.42 & 0.96\\
@@ -132,5 +132,54 @@ Dopo aver applicato diversi metodi per il calcolo del tempo di corrivazione, ris
     \end{tabular}
     \end{table}
 A seconda del caso di studio o di lavoro in esame, ogni metodo di calcolo trova la propria migliore applicazione.\\
-Ovviamente, conoscendo le distanze dei tratti (di reticolo e di versante) e le relative velocità dell'acqua in movimento, il metodo cinematico risulta quello che calcola nel modo più affidabile possibile il tempo di corrivazione del bacino. Lo stesso ragionamento può essere svolto considerando che tale metodo è l'unico fisicamente basato tra tutti quelli elencati.\\
+Ovviamente, conoscendo le distanze dei tratti (di reticolo e di versante) e le relative velocità dell'acqua in movimento, il metodo cinematico risulta quello che calcola nel modo più affidabile possibile il tempo di corrivazione del bacino. Lo stesso ragionamento può essere svolto considerando che tale metodo è l'unico fisicamente basato tra tutti quelli elencati. Per tali motivi, verrà utilizzato questo risultato per le successive valutazioni inerenti ai calcoli dei deflussi attesi.\\
 Nei casi in cui, per questioni di tempo o per mancanza di dati, il metodo cinematico non fosse utilizzabile, l'applicazione degli altri metodi per il calcolo del tempo di corrivazione dev'essere svolta considerando l'assunzione di inevitabili errori. 
+
+\subsection{Determinazione del parametro idrologico CN}
+Al fine di descrivere la tendenza di un suolo a generare runoff o infiltrazione sottosuperficiale (a fronte di un evento pluviometrico), il dipartimento di agricoltura americano (USDA) ha idealizzato il metodo SCS-CN (\textit{soil conservation service - curve number}).\\
+In seguito ad analisi empiriche, ad ogni tipologia di suolo e soprassuolo sono associati precisi valori, in una scala che va da 0 a 100.\\
+Maggiore è il valore attribuito all'area e maggiore è la tendenza che si crei deflusso superficiale. Viceversa, minore è il numero dell'indice e maggiore sarà la capacità del suolo ad infiltrare acqua. I valori CN sono generalmente tabellati, e rilasciati da vari enti pubblici (\ref{scs_cn_table}).\\
+La qualità litologica del suolo viene descritta secondo 4 gruppi (dalla A alla D), con capacità di infiltrazione dell'acqua sempre minore.\\
+
+\begin{figure}[H]  \centering
+    \includegraphics[scale=0.5]{immagini/scs_cn_table.png}
+    \caption{Valori tabellari del parametro idrologico CN.}
+    \label{scs_cn_table}
+\end{figure}
+
+Il parametro CN, oltre che essere dipendente dalla natura del suolo o dall'utilizzo del soprassuolo, viene influenzato anche dalle condizioni pluviometriche incidenti nei giorni precedenti del momento di studio.\\
+Generalmente, tutti i valori tabellati, a meno che non venga specificato, si trovano in condizione AMC (\textit{Antecedent Moisture Conditions}) numero II, ovvero in grado medio.\\
+I parametri AMC vengono imposti considerando le seguenti condizioni:
+\begin{figure}[H]  \centering
+    \includegraphics[scale=0.7]{immagini/AMC_table.png}
+    \caption{Condizioni idrologiche del suolo antecedenti l'evento di pioggia AMC (I), AMC (II) e AMC (III).}
+    \label{AMC_table}
+\end{figure}
+Le trasformazioni tra le diverse condizioni avvengono mediante le formule:
+\begin{equation}
+    AMC (I)\rightarrow CN (I) = \frac{4.2 \cdot CN(II)}{10-0.058 \cdot CN(II)}
+\end{equation}
+\begin{equation}
+    AMC(III) \rightarrow CN(III) = \frac{23\cdot CN (II)}{10+0.13 \cdot CN(II)}
+\end{equation}
+La condizione più favorevole, ovvero la AMC (III), è quella che genera il maggior deflusso, e che è quindi preferibile da utilizzare in sede di progetto.\\
+Il limite di saturazione dell'acqua nel terreno (S), ovvero la massima quantità infiltrabile, viene ricavata dal parametro CN del suolo-soprassuolo, utilizzando la formula:
+\begin{equation}
+    S = 25.4 \cdot \left(\frac{1000}{CN} -10 \right)
+\end{equation} 
+Al fine di conoscere le quantità di pioggia che si trasformano in deflusso, che vengono intercettate o che vengono assorbite, viene applicata la formula $P_e = \frac{(P-I_a)^2}{P-I_a+S} \label{eq_PE}$, che derivano dalle seguenti:
+\begin{figure}[H]
+\begin{equation}
+    \frac{P_e}{P-I_a} = \frac{F_a}{S} 
+\end{equation}
+\caption*{Relazione empirica che lega le diverse componenti dell'acqua meteorica in arrivo.}
+\end{figure}
+\begin{figure}[H]
+\begin{equation}
+    P= P_e + I_a + F_a     
+\end{equation}
+\caption*{Equazione di continuità.}
+\end{figure}
+
+Nell'equazione \ref{eq_PE}, oltre ad essere presenti i valori di pioggia in arrivo (P) e di storage idrico del terreno (S), viene considerato anche il parametro riguardante la perdita iniziale di acqua ($I_a$).\\
+Tale valore è dipendente da S, e varia da 0 a $0.2\cdot S$; riguarda tutto il volume di pioggia intercetta dalla vegetazione, o dalle cavità nel terreno, che non si infiltra e che non diventa deflusso.
