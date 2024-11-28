@@ -468,7 +468,7 @@ Questo metodo prevede che l'evento pluviometrico che genera il deflusso abbia ap
 Essendo che la superficie del bacino in analisi è di 2.01 $km^2$, l'applicazione della precedente formula restituisce un valore di portata unitaria pari a 9.75 $\frac{m^3}{s \cdot km^2}$; di conseguenza, la portata di picco Q del bacino è pari a 19.60 $\frac{m^3}{s}$.\\
 Confrontando tale valore con quelli precedenti, ne risulta che quello calcolato con il metodo empirico tende a sovrastimare eccessivamente l'evento idraulico uscente dal bacino.
 
-\subsection{Studio del deflusso con tempo di pioggia superiore a quello di corrivazione}
+\subsection{Studio del deflusso con tempo di pioggia superiore a quello di corrivazione (metodo razionale)}
 E' raro che la durata dell'evento di pioggia sia uguale al tempo di corrivazione del bacino; generalmente, la durata di pioggia è ben superiore al tempo di risposta totale del bacino. Questa condizione comporta due fenomeni: un minore picco di deflusso, ma un maggior volume di acqua uscente dalla sezione di chiusura.
 Per valutare come si comporta il bacino in risposta a precipitazioni di durate superiori a quella di corrivazione, sono stati ripetuti i calcoli del metodo razionale, a seconda del tempo di ritorno e del tempo di pioggia.\\
 Per valori sempre maggiori della durata di pioggia, sono stati ripetuti i calcoli inerenti alla pioggia efficace, alla portata di picco ed al volume totale.
@@ -477,4 +477,417 @@ Per valori sempre maggiori della durata di pioggia, sono stati ripetuti i calcol
     \caption{Andamento del deflusso per ogni tempo di ritorno.}
     \label{metodo_razionale_cn_c}
 \end{figure}
+Il valore $k'$ indica il moltiplicatore che fa aumentare il tempo di pioggia in relazione al tempo di corrivazione.\\
 Per tempi di ritorno relativamente bassi, la riduzione del picco della portata di deflusso è più attenuata rispetto a quella che si noterebbe per tempi di ritorno superiori.
+
+\subsection{Metodo cinematico}
+Al fine di compensare le limitazioni dovute al metodo razionale classico (intensità di pioggia costante e non considerazione della morfologia del bacino), è stato proposto il ``metodo cinematico".\\
+Questo procedimento si basa sull'ipotesi che ai punti del bacino con la stessa quota (isoipse) corrispondono gli stessi tempi di contribuzione alla sezione di chiusura. In questo modo, si considerano le isoipse coincidenti con le linee isocorrive del bacino.\\
+Quindi, secondo il prof. Michele Viparelli (1963), le curve ipsografiche possono essere utilizzate per valutare l'incremento nel tempo dell'area contribuente di deflusso alla sezione di chiusura.\\
+Considerando la curva ipsometrica di un bacino idrografico, come per esempio \ref{curva_ipsometrica_dimensionale}, è possibile quantificare qual è l'area contribuente di quota superiore a qualsiasi punto scelto.\\
+Ne deriva che la formula generale per questo metodo di analisi di deflusso è:
+\begin{equation}
+    \frac{t}{T_c} = \frac{h - h_0}{h_{max} - h_0}
+    \label{formula_generica_metodo_cinematico}
+\end{equation}
+Dove:
+\begin{itemize}
+    \item $t$ è il tempo generico di contribuzione di una fascia di bacino;
+    \item $T_c$ è il tempo di corrivazione del bacino;
+    \item $h$ è l'altezza di quota generica;
+    \item $h_0$ è la quota della sezione di chiusura;
+    \item $h_{max}$ è la quota massima del bacino;
+    \item $h - h_0$ è il dislivello relativo;
+    \item $h_{max}-h_0$ è il dislivello massimo;
+\end{itemize}
+Da questa formula, conoscendo la quota di un qualsiasi punto, è possibile ricavare il tempo di contribuzione alla sezione di chisura.\\
+Invertendo gli assi della curva ipsografica è possibile ricavare altre due importanti formule:
+
+\begin{figure}[H]
+\begin{equation}
+    h \rightarrow t= T_c \cdot \frac{h - h_0}{h_{max} - h_0}
+    \label{h_tcontribuzione}
+\end{equation}
+\caption*{Ad ogni quota $h$ corrisponde un tempo di contribuzione $t$.}
+\end{figure}
+
+\begin{figure}[H]
+\begin{equation}
+    A(h) \rightarrow A_{TOTALE} - A(h) = A(t)
+    \label{Acontribuzione_tprecipitazione}
+\end{equation}
+\caption*{Area contribuente alla quota $h$ e dopo un tempo $t$ dall'inizio della precipitazione.}
+\end{figure}
+
+Conoscendo come le aree del bacino contribuiscono al trasporto di deflusso fino alla sezione di chiusura, è possibile creare due grafici in funzione al tempo trascorso, rispettivamente con le aree incrementali e con le aree cumulate.\\
+Associando ad ogni area drenata anche l'altezza di pioggia efficace che si crea, è possibile ricavare la portata di deflusso prodotta per ogni sub-area e nella totalità del bacino.\\
+Infatti, è probabile che i contributi di deflusso alla sezione di chiusura provengono da precipitazioni con intensità di pioggia differenti.\\
+Mediante questo metodo di calcolo, è possibile considerare l'evento di precipitazione con intensità $j$ costante nel tempo oppure continua variazione.\\
+Nel caso in cui l'intensità di pioggia fosse variabile, è possibile scegliere come suddividere nel tempo gli afflussi di precipitazione, in modo da rendere più cautelativa la simulazione alla sezione di chiusura.\\
+Ci sono due possibilità su come suddividere l'evento variabile nel tempo:
+\begin{itemize}
+    \item a blocchi alterni: la fase temporale di precipitazione più intensa viene posta centralmente nello ietogramma, e successivamente vengono posti in modo alternato e decrescente (alla destra e sinistra) i successivi momenti di pioggia;
+    \item a blocchi crescenti: lo ietogramma viene creato ponendo in ordine crescente le fasi di intensità di pioggia. In questo modo, contemporaneamente all'aumento della saturazione del terreno, aumenta anche l'intensità di precipitazione. Risulta essere il metodo più gravoso di stima per il sistema. 
+\end{itemize}
+
+Mediante l'utilizzo di questo metodo, si assume che:
+\begin{itemize}
+    \item il contributo idrologico di ogni sub-area contribuente viene semplicemente trasferito alla sezione di chiusura, senza interferire con le altre aree attraversate;
+    \item ogni volume di pioggia efficace al suolo segue sempre lo stesso percorso fino alla sezione di chiusura, senza subire interferenze;
+    \item le posizioni delle linee isocorrive (isoipse) sono costanti durante l'evento pluviometrico;
+    \item la portata totale alla sezione di chiusura del bacino si ottiene dalla somma degli effetti delle portate prodotte dalle sub-aree, che arrivano allo stesso attimo alla sezione di chiusura.
+\end{itemize}
+
+\subsubsection{Calcolo delle aree contribuenti}
+Al fine di svolgere i calcoli di stima del deflusso alla sezione di chiusura (qualsiasi sia la tipologia di metodo cinematico), occorre conoscere le aree contribuenti del bacino, mediante la curva ipsometrica.\\
+Infatti, conoscendo la superficie contribuente cumulata e la quota inferiore di ogni area (ovvero l'isoipsa minore), tramite le formule \ref{h_tcontribuzione} e \ref{Acontribuzione_tprecipitazione} è possibile calcolare il tempo di corrivazione corrispondente a qualsiasi quota e l'area contribuente dopo un certo tempo di precipitazione.
+\begin{table}[H] \centering
+\caption{\textcolor{red}{Tempi di contribuzione per ogni area contribuente del bacino idrografico ed area contribuente relativa alla quota altimetrica.}}
+    \begin{tabular}{cccc}
+\toprule
+Aree cum. [$km^2$]& Quota inf. isocorr. [m s.l.m.] &  T contrib. (min) & Area contrib. A(t) [$km^2$] \\
+\midrule
+    0.00          & 2050                       & 83.00                       & 2.01                   \\
+    0.02          & 2000                       & 78.21                       & 1.99                   \\
+    0.10          & 1950                       & 73.43                       & 1.91                   \\
+    0.22          & 1900                       & 68.64                       & 1.79                   \\
+    0.33          & 1850                       & 63.85                       & 1.68                   \\
+    0.48          & 1800                       & 59.07                       & 1.53                   \\
+    0.63          & 1750                       & 54.28                       & 1.37                   \\
+    0.79          & 1700                       & 49.49                       & 1.21                   \\
+    0.97          & 1650                       & 44.71                       & 1.04                   \\
+    1.15          & 1600                       & 39.92                       & 0.86                   \\
+    1.35          & 1550                       & 35.13                       & 0.66                   \\
+    1.51          & 1500                       & 30.35                       & 0.50                   \\
+    1.67          & 1450                       & 25.56                       & 0.34                   \\
+    1.81          & 1400                       & 20.77                       & 0.20                   \\
+    1.92          & 1350                       & 15.99                       & 0.09                   \\
+    1.98          & 1300                       & 11.20                       & 0.03                   \\
+    2.00          & 1250                       & 6.41                        & 0.01                   \\
+    2.01          & 1200                       & 1.63                        & 0.00                   \\
+    2.01          & 1183                       & 0.00                        & 0.00            \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{figure}[H]  \centering
+        \includegraphics[scale=0.6]{immagini/curva_area_contribuente_tempo.png}
+        \caption{Curva di interpolazione tra il tempo di contribuzione e l'area contribuente del bacino.}
+        \label{curva_area_contribuente_tempo}
+\end{figure}
+Successivamente ad aver riportato in un grafico i risultati dei calcoli svolti, è necessario ricavare la curva che interpola nel modo migliore i singoli punti: nel nostro caso risulta essere una funzione di potenza con esponente quattro.\\
+Utilizzando la funzione che il programma di calcolo restituisce, è necessario calcolare l'area contribuente del bacino in funzione del tempo di precipitazione e l'area incrementale totale.
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Risultati numerici delle aree contribuenti cumulate ed incrementali, in funzione del tempo di precipitazione.}}
+    \begin{tabular}{ccc}
+    \toprule
+    t (min) & A contrib. (t) $[km^2]$& A contrib. increm. $[km^2]$\\
+\midrule
+    0       & 0.00               & 0.000                       \\
+    10      & 0.01               & 0.009                       \\
+    20      & 0.19               & 0.182                       \\
+    30      & 0.49               & 0.298                       \\
+    40      & 0.85               & 0.361                       \\
+    50      & 1.22               & 0.374                       \\
+    60      & 1.57               & 0.343                       \\
+    70      & 1.84               & 0.270                       \\
+    80      & 2.01               & 0.174                       \\
+ \bottomrule
+ \end{tabular}
+ \end{table} 
+
+Da questa questa tabella è possibile ricavare il relativo grafico.
+\begin{figure}[H]  \centering
+    \includegraphics[scale=0.75]{immagini/aree_incrementali_funzione_tempo.png}
+    \caption{Grafico contenente le aree incrementali in funzione del tempo di precipitazione.}
+    \label{aree_incrementali_funzione_tempo}
+\end{figure}
+
+\subsubsection{Metodo cinematico con intensità di precipitazione costante}
+Come anticipato precedentemente, mediante questo metodo si considera la precipitazione costante nel tempo, perciò con intensità sempre uguale.\\
+Svolgendo i relativi procedimenti nel programma di calcolo, i risultati inerenti alla precipitazione sono i seguenti.
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico con intensità di precipitazione costante.}}
+\begin{tabular}{ccccccc}
+    \toprule
+t (min) & t (ore) & P = h (mm) & $\Delta$ Pcost (mm) & P cum           (mm) & Pe cum (mm) & $\Delta$ Pe cost (mm) \\
+\midrule
+    0       & 0.000   & 0.00                 & 0            & 0.00                 & 0.000       & 0.00           \\
+    10      & 0.167   & 32.98                & 7.11         & 7.11                 & 0.002       & 0.002          \\
+    20      & 0.333   & 39.56                & 7.11         & 14.23                & 0.425       & 0.423          \\
+    30      & 0.500   & 44.00                & 7.11         & 21.34                & 1.501       & 1.076          \\
+    40      & 0.667   & 47.45                & 7.11         & 28.45                & 3.138       & 1.637          \\
+    50      & 0.833   & 50.31                & 7.11         & 35.57                & 5.263       & 2.124          \\
+    60      & 1.000   & 52.77                & 7.11         & 42.68                & 7.812       & 2.549          \\
+    70      & 1.167   & 54.95                & 7.11         & 49.79                & 10.734      & 2.922          \\
+    80      & 1.333   & 56.91                & 7.11         & 56.91                & 13.984      & 3.251         \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+La precipitazione $P$ è stata calcolata mediante la LSPP ricavata precedentemente.\\
+L'intensità di pioggia $\Delta P$, essendo costante, si calcola mediante il rapporto tra l'altezza di pioggia totale ed il numero di fasi temporali imposte.\\
+La pioggia cumulata viene ricavata come l'altezza totale di pioggia caduta al suolo per ogni attimo, con intensità costante.\\
+Mediante la formula \ref{eq_PE} si calcola l'altezza di pioggia efficace cumulata e successivamente anche la quantità di deflusso incrementale. 
+\begin{figure}[H]  \centering
+    \includegraphics[scale=0.7]{immagini/ietogramma_pioggia_intensità_costante.png}
+    \caption{Pioggia cumulata ed efficace di un evento pluviometrico di intensità costante.}
+    \label{ietogramma_pioggia_intensità_costante}
+\end{figure}
+
+La procedura di stima dell'evento di piena continua andando a valutare i singoli contributi alla sezione di chiusura per ogni singola sotto-area.
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di pioggia con intensità di precipitazione costante.}}
+    \begin{tabular}{ccccccccccc}
+    \toprule
+ & \multicolumn{2}{c}{Intervallo temporale (min)}  & 10& 20    & 30    & 40    & 50    & 60    & 70    & 80    \\ 
+ \midrule
+ & & & Pe1   & Pe2   & Pe3   & Pe4   & Pe5   & Pe6   & Pe7   & Pe8   \\
+&& tempo (N)& 0.002 & 0.423 & 1.076 & 1.637 & 2.124 & 2.549 & 2.922 & 3.251 \\
+    \multicolumn{2}{c}{Aree incrementali} & 0                     &       &       &       &       &       &       &       &       \\
+    A1          & 0.009                   & 1                     & 0.000 &       &       &       &       &       &       &       \\
+    A2          & 0.182                   & 2                     & 0.000 & 0.004 &       &       &       &       &       &       \\
+    A3          & 0.298                   & 3                     & 0.001 & 0.077 & 0.010 &       &       &       &       &       \\
+    A4          & 0.361                   & 4                     & 0.001 & 0.126 & 0.196 & 0.015 &       &       &       &       \\
+    A5          & 0.374                   & 5                     & 0.001 & 0.152 & 0.320 & 0.298 & 0.019 &       &       &       \\
+    A6          & 0.343                   & 6                     & 0.001 & 0.158 & 0.388 & 0.488 & 0.386 & 0.023 &       &       \\
+    A7          & 0.270                   & 7                     & 0.001 & 0.145 & 0.403 & 0.591 & 0.633 & 0.464 & 0.027 &       \\
+    A8          & 0.174                   & 8                     & 0.000 & 0.114 & 0.369 & 0.613 & 0.766 & 0.759 & 0.531 & 0.030 \\
+    \textbf{}   &                         &                       &       & 0.073 & 0.290 & 0.561 & 0.795 & 0.920 & 0.870 & 0.591 \\
+    \textbf{}   &                         &                       &       &       & 0.187 & 0.442 & 0.728 & 0.954 & 1.054 & 0.968 \\
+                & \textbf{}               &                       &       &       &       & 0.284 & 0.573 & 0.874 & 1.094 & 1.173 \\
+                & \textbf{}               &                       &       &       &       &       & 0.369 & 0.687 & 1.002 & 1.217 \\
+                & \textbf{}               &                       &       &       &       &       &       & 0.442 & 0.788 & 1.114 \\
+                & \textbf{}               &                       &       &       &       &       &       &       & 0.507 & 0.877 \\
+                & \textbf{}               &                       &       &       &       &       &       &       &       & 0.564 \\ 
+\bottomrule
+    \end{tabular}
+    \end{table}
+
+Infine, il calcolo del deflusso totale termina con la somma degli effetti di tutti i deflussi delle sub-aree del bacino, comprendendo anche la portata di base del canale (pari ad un decimo del colmo). 
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusura, per un evento di precipitazione con intensità costante, in funzione del tempo.}}
+    \begin{tabular}{cccc}
+        \toprule
+        Tempo    & Q(t)   & Q(t) + Qb           & V                 \\
+        (minuti) & (m3/s) & (m3/s)              & (m3)              \\
+        \midrule
+        0.00     & 0.00   & 0.72                & 433.31            \\
+        10.00    & 0.00   & 0.72                & 433.33            \\
+        20.00    & 0.01   & 0.73                & 437.59            \\
+        30.00    & 0.15   & 0.87                & 520.68            \\
+        40.00    & 0.56   & 1.28                & 770.58            \\
+        50.00    & 1.32   & 2.04                & 1224.15           \\
+        60.00    & 2.41   & 3.13                & 1877.62           \\
+        70.00    & 3.77   & 4.49                & 2695.14           \\
+        80.00    & 5.30   & 6.03                & 3616.02           \\
+        90.00    & 6.84   & 7.56                & 4534.48           \\
+        100.00   & 7.22   & 7.94                & 4766.41           \\
+        110.00   & 6.66   & 7.38                & 4430.92           \\
+        120.00   & 5.46   & 6.18                & 3708.31           \\
+        130.00   & 3.91   & 4.63                & 2778.12           \\
+        140.00   & 2.31   & 3.03                & 1817.12           \\
+        150.00   & 0.94   & 1.66                & 997.49            \\
+        160.00   & 0.00   & 0.72                & 433.31            \\
+        170.00   & 0.00   & 0.72                & 433.31            \\
+        \bottomrule
+                 &        & Volume tot & 35907.91 $m^3$
+        \end{tabular}
+        \end{table}
+
+\begin{figure}[H]  \centering
+            \includegraphics[scale=0.8]{immagini/metodo_cinematico_p_cost.png}
+            \caption{Idrogramma di piena del bacino di studio, con un evento pluviometrico di intensità costante.}
+            \label{metodo_cinematico_p_cost}
+\end{figure}
+
+\subsubsection{Metodo cinematico con intensità di precipitazione a blocchi alterni}
+Al contrario del metodo precedente, in questo caso lo ietogramma di precipitazione viene modificato, in modo da aumentare la quantità di pioggia efficace.\\
+Essendo il procedimento simile a quello precedente, verranno riportati solamente i dati, con eventuali spiegazioni specifiche.
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico, con intensità pluviometrica a blocchi alterni. Ovviamente, i valori di precipitazione hanno come unità di misura i $mm$.}}
+    \begin{tabular}{ccccccc}
+        \toprule
+    t (ore) & P = h & $\Delta$P & $\Delta$Pb.alt. & Pb.alt.cum. & $P_e$b.alt.cum.  & $\Delta$ $P_e$b.alt. \\
+    \midrule
+     0.000   & 0.00                 & 0                    & 0.00              & 0.00                & 0.000                & 0.000              \\
+     0.167   & 32.98                & 32.98                & 2.18              & 2.18                & 0.000                & 0.000              \\
+     0.333   & 39.56                & 6.58                 & 2.86              & 5.04                & 0.000                & 0.000              \\
+     0.500   & 44.00                & 4.44                 & 4.44              & 9.48                & 0.064                & 0.064              \\
+    0.667   & 47.45                & 3.45                 & 32.98             & 42.46               & 7.726                & 7.662              \\
+    0.833   & 50.31                & 2.86                 & 6.58              & 49.04               & 10.406               & 2.679              \\
+    1.000   & 52.77                & 2.46                 & 3.45              & 52.48               & 11.926               & 1.521              \\
+    1.167   & 54.95                & 2.18                 & 2.46              & 54.95               & 13.059               & 1.132              \\
+    1.333   & 56.91                & 1.96                 & 1.96              & 56.91               & 13.984               & 0.926             \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+Al contrario del metodo precedente, in questo tabella i valori di differenza di precipitazione ($\Delta$Pb.alt.), in base al tempo, sono stati introdotti mediante il criterio dei metodi alterni.\\
+
+\begin{figure}[H]  \centering
+    \includegraphics[scale=0.7]{immagini/ietogramma_pioggia_intensità_a_blocchi_alterni.png}
+    \caption{Pioggia cumulata ed efficace dell'evento pluviometrico con intensità a blocchi alterni.}
+    \label{ietogramma_pioggia_intensità_a_blocchi_alterni}
+\end{figure}
+
+\begin{table}[H] \centering
+\caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di precipitazione con intensità a blocchi alterni.}}
+    \begin{tabular}{ccccccccccc}
+\toprule
+& Int. temp. (min) &  & 10    & 20    & 30    & 40    & 50    & 60    & 70    & 80    \\
+\midrule
+& & & Pe1   & Pe2   & Pe3   & Pe4   & Pe5   & Pe6   & Pe7   & Pe8   \\
+&& tempo (N) & 0.000 & 0.000 & 0.064 & 7.662 & 2.679 & 1.521 & 1.132 & 0.926 \\
+    \multicolumn{2}{c}{Aree incremen.}  & 0         &       &       &       &       &       &       &       &       \\
+    A1        & 0.009                      & 1         & 0.0   &       &       &       &       &       &       &       \\
+    A2        & 0.182                      & 2         & 0.0   & 0     &       &       &       &       &       &       \\
+    A3        & 0.298                      & 3         & 0.0   & 0     & 0.001 &       &       &       &       &       \\
+    A4        & 0.361                      & 4         & 0.0   & 0     & 0.012 & 0.070 &       &       &       &       \\
+    A5        & 0.374                      & 5         & 0.0   & 0     & 0.019 & 1.394 & 0.024 &       &       &       \\
+    A6        & 0.343                      & 6         & 0.0   & 0     & 0.023 & 2.282 & 0.487 & 0.014 &       &       \\
+    A7        & 0.270                      & 7         & 0.0   & 0     & 0.024 & 2.764 & 0.798 & 0.277 & 0.010 &       \\
+    A8        & 0.174                      & 8         & 0.0   & 0     & 0.022 & 2.869 & 0.966 & 0.453 & 0.206 & 0.008 \\
+     &                            &           &       & 0     & 0.017 & 2.627 & 1.003 & 0.549 & 0.337 & 0.168 \\
+     &                            &           &       &       & 0.011 & 2.067 & 0.918 & 0.569 & 0.408 & 0.276 \\
+&  &           &       &       &       & 1.330 & 0.723 & 0.521 & 0.424 & 0.334 \\
+ &  &           &       &       &       &       & 0.465 & 0.410 & 0.388 & 0.347 \\
+ & &           &       &       &       &       &       & 0.264 & 0.305 & 0.317 \\
+&  &     &   &       &       &       &       &       & 0.196 & 0.250 \\
+ &        &           &       &       &       &       &       &       &       & 0.161\\
+ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusura, per un evento di precipitazione con intensità a blocchi alterni, in funzione del tempo.}}
+        \begin{tabular}{cccc}
+        \toprule
+        tempo        & Q(t)       & Q(t) + Qb  & V        \\
+        (minuti)     & (m3/s)     & (m3/s)     & (m3)     \\
+        \midrule
+        0.00         & 0.00       & 0.78       & 470.13   \\
+        10.00        & 0.00       & 0.78       & 470.13   \\
+        20.00        & 0.00       & 0.78       & 470.13   \\
+        30.00        & 0.00       & 0.78       & 470.71   \\
+        40.00        & 0.14       & 0.92       & 551.35   \\
+        50.00        & 2.40       & 3.18       & 1907.20  \\
+        60.00        & 4.68       & 5.46       & 3276.32  \\
+        70.00        & 6.45       & 7.24       & 4342.85  \\
+        80.00        & 7.54       & 8.32       & 4994.81  \\
+        90.00        & 7.84       & 8.62       & 5171.47  \\
+        100.00       & 7.08       & 7.87       & 4719.76  \\
+        110.00       & 5.55       & 6.34       & 3801.76  \\
+        120.00       & 2.68       & 3.47       & 2080.00  \\
+        130.00       & 1.48       & 2.26       & 1356.75  \\
+        140.00       & 0.74       & 1.53       & 916.28   \\
+        150.00       & 0.27       & 1.05       & 630.79   \\
+        160.00       & 0.00       & 0.78       & 470.13   \\
+        170.00       & 0.00       & 0.78       & 470.13   \\
+                     &            & Volume tot & 36570.73 $m^3$ \\
+        \bottomrule
+        \end{tabular}
+        \end{table}
+
+\begin{figure}[H]  \centering
+            \includegraphics[scale=0.8]{immagini/metodo_cinematico_p_b_alterni.png}
+            \caption{Idrogramma di piena del bacino di studio, con un evento pluviometrico di intensità a blocchi alterni.}
+            \label{metod_cinematico_p_b_alterni}
+\end{figure}
+
+\subsubsection{Metodo cinematico con intensità di precipitazione crescente}
+In questo metodo, lo ietogramma di precipitazione viene creato andando a porre i blocchi in ordine di evento.\\
+Essendo i procedimenti uguali ai due casi precedenti, verranno riportati solamente i risultati numerici e grafici.
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico, con intensità di precipitazione crescente. Ovviamente, i valori di precipitazione hanno come unità di misura i $mm$.}}
+    \begin{tabular}{ccccccc}
+        \toprule
+    t (ore)   & P = h & $\Delta$P & $\Delta$ P.b.c. & P.b.c. & $P_e$b.c.cum. & $\Delta$ $P_e$.b.c. \\
+    \midrule
+    0.000     & 0.00                 & 0                    & 0.00              & 0.00                & 0.000                & 0.000              \\
+    0.167     & 32.98                & 32.98                & 1.96              & 1.96                & 0.000                & 0.000              \\
+    0.333 & 39.56                & 6.58                 & 2.18              & 4.14                & 0.000                & 0.000              \\
+    0.500     & 44.00                & 4.44                 & 2.46              & 6.60                & 0.00002              & 0.00002            \\
+    0.667     & 47.45                & 3.45                 & 2.86              & 9.46                & 0.063                & 0.063              \\
+    0.833     & 50.31                & 2.86                 & 3.45              & 12.91               & 0.295                & 0.231              \\
+    1.000     & 52.77                & 2.46                 & 4.44              & 17.35               & 0.823                & 0.528              \\
+    1.167     & 54.95                & 2.18                 & 6.58              & 23.93               & 2.035                & 1.213              \\
+    1.333     & 56.91                & 1.96                 & 32.98             & 56.91               & 13.984               & 11.949            \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{figure}[H]  \centering
+        \includegraphics[scale=0.7]{immagini/ietogramma_pioggia_intensità_a_blocchi_crescenti.png}
+        \caption{Pioggia cumulata ed efficace di un evento di pioggia con intensità di pioggia crescente.}
+        \label{ietogramma_pioggia_intensità_a_blocchi_crescenti}
+\end{figure}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di precipitazione con intensità di pioggia a blocchi crescenti.}}
+    \begin{tabular}{ccccccccccc}
+    \toprule
+    & Int. temp. (min) &  & 10  & 20  & 30      & 40                & 50                & 60                & 70               & 80     \\
+\midrule
+ & & & Pe1 & Pe2 & Pe3     & Pe4 & Pe5   & Pe6 & Pe7   & Pe8    \\
+    &    & tempo (N) & 0   & 0   & 0.00002 & 0.063 & 0.231 & 0.528 & 1.212 & 11.949 \\
+    \multicolumn{2}{c}{Aree incremen.}  & 0         &     &     &         &                   &                   &                   &                  &        \\
+    A1        & 0.009                      & 1         & 0.0 &     &         &                   &                   &                   &                  &        \\
+    A2        & 0.182                      & 2         & 0.0 & 0   &         &                   &                   &                   &                  &        \\
+    A3        & 0.298                      & 3         & 0.0 & 0   & 0.000   &                   &                   &                   &                  &        \\
+    A4        & 0.361                      & 4         & 0.0 & 0   & 0.000   & 0.001             &                   &                   &                  &        \\
+    A5        & 0.374                      & 5         & 0.0 & 0   & 0.000   & 0.012             & 0.002             &                   &                  &        \\
+    A6        & 0.343                      & 6         & 0.0 & 0   & 0.000   & 0.019             & 0.042             & 0.005             &                  &        \\
+    A7        & 0.270                      & 7         & 0.0 & 0   & 0.000   & 0.023             & 0.069             & 0.096             & 0.011            &        \\
+    A8        & 0.174                      & 8         & 0.0 & 0   & 0.000   & 0.024             & 0.083             & 0.157             & 0.221            & 0.109  \\
+    \textbf{} &                            &           &     & 0   & 0.000   & 0.022             & 0.087             & 0.190             & 0.361            & 2.173  \\
+    \textbf{} &                            &           &     &     & 0.000   & 0.017             & 0.079             & 0.198             & 0.437            & 3.559  \\
+              & \textbf{}                  &           &     &     &         & 0.011             & 0.062             & 0.181             & 0.454            & 4.310  \\
+              & \textbf{}                  &           &     &     &         &                   & 0.040             & 0.142             & 0.416            & 4.474  \\
+              & \textbf{}                  &           &     &     &         &                   &                   & 0.092             & 0.327            & 4.096  \\
+              & \textbf{}                  &           &     &     &         &                   &                   &                   & 0.210            & 3.223  \\
+              & \textbf{}                  &           &     &     &         &                   &                   &                   &                  & 2.074 \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusuta, per un evento di precipitazione con intensità a blocchi crescenti, in funzione del tempo.}}
+        \begin{tabular}{cccc}
+        \toprule
+        tempo    & Q(t)   & Q(t) + Qb  & V        \\
+        (minuti) & (m3/s) & (m3/s)     & (m3)     \\
+        \midrule
+        0.00     & 0.00   & 0.85       & 507.24   \\
+        10.00    & 0.00   & 0.85       & 507.24   \\
+        20.00    & 0.00   & 0.85       & 507.24   \\
+        30.00    & 0.00   & 0.85       & 507.24   \\
+        40.00    & 0.00   & 0.85       & 507.82   \\
+        50.00    & 0.02   & 0.87       & 520.86   \\
+        60.00    & 0.11   & 0.95       & 572.95   \\
+        70.00    & 0.33   & 1.18       & 705.99   \\
+        80.00    & 0.99   & 1.83       & 1100.65  \\
+        90.00    & 4.72   & 5.57       & 3340.45  \\
+        100.00   & 7.15   & 8.00       & 4797.28  \\
+        110.00   & 8.36   & 9.21       & 5525.85  \\
+        120.00   & 8.45   & 9.30       & 5579.61  \\
+        130.00   & 7.52   & 8.37       & 5022.23  \\
+        140.00   & 5.72   & 6.57       & 3940.37  \\
+        150.00   & 3.46   & 4.30       & 2581.12  \\
+        160.00   & 0.00   & 0.85       & 507.24   \\
+        170.00   & 0.00   & 0.85       & 507.24   \\
+                 &        & Volume tot & 37238.59 $m^3$\\
+        \bottomrule
+        \end{tabular}
+        \end{table}
+
+\begin{figure}[H]  \centering
+    \includegraphics[scale=0.8]{immagini/metodo_cinematico_p_b_crescenti.png}
+    \caption{Idrogramma di piena del bacino di studio, con un evento pluviometrico di intensità a blocchi crescenti.}
+    \label{metodo_cinematico_p_b_crescenti}
+\end{figure}    
+
+\subsubsection{Confronto tra i diversi casi di metodi cinematici}
+Come anticipato precedentemente, il metodo cinematico che implica l'ordine crescente di intensità pluviometrica, genera alla sezione di chiusura un picco ed un volume totale di deflusso superiore agli altri due casi presi in esame. Di fatto risulta essere il metodo più cautelativo tra i tre.
