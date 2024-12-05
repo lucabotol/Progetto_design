@@ -145,3 +145,119 @@ Tale formula può anche essere riscritta, diventando:
 \end{equation}
 
 \subsubsection{Soluzione esplicita semplificata per sezioni rettangolari molto larghe}
+Nel caso in cui il corso d'acqua dovesse passare attraverso una sezione rettangolare ampia e con un tirante idraulico ridotto, è possibile adottare alcune approssimazioni e semplificazioni.\\
+Data una sezione rettangolare, potendo trascurare l'altezza del tirante idraulico $h$, il raggio idraulico $Rh$ risulta essere:
+\begin{equation}
+    \frac{B \cdot h}{B + 2\cdot h} \approx \frac{B \cdot h}{B} \approx h
+\end{equation}
+La formula per il calcolo del coefficiente di scabrezza $ks$, conoscendo il parametro relativo alla granulometria $D_{90}$ è:
+\begin{equation}
+K_s \approx \frac{26}{D_{90}^{1/6}}
+\end{equation}
+Essendo che la portata $Q$ è calcolabile come il prodotto dell'area per la velocità, è possibile esplicitare tutte e due le componenti della formula, che diventa:
+\begin{equation}
+    Q = (Ks \cdot Rh^{2/3} \cdot \sqrt{i_c}) \cdot (B \cdot h)
+    \label{portata_sez_rett}
+\end{equation}
+Dove:
+\begin{itemize}
+    \item Ks è il coefficiente di scabrezza del fondo $\left[\frac{m^{1/3}}{s^{-1}}\right]$;
+    \item Rh indica il raggio idraulico $[m]$;
+    \item $i_c$ è la pendenza di correzione $\left[\frac{m}{m}\right]$;
+    \item B è la larghezza dell'alveo $[m]$;
+    \item h è la profondità del tirante idraulico $[m]$.
+\end{itemize}
+Sostituendo alla formula \ref{portata_sez_rett} il raggio idraulico, la formula diventa:
+\begin{equation}
+    Q = (Ks \cdot h^{2/3} \cdot \sqrt{i_c}) \cdot (B \cdot h)
+\end{equation}
+Che diventa:
+\begin{equation}
+    Q = (Ks \cdot h^{5/3} \cdot \sqrt{i_c}) \cdot B
+\end{equation}
+
+Il procedimento prosegue mediante il calcolo della pendenza di correzione:
+\begin{equation}
+    i_c = \left(\frac{0.1 \cdot D_{90} \cdot ks^{0.6} \cdot B^{0.6}}{Q^{0.6}_{30}} \right) ^{1.43}
+    \label{pend_critica_iterativo}
+\end{equation}
+La profondità del tirante relativo alla condizione critica è calcolabile mediante la formula:
+\begin{equation}
+    h_c = \left( \frac{Q}{ks \cdot B \cdot \sqrt{i}}\right)^{3/5}
+\end{equation}
+Nel caso in cui il rapporto tra $h_c$ e $D_{84}$ è minore a 3.5, è possibile iniziare il procedimento di calcolo iterattivo mediante la formula di Barhurst (1985):
+\begin{equation}
+    Ks= \frac{\sqrt{g}}{h^{1/6}} \left[5.62 \cdot \log \left(\frac{h}{D_{84}}\right)+4\right]
+\end{equation}
+Dal valore di scabrezza calcolato è possibile ricavare il valore di pendenza critica, sempre mediante la formula \ref{pend_critica_iterativo}. Il procedimento iterativo termina quando il valore di scabrezza ks non si discosta molto da quello ricavato precedentemente.
+
+\subsection{Determinazione di altezza e numero di briglie di consolidamento}
+Successivamente ad aver calcolato la pendenza di correzione più ottimale per il caso di studio, è necessario valutare le misure di massima delle briglie, quali altezza, numero ed interdistanza tra ciascuna.\\
+Come primo passaggio è necessario calcolare la variazione di quota totale per tutto il tratto, ed avviene mediante la formula:
+\begin{equation}
+    \Delta Z = (i_0 - i_c) \cdot L_s
+\end{equation}
+Successivamente, è necessario porre un'altezza di primo tentativo della briglia. Utilizzando questo valore per dividere la differenza di quota totale, è possibile calcolare il numero di opere in serie da costruire.\\
+Infine, dividendo la distanza totale del tratto per il numero di opere da ereggere, si ricava l'interdistanza lineare tra una briglia e la successiva.
+
+\subsection{Calcolo della pendenza di correzione per il tratto di studio}
+Dopo aver descritto i vari procedimenti per il calcolo della pendenza di correzione, è possibile applicare i concetti per il caso di studio di questa relazione.\\
+Dal programma GIS è possibile evidenziare il tratto di reticolo idrografico soggetto alla sistemazione idraulica mediante briglie.
+\begin{figure}[H] \centering
+    \includegraphics[scale=0.3]{immagini/pendenza_planimetria_1.png}
+    \caption{Rappresentazione planimetrica del bacino di studio e del reticolo idrografico, con evidenziato in rosso il tratto interessato dalla sistemazione idraulica.}
+    \label{pendenza_planimetria_1}
+\end{figure}
+\begin{figure}[H] \centering
+    \includegraphics[scale=0.3]{immagini/pendenza_planimetria_2.png}
+    \caption{Particolare del bacino di studio, con rappresentazione del tratto soggetto a sistemazione idraulica.}
+    \label{pendenza_planimetria_2}
+\end{figure}
+\begin{figure}[H] \centering
+    \includegraphics[scale=0.5]{immagini/pendenza_collettore.png}
+    \caption{Rappresentazione del profilo del collettore principale, con indicazione del tratto soggetto a sistemazione idraulica (in rosso).}
+    \label{pendenza_collettore}
+\end{figure}
+Mediante dei semplici passaggi matematici, svolti nel programma di calcolo, è possibile ricavarsi le principali informazioni morfologiche inerenti al tratto interessato da sistemazioni:
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Principali informazioni morfologiche inerenti al collettore principale del reticolo idrografico e del tratto interessato dalle sistemazioni.}}
+    \begin{tabular}{ccc}
+    \toprule
+                 & collettore & tratto da sistemare \\
+    \midrule
+    lunghezza    & 2388.27    & 250.83              \\
+    pendenza m/m & 0.29       & 0.20                \\
+    pendenza °   & 16.12      & 11.57               \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Successivamente ad aver svolto per due volte i calcoli iterativi, al fine di ottenere i valori di scabrezza e di pendenza maggiormente ottimali, si è giunti ai seguenti risultati:
+\begin{itemize}
+    \item ks = 17.0 $\frac{m^{1/3}}{s}$;
+    \item $i_c$ = 0.110 $\frac{m}{m}$.
+\end{itemize}
+
+Infine, si procede al calcolo del numero di opere in serie da ereggere e le relative interdistanze, imponendo l'altezza del livello inferiore della gaveta.\\
+Vengono riportati alcuni risultati.
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Serie di risultati inerenti ai valori di numerosità ed interdistanza delle briglie, in funzione dell'altezza imposta.}}
+    \begin{tabular}{ccc|ccc}
+        \toprule
+    Scenario 1 & DZ (m)& 23.68 & Scenario 4 & DZ (m) & 23.68 \\
+& Z (m)         & 2.37  &            & Z (m)         & 3.40  \\
+& n             & 10.0  &            & n             & 7.0   \\
+& interdistanza & 25.11 &            & interdistanza & 36.02 \\
+\midrule
+Scenario 2 & DZ (m)        & 23.68 & Scenario 5 & DZ (m) & 23.68 \\
+& Z (m)         & 3.95  &            & Z (m)         & 4.75  \\
+& n             & 6.0   &            & n             & 5.0   \\
+& interdistanza & 41.84 &            & interdistanza & 50.32 \\
+    \midrule
+Scenario 3 & DZ (m)        & 23.68 & Scenario 6 & DZ (m)        & 23.68 \\
+& Z (m)         & 1.70  &            & Z (m)         & 2.62  \\
+& n             & 13.9  &            & n             & 9.0   \\
+& interdistanza & 18.01 &            & interdistanza & 27.75 \\
+\bottomrule
+\end{tabular}
+\end{table}
