@@ -42,10 +42,10 @@ La formula del tempo di corrivazione \ref{tempo_corrivazione} può essere implem
 \end{equation}
 
 Per il calcolo della velocità di reticolo dell'acqua nel bacino, è necessario imporre un valore di pendenza del retico; questo valore si ricava dal rapporto tra la differenza di quota del collettore principale (1883 m-1183 m) e la sua lunghezza (2401 m).\\
-Svolgendo la formula \ref{vel_reticolo}, imponendo un coefficiente medio di 7.5, il risultato è $4.05 \frac{m}{s}$.\\
+Svolgendo la formula \ref{vel_reticolo}, imponendo un coefficiente medio di 7.5, il risultato è 4.05 $m/s$.\\
 Conoscendo la lunghezza del collettore principale, è possibile ricavare il tempo di corrivazione della componente del reticolo idrografico.\\
 In modo analogo, il calcolo della velocità dell'acqua nel versante avviene conoscendo la pendenza del tratto di terreno, ovvero il rapporto tra la differenza di quota (2084.3 m-1883 m) e la sua distanza, ricavata dal GIS, di 445.16 m.\\
-Applicando la formula \ref{vel_versante}, applicando un coefficiente di 0.15, la velocità di versante risulta essere di $0.10 \frac{m}{s}$.\\
+Applicando la formula \ref{vel_versante}, applicando un coefficiente di 0.15, la velocità di versante risulta essere di 0.10 $m/s$.\\
 Anche in questo caso, il tempo di corrivazione nel versante è ricavabile invertendo la formula della velocità.
 I tempi di percorrenza dell'acqua sono:
 \begin{table}[H] \centering
@@ -91,13 +91,13 @@ Dove:
 \begin{itemize}
     \item $T_c$: viene espressa in minuti;
     \item $L_C$: viene espressa in metri;
-    \item i: viene espressa $\frac{m}{m}$.
+    \item i: viene espressa $m/m$.
 \end{itemize}
 Nel caso del bacino in esame:
 \begin{itemize}
     \item A: 2.01 $km^2$;
     \item $L_C$: 2401 $m$;
-    \item $i_r$: 0.293 $\frac{m}{m}$.
+    \item $i_r$: 0.293 $m/m$.
 \end{itemize}
 La formula del metodo di Ferro (I) \ref{formula_ferro_I} restituisce il valore di 18.19 minuti.\\
 Nel caso di bacini montani con collettore principale corto (qualche chilometro), e ripido, la formula tende a sottostimare il valore reale.
@@ -341,7 +341,7 @@ Unendo le formule, risulta che $Q_t \cdot T_c = P_e \cdot A$ ed infine $Q_t \fra
 
 Nel caso in cui si utilizzassero le seguenti unità di misura:
 \begin{itemize}
-    \item $Q_t$ = $\frac{m^3}{s}$;
+    \item $Q_t$ = $m^3/s$;
     \item $T_c$ = ore;
     \item $P_e$ = mm;
     \item A = $km^2$;
@@ -465,7 +465,7 @@ Per il solo fine di esempio, si è deciso di applicare la formula di Forti (II):
     q = 2.35 \cdot \frac{500}{A+125}+0.5
 \end{equation}
 Questo metodo prevede che l'evento pluviometrico che genera il deflusso abbia apportato al suolo un'altezza di precipitazione di 200-250 mm, per la durata di 24 ore.\\
-Essendo che la superficie del bacino in analisi è di 2.01 $km^2$, l'applicazione della precedente formula restituisce un valore di portata unitaria pari a 9.75 $\frac{m^3}{s \cdot km^2}$; di conseguenza, la portata di picco Q del bacino è pari a 19.60 $\frac{m^3}{s}$.\\
+Essendo che la superficie del bacino in analisi è di 2.01 $km^2$, l'applicazione della precedente formula restituisce un valore di portata unitaria pari a 9.75 $\frac{m^3}{s \cdot km^2}$; di conseguenza, la portata di picco Q del bacino è pari a 19.60 $m^3/s$.\\
 Confrontando tale valore con quelli precedenti, ne risulta che quello calcolato con il metodo empirico tende a sovrastimare eccessivamente l'evento idraulico uscente dal bacino.
 
 \subsection{Studio del deflusso con tempo di pioggia superiore a quello di corrivazione (metodo razionale)}
@@ -500,7 +500,7 @@ Dove:
     \item $h - h_0$ è il dislivello relativo;
     \item $h_{max}-h_0$ è il dislivello massimo;
 \end{itemize}
-Da questa formula, conoscendo la quota di un qualsiasi punto, è possibile ricavare il tempo di contribuzione alla sezione di chisura.\\
+Da questa formula, conoscendo la quota di un qualsiasi punto, è possibile ricavare il tempo di contribuzione alla sezione di chiusura.\\
 Invertendo gli assi della curva ipsografica è possibile ricavare altre due importanti formule:
 
 \begin{figure}[H]

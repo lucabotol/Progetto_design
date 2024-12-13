@@ -164,7 +164,7 @@ Dove:
 \begin{itemize}
     \item Ks è il coefficiente di scabrezza del fondo $\left[\frac{m^{1/3}}{s^{-1}}\right]$;
     \item Rh indica il raggio idraulico $[m]$;
-    \item $i_c$ è la pendenza di correzione $\left[\frac{m}{m}\right]$;
+    \item $i_c$ è la pendenza di correzione $\left[m/m\right]$;
     \item B è la larghezza dell'alveo $[m]$;
     \item h è la profondità del tirante idraulico $[m]$.
 \end{itemize}
@@ -236,8 +236,8 @@ Mediante dei semplici passaggi matematici, svolti nel programma di calcolo, è p
 
 Successivamente ad aver svolto per due volte i calcoli iterativi, al fine di ottenere i valori di scabrezza e di pendenza maggiormente ottimali, si è giunti ai seguenti risultati:
 \begin{itemize}
-    \item ks = 17.0 $\frac{m^{1/3}}{s}$;
-    \item $i_c$ = 0.110 $\frac{m}{m}$.
+    \item ks = 17.0 $m^{1/3}/s$;
+    \item $i_c$ = 0.110 $m/m$.
 \end{itemize}
 
 Infine, si procede al calcolo del numero di opere in serie da ereggere e le relative interdistanze, imponendo l'altezza del livello inferiore della gaveta.\\
@@ -376,4 +376,69 @@ Essendo il volume liquido transitato pari a 36100.60 $m^3$, è possibile ricavar
     \label{sedimentogramma}
 \end{figure}
 
-\subsection{Relazione tra la portata e lo sforzo tangenziale}
+\subsection{Calcolo del trasporto solido mediante Smart-Jaeggi}
+Un ulteriore metodo per il calcolo del trasporto solido di fondo avviene mediante la formula di Smart e Jaeggy (1983), che è:
+\begin{equation}
+    q_s = 4 \cdot \left(\frac{D_{90}}{D_{30}}\right)^{0.2} \cdot \frac{1}{\frac{\rho_s}{\rho} -1} \cdot q \cdot S^{1.6} \cdot \left( 1 - \frac{\tau_c}{\tau}\right)
+\end{equation}
+Nell'equazione:
+\begin{itemize}
+    \item $q$ e $q_s$ indicano rispettivamente le portate unitarie liquide e solide;
+    \item $\tau$ e $\tau_s$ sono rispettivamente gli sforzi medi e critici dell'acqua in movimento nel corso;
+    \item $\rho$ e $\rho_s$ indicano rispettivamente i valori di peso volumetrico dell'acqua e di peso volumetrico dei sedimenti dell'alveo.
+\end{itemize}
+Essendo che la relazione tra la portata volumetrica e lo sforzo tangenziale non è lineare, occorre ricavare la funzione interpolatrice di tali punti. Tale funzione ha come formula $\tau = \alpha \cdot Q^{\beta}$.\\
+Per fare ciò, occorre creare una grafico a doppia entrata dei valori di portata e sforzo tangenziale, in condizioni di diverse profondità di tiranti idraulici.\\
+Successivamente, dalla curva interpolatrice del grafico ci si ricava la tensione tangenziale reale, in funzione della portata liquida, come indicato nella formula precedentemente esposta.\\
+Infine, dal valore della tensione agente sul fondo si termina lo studio del trasporto solido mediante il calcolo della portata solida e del relativo volume di sedimenti.\\
+\begin{figure}[H] \centering
+    \includegraphics[scale=0.75]{immagini/rel_port_sforzo_ante_sist.png}
+    \caption{Relazione tra lo sforzo tangenziale agente sulla sezione dell'alveo e la portata liquida, per un evento di piena con tempo di ritorno pari a 200 anni, ed in condizioni precedenti alla sistemazione idraulica.}
+    \label{rel_port_sforzo_ante_sist}
+\end{figure}
+\begin{figure}[H] \centering
+    \includegraphics[scale=0.75]{immagini/rel_port_sforzo_post_sist.png}
+    \caption{Relazione tra lo sforzo tangenziale agente sulla sezione dell'alveo e la portata liquida, per un evento di piena con tempo di ritorno pari a 200 anni, ed in condizioni successive alla sistemazione idraulica.}
+    \label{rel_port_sforzo_post_sist}
+\end{figure}
+
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Portata e volume di materiale solido, nel caso di una piena con tempo di ritorno pari a 200 anni, nella condizione precedente e successiva alla sistemazione idraulica, calcolata secondo il metodo Smart-Jaeggy.}}
+    \begin{tabular}{ccccccc}
+\toprule
+& \multicolumn{3}{c}{Sit. ANTE SISTEM.} & \multicolumn{3}{r}{Sit. POST SISTEM.} \\
+\midrule
+    tempo & $\tau(i_o)$ & $Q_s(i_o)$ & $V_s(i_o)$ & $\tau(i_c)$ & $Q_s(i_c)$ & $V_s(i_c)$ \\
+    (minuti) & ($N/m^2$) & $(m^3/s)$ & $(m^3)$ & $N/m^2$ & $(m^3/s)$ & $(m^3)$ \\
+\midrule
+    0 & 0.00 & 0.00   & 0.00 & 0.00     & 0.00   & 0.00   \\
+    10 & 214.33 & 0.12   & 74.75 & 129.82      & 0.02   & 14.85  \\
+    20 & 214.33 & 0.12   & 74.75   & 129.82 & 0.02   & 14.85  \\
+    30       & 214.39 & 0.12   & 74.80   & 129.86 & 0.02   & 14.86  \\
+    40       & 221.55  & 0.14   & 83.13   & 134.36 & 0.03   & 17.32  \\
+    50       & 313.88                       & 0.40   & 239.46  & 192.81                       & 0.11   & 66.46  \\
+    60       & 422.03                       & 0.93   & 556.06  & 262.08                       & 0.29   & 171.88 \\
+    70       & 491.74                       & 1.41   & 848.31  & 307.09                       & 0.45   & 271.68 \\
+    80       & 533.08                       & 1.76   & 1057.46 & 333.90                       & 0.57   & 343.87 \\
+    90       & 551.38                       & 1.93   & 1158.96 & 345.79                       & 0.63   & 379.06 \\
+    100      & 545.41                       & 1.88   & 1125.23 & 341.90                       & 0.61   & 367.35 \\
+    110      & 514.08                       & 1.60   & 957.89  & 321.56                       & 0.52   & 309.44 \\
+    120      & 443.73                       & 1.07   & 639.21  & 276.07                       & 0.33   & 200.11 \\
+    130      & 358.51                       & 0.59   & 351.22  & 221.30                       & 0.17   & 103.16 \\
+    140      & 304.26                       & 0.36   & 218.62  & 186.68                       & 0.10   & 59.72  \\
+    150      & 261.17                       & 0.23   & 138.64  & 159.35                       & 0.06   & 34.29  \\
+    160      & 228.18                       & 0.15   & 91.29   & 138.53                       & 0.03   & 19.76  \\
+    170      & 214.33                       & 0.12   & 74.75   & 129.82                       & 0.02   & 14.85 \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+La portata solida totale trasporta precedentemente alla realizzazione dell'opera è pari a 7764.51 $m^3$, mentre per quella successiva alla sistemazione idraulica è di 2403.49 $m^3$.\\
+Essendo la portata liquida totale pari a 36100.60 $m^3$, la concentrazione solida antecedente al miglioramento idraulico è di 17.70\%, mentre per quella successiva è di 6.24\%. La riduzione del trasporto solido, in presenza o in assenza delle briglie, è del 64.74\%.\\
+\begin{figure}[H] \centering
+    \includegraphics[scale=0.75]{immagini/sedimentogramma_smart_jaeggy.png}
+    \caption{Sedimentogramma dell'evento di piena, per tempo di ritorno pari a 200 anni, calcolata mediante il metodo di Smart e Jaeggy.}
+    \label{sedimentogramma_smart_jaeggy}
+\end{figure}
+
+
