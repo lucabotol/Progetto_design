@@ -189,6 +189,7 @@ La profondità del tirante relativo alla condizione critica è calcolabile media
 Nel caso in cui il rapporto tra $h_c$ e $D_{84}$ è minore a 3.5, è possibile iniziare il procedimento di calcolo iterattivo mediante la formula di Barhurst (1985):
 \begin{equation}
     Ks= \frac{\sqrt{g}}{h^{1/6}} \left[5.62 \cdot \log \left(\frac{h}{D_{84}}\right)+4\right]
+    \label{ks_scabrezza_barhurst}
 \end{equation}
 Dal valore di scabrezza calcolato è possibile ricavare il valore di pendenza critica, sempre mediante la formula \ref{pend_critica_iterativo}. Il procedimento iterativo termina quando il valore di scabrezza ks non si discosta molto da quello ricavato precedentemente.
 
@@ -264,24 +265,115 @@ Scenario 3 & $\Delta Z$ (m)        & 23.68 & Scenario 6 & $\Delta Z$ (m)        
 \end{table}
 
 \subsection{Calcolo preliminare del trasporto solido}
+Al fine di studiare la quantità di sedimenti trasportati durante un qualsiasi evento di piena, occorre riuscire a calcolare la relativa capacità massima di trasporto di materiale solido al fondo del corso d'acqua.\\
 Shields (1936), grazie ai suoi studi effettuati sul trasporto solido, riuscì a ricavare empiricamente la formula dello sforzo tangenziale critico (necessario a muovere i sedimenti nel letto di un fiume), in funzione del peso specifico dell'acqua, dei sedimenti e della grandezza delle particelle granulometriche.\\
-Tale formula, già riportata precedentemente, è \ref{tau_cr_shields}.\\
+Tale formula, già riportata precedentemente, è la \ref{tau_cr_shields}.\\
 Da tale formula è possibile calcolare l'altezza del tirante idraulico che genera lo sforzo tangenziale in grado di muovere i sedimenti, conoscendo il peso volumetrico dell'acqua in movimento e della pendenza del corso:
 \begin{equation}
     h_c = \frac{\tau_c}{\gamma \cdot i} 
 \end{equation}
 Mediante la conoscenza delle pendenze del tratto precedentemente e successivamente alla sistemazione, è possibile valutare come cambia il trasporto solido, calcolato mediante questo procedimento preliminare.\\
 
-\begin{table}[H]
-    \caption{\textcolor{red}{Trasporto solido di fondo, calcolato nelle condizioni precedenti e posteriori alla sistemazione idraulica del tratto di corso.}}
-    \begin{tabular}{cccccccccc}
-    \multicolumn{4}{l}{Situazione ANTE SISTEMAZIONE} &      & \multicolumn{4}{l}{Situazione POST SISTEMAZIONE} &      \\
-    \textit{i0 =}  & 0.205  & \textbf{}  & \textbf{} &      & \textit{ic =}  & 0.110  & \textbf{}  & \textbf{} &      \\
-                   &        &            &           &      &                &        &            &           &      \\
-                   & D50    & D84        & D90       &      &                & D50    & D84        & D90       &      \\
-                   & 0.089  & 0.215      & 0.256     & m    &                & 0.089  & 0.215      & 0.256     & m    \\
-    $\tau_c$            & 89     & 215        & 256       & N/m2 & $\tau_c$       & 89     & 215        & 256       & N/m2 \\
-    hc            & 0.04   & 0.11       & 0.13      & m    & hc         & 0.08   & 0.20       & 0.24      & m    \\
-    Qc& 0.015  & 0.898      & 1.378     & m3/s & Qc & 0.32   & 2.71       & 3.90  & m3/s
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Trasporto solido di fondo calcolato nelle condizioni precedenti e posteriori alla sistemazione idraulica del tratto di corso studiato.}}
+    \begin{tabular}{cccclccccl}
+    \toprule
+    \multicolumn{4}{c}{Situazione ANTE SISTEMAZIONE} & & \multicolumn{4}{c}{Situazione POST SISTEMAZIONE} &      \\
+    i0 = & 0.205 & & & &ic = & 0.110 & & &      \\
+    \midrule
+    & $D_{50}$ & $D_{84}$ & $D_{90}$ & & & $D_{50}$ & $D_{84}$ & $D_{90}$ & \\
+    \midrule
+    & 0.089 & 0.215 & 0.256 & m & & 0.089 & 0.215 & 0.256  & m  \\
+    $\tau_c$ & 89 & 215 & 256 & $\frac{N}{m^2}$ & $\tau_c$ & 89 & 215 & 256 & $\frac{N}{m^2}$\\
+    $h_c$ & 0.04 & 0.11 & 0.13 & m & $h_c$ & 0.08 & 0.20 & 0.24 & m  \\
+   % $Q_c$ & 0.015 & 0.898 & 1.378 & $\frac{m^3}{s}$ & $Q_c$ & 0.32 & 2.71 & 3.90 & $\frac{m^3}{s}$\\
+    \bottomrule
     \end{tabular}
     \end{table}
+Come previsto, mediante le opere di sistemazione idraulica dei tratti, si incrementa la profondità del tirante idraulico critico necessario a muovere i sedimenti dei letti di torrente.\\
+In questo caso, come osservabile nella tabella precedente, il tirante idraulico critico post sistemazione è molto superiore (quasi il doppio) rispetto a quello pre-sistemazione.
+
+\subsection{Calcolo della portata critica di trasporto}
+Successivamente ad aver calcolato la profondità del tirante idraulico critico, ovvero necessario a muovere i sedimenti nel letto del corso d'acqua, si procede a calcolare la relativa portata critica, valutando nuovamente la scabrezza, mediante la formula \ref{ks_scabrezza_barhurst}.\\
+Il valore di flusso critico si ricava applicando la formula generale della portata idraulica:
+\begin{equation}
+    Q_c = v_c \cdot A
+\end{equation}
+Conoscendo la larghezza del torrente di studio (8 metri), è possibile svolgere il calcolo della portata critica, per la condizione precedente e successiva alla sistemazione idraulica del tratto.\\
+Per la condizione precedente alla costruzione delle opere idrauliche, con pendenza di 0.205 $m/m$, i calcoli restituiscono i seguenti valori.
+\begin{table}[H] \centering
+\caption{\textcolor{red}{Valori di portata critica del trasporto solido, nelle condizioni precedenti alla costruzione delle opere idrauliche di correzione della pendenza.}}
+\begin{tabular}{ccccccccccc}
+\toprule
+& h (m) & A $(m^2)$ & C (m) & R (m) & $h/d_{84}$ & Ks& v (m/s)& Qc $(m^3/s)$ \\
+\midrule
+$D_{50}$& 0.04 & 0.355 & 8.09  & 0.044 & 0.206 & 0.8  & 0.043 & 0.015 \\
+$D_{84}$ & 0.11 & 0.857 & 8.21 & 0.104 & 0.498 & 10.4 & 1.048   & 0.898 \\
+$D_{90}$ & 0.13  & 1.020  & 8.25 & 0.124 & 0.593 & 12.0 & 1.351 & 1.378 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Per quanto riguarda i calcoli nelle condizioni successive alla costruzione delle opere idrauliche, ovvero con pendenza pari a 0.110 $m/m$, i calcoli generano i seguenti valori.
+\begin{table}[H] \centering
+\caption{\textcolor{red}{Valori di portata critica del trasporto solido, nelle condizioni successive alla costruzione delle opere idrauliche di correzione della pendenza.}}
+\begin{tabular}{ccccccccccc}
+\toprule
+& h (m) & A $(m^2)$ & C (m) & R (m) & $h/d_{84}$ & Ks& v (m/s)& Qc $(m^3/s)$ \\
+\midrule
+$D_{50}$& 0.08  & 0.658  & 8.16  & 0.081 & 0.383 & 7.9 & 0.487 & 0.320\\
+$D_{84}$ & 0.20 & 1.590  & 8.40  & 0.189 & 0.924 & 15.6 & 1.707 & 2.715 \\
+$D_{90}$ & 0.24  & 1.893  & 8.47 & 0.223 & 1.101 & 16.9 & 2.059 & 3.898 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Come per il sottocapitolo precedente, ed in modo concorde a tali risultati, la portata critica nelle condizioni successive alla sistemazione ha valori nettamente superiori rispetto a quelli della condizione ante-sistemazione.
+
+\subsection{Creazione del sedimentogramma}
+Dopo aver calcolato la capacità di trasporto teorica del corso d'acqua, è necessario simulare per un evento di piena (di qualsiasi entità), come varia il trasporto solido. Infatti, il trasporto solido al fondo avviene solamente quando la portata liquida supera quella critica relativa al trasporto solido.\\
+Considerando un evento di piena, con tempo di ritorno pari a 200 anni ed utilizzando il metodo del deflusso cinematico, è possibile discretizzare nel tempo la portata liquida e considerare singolarmente come si comporta il trasporto solido.\\
+Per questa analisi, si andranno ad utilizzare i dati già ricavati precedentemente, ovvero le portate di deflusso con tempo di ritorno pari a 200 anni (mediante metodo cinematico), lo sforzo cinematico critico per $D_{84}$ ed i valori granulometrici.\\
+Il calcolo della portata critica verrà svolta mediante la formula $q_s=2.5 \cdot q \cdot S^{1/6}$, per $q > q_s$.
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Portata e volume di materiale solido, nel caso di una piena con tempo di ritorno pari a 200 anni, nella condizione precedente e successiva alla sistemazione idraulica.}}
+    \begin{tabular}{ccccc}
+        \toprule
+& \multicolumn{2}{c}{Sit. ANTE SISTEM.} & \multicolumn{2}{c}{Sit. POST SISTEM.} \\
+\midrule
+tempo  & $Qs(i_0)$ & $Vs(i_0)$ & $Qs(i_c)$  & $Vs(i_c)$  \\
+(minuti) & $(m^3/s)$ & $(m^3)$ & $(m^3/s)$ & $(m^3)$  \\
+\midrule
+    0     & 0.00 & 0.00 & 0.00 & 0.00   \\
+    10    & 0.00 & 0.00  & 0.00  & 0.00                   \\
+    20    & 0.00 & 0.00  & 0.00  & 0.00                   \\
+    30    & 0.00 & 0.00 & 0.00  & 0.00                   \\
+    40    & 0.00 & 0.00& 0.00   & 0.00                   \\
+    50    & 0.41 & 243.44  & 0.00       & 0.00                   \\
+    60    & 0.86 & 513.26 & 0.32     & 189.57                 \\
+    70    & 1.26                   & 754.44                  & 0.46                    & 278.64                 \\
+    80    & 1.54                   & 924.60                  & 0.57                    & 341.49                 \\
+    90    & 1.68                   & 1006.65                 & 0.62                    & 371.79                 \\
+    100   & 1.63                   & 979.41                  & 0.60                    & 361.73                 \\
+    110   & 1.41                   & 843.79                  & 0.52                    & 311.64                 \\
+    120   & 0.97                   & 582.40                  & 0.36                    & 215.10                 \\
+    130   & 0.57                   & 340.30                  & 0.21                    & 125.69                 \\
+    140   & 0.38                   & 225.07                  & 0.00                    & 0.00                   \\
+    150   & 0.26                   & 153.19                  & 0.00                    & 0.00                   \\
+    160   & 0.18                   & 109.01                  & 0.00                    & 0.00                   \\
+    170   & 0.00                   & 0.00                    & 0.00                    & 0.00     \\
+    \bottomrule             
+    \end{tabular}
+    \end{table}
+
+Il volume totale dei materiale solido trasportato, nelle condizioni pre-sistemazione è pari a 6675.57 $m^3$, mentre nelle condizioni post-sistemazioni è pari a 2195.65 $m^3$.\\
+Essendo il volume liquido transitato pari a 36100.60 $m^3$, è possibile ricavare la concentrazione di materiale solido: nel caso delle condizioni precedenti alla costruzione dell'opera idraulica è pari a 15.61\%, mentre nelle condizioni successive all'intervento idraulico è pari a 5.73\%. La riduzione di trasporto solido, tra le due condizioni di analisi, è del 63.26\% di volume.
+
+\begin{figure}[H] \centering
+    \includegraphics[scale=0.75]{immagini/sedimentogramma.png}
+    \caption{Sedimentogramma del tratto di studio, per un evento di deflusso con tempo di ritorno pari a 200 anni, calcolato mediante il metodo cinematico.}
+    \label{sedimentogramma}
+\end{figure}
+
+\subsection{Relazione tra la portata e lo sforzo tangenziale}
