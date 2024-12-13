@@ -127,6 +127,7 @@ Mentre, per quanto riguarda lo sforzo agente sulle sponde, il calcolo avviene me
 Secondo le ricerche Shields (1936), e successive semplificazioni, la relazione tra sforzo al fondo e grandezza dei sedimenti è regolata dalla formula:
 \begin{equation}
     \tau_c \approx 1000 \cdot D
+    \label{tau_cr_shields}
 \end{equation}
 \subsubsection{Approccio deterministico per la stima di $i_c$}
 Secondo Shields (1936), la formula per il calcolo dello sforzo tangenziale critico è:
@@ -244,20 +245,43 @@ Vengono riportati alcuni risultati.
     \caption{\textcolor{red}{Serie di risultati inerenti ai valori di numerosità ed interdistanza delle briglie, in funzione dell'altezza imposta.}}
     \begin{tabular}{ccc|ccc}
         \toprule
-    Scenario 1 & DZ (m)& 23.68 & Scenario 4 & DZ (m) & 23.68 \\
+    Scenario 1 & $\Delta Z$ (m)& 23.68 & Scenario 4 & $\Delta Z$ (m) & 23.68 \\
 & Z (m)         & 2.37  &            & Z (m)         & 3.40  \\
 & n             & 10.0  &            & n             & 7.0   \\
 & interdistanza & 25.11 &            & interdistanza & 36.02 \\
 \midrule
-Scenario 2 & DZ (m)        & 23.68 & Scenario 5 & DZ (m) & 23.68 \\
+Scenario 2 & $\Delta Z$ (m)        & 23.68 & Scenario 5 & $\Delta Z$ (m) & 23.68 \\
 & Z (m)         & 3.95  &            & Z (m)         & 4.75  \\
 & n             & 6.0   &            & n             & 5.0   \\
 & interdistanza & 41.84 &            & interdistanza & 50.32 \\
     \midrule
-Scenario 3 & DZ (m)        & 23.68 & Scenario 6 & DZ (m)        & 23.68 \\
+Scenario 3 & $\Delta Z$ (m)        & 23.68 & Scenario 6 & $\Delta Z$ (m)        & 23.68 \\
 & Z (m)         & 1.70  &            & Z (m)         & 2.62  \\
 & n             & 13.9  &            & n             & 9.0   \\
 & interdistanza & 18.01 &            & interdistanza & 27.75 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\subsection{Calcolo preliminare del trasporto solido}
+Shields (1936), grazie ai suoi studi effettuati sul trasporto solido, riuscì a ricavare empiricamente la formula dello sforzo tangenziale critico (necessario a muovere i sedimenti nel letto di un fiume), in funzione del peso specifico dell'acqua, dei sedimenti e della grandezza delle particelle granulometriche.\\
+Tale formula, già riportata precedentemente, è \ref{tau_cr_shields}.\\
+Da tale formula è possibile calcolare l'altezza del tirante idraulico che genera lo sforzo tangenziale in grado di muovere i sedimenti, conoscendo il peso volumetrico dell'acqua in movimento e della pendenza del corso:
+\begin{equation}
+    h_c = \frac{\tau_c}{\gamma \cdot i} 
+\end{equation}
+Mediante la conoscenza delle pendenze del tratto precedentemente e successivamente alla sistemazione, è possibile valutare come cambia il trasporto solido, calcolato mediante questo procedimento preliminare.\\
+
+\begin{table}[H]
+    \caption{\textcolor{red}{Trasporto solido di fondo, calcolato nelle condizioni precedenti e posteriori alla sistemazione idraulica del tratto di corso.}}
+    \begin{tabular}{cccccccccc}
+    \multicolumn{4}{l}{Situazione ANTE SISTEMAZIONE} &      & \multicolumn{4}{l}{Situazione POST SISTEMAZIONE} &      \\
+    \textit{i0 =}  & 0.205  & \textbf{}  & \textbf{} &      & \textit{ic =}  & 0.110  & \textbf{}  & \textbf{} &      \\
+                   &        &            &           &      &                &        &            &           &      \\
+                   & D50    & D84        & D90       &      &                & D50    & D84        & D90       &      \\
+                   & 0.089  & 0.215      & 0.256     & m    &                & 0.089  & 0.215      & 0.256     & m    \\
+    $\tau_c$            & 89     & 215        & 256       & N/m2 & $\tau_c$       & 89     & 215        & 256       & N/m2 \\
+    hc            & 0.04   & 0.11       & 0.13      & m    & hc         & 0.08   & 0.20       & 0.24      & m    \\
+    Qc& 0.015  & 0.898      & 1.378     & m3/s & Qc & 0.32   & 2.71       & 3.90  & m3/s
+    \end{tabular}
+    \end{table}
