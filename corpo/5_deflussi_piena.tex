@@ -246,7 +246,7 @@ Mediante il software Qgis è possibile estrarre i relativi valori:
     \multicolumn{4}{c}{\textbf{Rio Sigismondi}}\\
     \midrule
     Uso del suolo & Superficie ($km^2$)      & Valore C           & $C\cdot Ai$    \\
-    & \textbf{}   & \textit{\textbf{}} &         \\
+    &   &  &     \\
     Boschi di conifere                               & 1.64                  & 0.3                & 0.492   \\
     Arbusteti e mugheti                              & 0.05                  & 0.3                & 0.0156  \\
     Aree a pascolo naturale e praterie di alta quota & 0.11                  & 0.35               & 0.0392  \\
@@ -257,7 +257,7 @@ Mediante il software Qgis è possibile estrarre i relativi valori:
     Reti stradali                                    & 0.01                  & 0.9                & 0.0099  \\
     Case singole                                     & 0.01                  & 0.8                & 0.0064  \\
     \midrule
-& Area del Bacino (km2) &  & C medio \\
+& Area del Bacino $(km^2)$ &  & C medio \\
   & 2.01400               &                    & 0.31 \\
   \bottomrule  
     \end{tabular}
@@ -607,7 +607,7 @@ Da questa questa tabella è possibile ricavare il relativo grafico.
 Come anticipato precedentemente, mediante questo metodo si considera la precipitazione costante nel tempo, perciò con intensità sempre uguale.\\
 Svolgendo i relativi procedimenti nel programma di calcolo, i risultati inerenti alla precipitazione sono i seguenti.
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico con intensità di precipitazione costante.}}
+    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico con intensità di precipitazione costante, con tempo di ritorno pari a 200 anni.}}
 \begin{tabular}{ccccccc}
     \toprule
 t (min) & t (ore) & P = h (mm) & $\Delta$ Pcost (mm) & P cum           (mm) & Pe cum (mm) & $\Delta$ Pe cost (mm) \\
@@ -631,14 +631,14 @@ La pioggia cumulata viene ricavata come l'altezza totale di pioggia caduta al su
 Mediante la formula \ref{eq_PE} si calcola l'altezza di pioggia efficace cumulata e successivamente anche la quantità di deflusso incrementale. 
 \begin{figure}[H]  \centering
     \includegraphics[scale=0.7]{immagini/ietogramma_pioggia_intensità_costante.png}
-    \caption{Pioggia cumulata ed efficace di un evento pluviometrico di intensità costante.}
+    \caption{Pioggia cumulata ed efficace di un evento pluviometrico di intensità costante e tempo di ritorno di 200 anni.}
     \label{ietogramma_pioggia_intensità_costante}
 \end{figure}
 
 La procedura di stima dell'evento di piena continua andando a valutare i singoli contributi alla sezione di chiusura per ogni singola sotto-area.
 
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di pioggia con intensità di precipitazione costante.}}
+    \caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di pioggia con intensità di precipitazione costante e tempo di ritorno pari a 200 anni.}}
     \begin{tabular}{ccccccccccc}
     \toprule
  & \multicolumn{2}{c}{Intervallo temporale (min)}  & 10& 20    & 30    & 40    & 50    & 60    & 70    & 80    \\ 
@@ -668,11 +668,11 @@ La procedura di stima dell'evento di piena continua andando a valutare i singoli
 Infine, il calcolo del deflusso totale termina con la somma degli effetti di tutti i deflussi delle sub-aree del bacino, comprendendo anche la portata di base del canale (pari ad un decimo del colmo). 
 
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusura, per un evento di precipitazione con intensità costante, in funzione del tempo.}}
+    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusura, per un evento di precipitazione con intensità costante e tempo di ritorno pari a 200 anni, in funzione del tempo.}}
     \begin{tabular}{cccc}
         \toprule
         Tempo    & Q(t)   & Q(t) + Qb           & V                 \\
-        (minuti) & (m3/s) & (m3/s)              & (m3)              \\
+        (minuti) & $(m^3/s)$ & $(m^3/s)$ & $(m^3)$              \\
         \midrule
         0.00     & 0.00   & 0.72                & 433.31            \\
         10.00    & 0.00   & 0.72                & 433.33            \\
@@ -709,7 +709,7 @@ Tale tipologia di ietogramma viene anche definito ``Chicago", poiché è stato u
 Essendo il procedimento simile a quello precedente, verranno riportati solamente i dati, con eventuali spiegazioni specifiche.
 
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico, con intensità pluviometrica a blocchi alterni. Ovviamente, i valori di precipitazione hanno come unità di misura i $mm$.}}
+    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico, con intensità pluviometrica a blocchi alterni e tempo di ritorno pari a 200 anni. Ovviamente, i valori di precipitazione hanno come unità di misura i $mm$.}}
     \begin{tabular}{ccccccc}
         \toprule
     t (ore) & P = h & $\Delta$P & $\Delta$Pb.alt. & Pb.alt.cum. & $P_e$b.alt.cum.  & $\Delta$ $P_e$b.alt. \\
@@ -726,16 +726,16 @@ Essendo il procedimento simile a quello precedente, verranno riportati solamente
     \bottomrule
     \end{tabular}
     \end{table}
-Al contrario del metodo precedente, in questo tabella i valori di differenza di precipitazione ($\Delta$Pb.alt.), in base al tempo, sono stati introdotti mediante il criterio dei metodi alterni.\\
+Al contrario del metodo precedente, in questo tabella i valori di differenza di precipitazione ($\Delta$Pb.alt.), in base al tempo, sono stati introdotti mediante il criterio dei metodi alterni.
 
 \begin{figure}[H]  \centering
-    \includegraphics[scale=0.7]{immagini/ietogramma_pioggia_intensità_a_blocchi_alterni.png}
-    \caption{Pioggia cumulata ed efficace dell'evento pluviometrico con intensità a blocchi alterni.}
+    \includegraphics[scale=0.65]{immagini/ietogramma_pioggia_intensità_a_blocchi_alterni.png}
+    \caption{Pioggia cumulata ed efficace dell'evento pluviometrico con intensità a blocchi alterni e tempo di ritorno pari a 200 anni.}
     \label{ietogramma_pioggia_intensità_a_blocchi_alterni}
 \end{figure}
 
 \begin{table}[H] \centering
-\caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di precipitazione con intensità a blocchi alterni.}}
+\caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di precipitazione con intensità a blocchi alterni e tempo di ritorno di 200 anni.}}
     \begin{tabular}{ccccccccccc}
 \toprule
 & Int. temp. (min) &  & 10    & 20    & 30    & 40    & 50    & 60    & 70    & 80    \\
@@ -763,11 +763,11 @@ Al contrario del metodo precedente, in questo tabella i valori di differenza di 
     \end{table}
 
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusura, per un evento di precipitazione con intensità a blocchi alterni, in funzione del tempo.}}
+    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusura, per un evento di precipitazione con intensità a blocchi alterni e tempo di ritorno pari a 200 anni, in funzione del tempo.}}
         \begin{tabular}{cccc}
         \toprule
         tempo        & Q(t)       & Q(t) + Qb  & V        \\
-        (minuti)     & (m3/s)     & (m3/s)     & (m3)     \\
+        (minuti)     & $(m^3/s)$  & $(m^3/s)$   & $(m^3)$     \\
         \midrule
         0.00         & 0.00       & 0.78       & 470.13   \\
         10.00        & 0.00       & 0.78       & 470.13   \\
@@ -794,7 +794,7 @@ Al contrario del metodo precedente, in questo tabella i valori di differenza di 
 
 \begin{figure}[H]  \centering
             \includegraphics[scale=0.8]{immagini/metodo_cinematico_p_b_alterni.png}
-            \caption{Idrogramma di piena del bacino di studio, con un evento pluviometrico di intensità a blocchi alterni.}
+            \caption{Idrogramma di piena del bacino di studio, con un evento pluviometrico di intensità a blocchi alterni e tempo di ritorno pari a 200 anni.}
             \label{metod_cinematico_p_b_alterni}
 \end{figure}
 
@@ -802,7 +802,7 @@ Al contrario del metodo precedente, in questo tabella i valori di differenza di 
 In questo metodo, lo ietogramma di precipitazione viene creato andando a porre i blocchi in ordine di evento.\\
 Essendo i procedimenti uguali ai due casi precedenti, verranno riportati solamente i risultati numerici e grafici.
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico, con intensità di precipitazione crescente. Ovviamente, i valori di precipitazione hanno come unità di misura i $mm$.}}
+    \caption{\textcolor{red}{Risultati numerici di precipitazione del metodo cinematico, con intensità di precipitazione crescente e tempo di ritorno pari a 200 anni. Ovviamente, i valori di precipitazione hanno come unità di misura i $mm$.}}
     \begin{tabular}{ccccccc}
         \toprule
     t (ore)   & P = h & $\Delta$P & $\Delta$ P.b.c. & P.b.c. & $P_e$b.c.cum. & $\Delta$ $P_e$.b.c. \\
@@ -822,12 +822,12 @@ Essendo i procedimenti uguali ai due casi precedenti, verranno riportati solamen
 
 \begin{figure}[H]  \centering
         \includegraphics[scale=0.7]{immagini/ietogramma_pioggia_intensità_a_blocchi_crescenti.png}
-        \caption{Pioggia cumulata ed efficace di un evento di pioggia con intensità di pioggia crescente.}
+        \caption{Pioggia cumulata ed efficace di un evento di pioggia con intensità di pioggia crescente e tempo di ritorno pari a 200 anni.}
         \label{ietogramma_pioggia_intensità_a_blocchi_crescenti}
 \end{figure}
 
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di precipitazione con intensità di pioggia a blocchi crescenti.}}
+    \caption{\textcolor{red}{Contributi di deflusso specifici per ogni sub-area del bacino, per un evento di precipitazione con intensità di pioggia a blocchi crescenti e tempo di ritorno pari a 200 anni.}}
     \begin{tabular}{ccccccccccc}
     \toprule
     & Int. temp. (min) &  & 10  & 20  & 30      & 40                & 50                & 60                & 70               & 80     \\
@@ -855,11 +855,11 @@ Essendo i procedimenti uguali ai due casi precedenti, verranno riportati solamen
     \end{table}
 
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusuta, per un evento di precipitazione con intensità a blocchi crescenti, in funzione del tempo.}}
+    \caption{\textcolor{red}{Deflussi totali alla sezione di chiusura, per un evento di precipitazione con intensità a blocchi crescenti e tempo di ritorno di 200 anni, in funzione del tempo.}}
         \begin{tabular}{cccc}
         \toprule
         tempo    & Q(t)   & Q(t) + Qb  & V        \\
-        (minuti) & (m3/s) & (m3/s)     & (m3)     \\
+        (minuti) & $(m^3/s)$ & $(m^3/s)$     & $(m^3)$     \\
         \midrule
         0.00     & 0.00   & 0.85       & 507.24   \\
         10.00    & 0.00   & 0.85       & 507.24   \\
@@ -886,18 +886,18 @@ Essendo i procedimenti uguali ai due casi precedenti, verranno riportati solamen
 
 \begin{figure}[H]  \centering
     \includegraphics[scale=0.8]{immagini/metodo_cinematico_p_b_crescenti.png}
-    \caption{Idrogramma di piena del bacino di studio, con un evento pluviometrico di intensità a blocchi crescenti.}
+    \caption{Idrogramma di piena del bacino di studio, con un evento pluviometrico di intensità a blocchi crescenti e tempo di ritorno di 200 anni.}
     \label{metodo_cinematico_p_b_crescenti}
 \end{figure}    
 
 \subsubsection{Confronto tra i diversi casi di metodi cinematici}
 
 \begin{table}[H] \centering
-    \caption{\textcolor{red}{Valori riassuntivi finali dei tre metodi di calcolo utilizzati.}}
+    \caption{\textcolor{red}{Valori riassuntivi finali dei tre metodi di calcolo utilizzati, per eventi pluviometrici con tempo di ritorno di 200 anni.}}
         \begin{tabular}{cccc}
         \toprule
         Metodo di calcolo & Q(t) di picco  & Q(t) + Qb  di picco & V totale    \\
-         & (m3/s) & (m3/s)     & (m3)     \\
+         & $(m^3/s)$ & $(m^3/s)$  & $(m^3)$     \\
          \midrule
 Intensità costante & 7.22 & 7.94 & 35907.91 \\
 Intensità a bl. alterni & 7.84 & 8.62 & 36570.73\\
