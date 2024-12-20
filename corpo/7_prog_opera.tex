@@ -12,3 +12,42 @@ Successivamente ad essersi calcolati la larghezza inferiore, occorre calcolare l
 \begin{equation}
     h = 0.7 \cdot q ^{2/3}
 \end{equation}
+Nel nostro caso, la formula diventa:
+\begin{equation}
+    h = 0.7 \cdot \left( \frac{9.25}{4} \right)^{2/3}
+\end{equation}
+Che restituisce il risultato di 1.22 m.\\
+Successivamente ad aver stimato la profondità di massima, occorre ricavare la profondità corretta, utilizzando in modo iterativo la formula di Belangér (ricavandosi la medesima portata di progetto). Tale formula è la seguente:
+\begin{equation}
+Q = 1.705 \cdot h^{3/2} \left[L + \frac{2}{5}\cdot h \cdot \left(\frac{1}{\tan{\alpha}} + \frac{1}{\tan{\beta}}\right) \right]
+\end{equation}
+Si è scelto di imporre i valori $\alpha$ e $\beta$ (ovvero la pendenza delle ali laterali), pari a 60$^\circ$.\\
+Dopo diversi tentativi, l'altezza che genera una portata totale di 9.25 $m^3/s$, in funzione della geometria della gaveta, è di 1.13 m.\\
+Si è scelto di imporre un franco idraulico di 13 cm, in modo da portare l'altezza della sezione della gaveta a 1.30 m.\\
+Avendo calcolato l'altezza della sezione trapezoidale e conoscendo la pendenza delle ali, è possibile calcolare la larghezza superiore della gaveta:
+\begin{equation}
+    L_{gav.sup} = L_{gav.inf} + 2 \cdot \frac{h}{\tan \alpha} 
+\end{equation}
+I calcoli reali portano ad una larghezza superiore della briglia di 5.50 m, essendo che la larghezza di una singola ala è di 1.25 m.\\
+La larghezza media della sezione trapezoidale della briglia avviene calcolando la media tra la larghezza inferiore e superiore, che in questo caso è 4.75 m.\\
+Lo spessore del coronamento della briglia (s) viene stimato utilizzando tre metodi diversi:
+\begin{itemize}
+    \item metodo di Zoli: $0.7 + 0.1 \cdot Z$ $\rightarrow$ 0.96 m;
+    \item verifica allo scorrimento: $0.7 \cdot h$ $\rightarrow$ 0.91 m;
+    \item metodo di Romiti: $0.8 + 2 \cdot D_{84}$ $\rightarrow$ 1.23 m.
+\end{itemize}
+Essendo che i tre risultati non si discostano molto tra di loro, viene scelto il valore più cautelativo, imponendo la larghezza del coronamento pari a 1.2 m.\\
+Il dimensionamento della base del corpo briglia può avvenire applicando due formule empiriche:
+\begin{itemize}
+    \item metodo di Zoli: implica l'utilizzo del specifico grafico a doppia entrata $\rightarrow$ 1.80 m;
+    \item metodo di Romiti: $z \sqrt{\frac{z+3 \cdot h-s^2/z}{z+h+4.55}}$ $\rightarrow$ 2.13 m.
+\end{itemize}
+Anche per questo caso, essendo che i valori ricavati non si discostano molto tra di loro, si scegliere di porsi nelle condizioni maggiormente cautelative, andando ad imporre una larghezza di base del corpo briglia di 2.10 m.\\
+La profondità della fondamenta $(z_f)$ della briglia viene calcolata in funzione della pool erosiva che si genera a valle dell'opera (l'argomento verrà ripreso nel capitolo successivo inerente alla controbriglia), o in funzione della sola portata totale passante per la gaveta. Tale profondità può essere calcolata mediante due formule:
+\begin{itemize}
+    \item $z_f > 0.6 \cdot t$ $\rightarrow$ 0.63 m;
+    \item $z_f > 0.15 \cdot (z+h)$ $\rightarrow$ 0.56 m
+\end{itemize}
+Viene scelto il valore maggiore tra i due, arrotondando a 0.65 m, per motivi pratici e di sicurezza.\\
+Infine, l'ultima geometria da calcolare per quanto riguarda la briglia è inerente alla lunghezza degli sporti, sia di monte che di valle. Tale valore dev'essere minore (o uguale) a $0.7 \cdot z_f$. In questo caso, la lunghezza massima dello sporto della fondamenta è 0.45 m, ed in questo caso si impone lo stesso valore per la progettazione.\\
+E' possibile che lo sporto di valle e di monte non abbiano la stessa lunghezza. 

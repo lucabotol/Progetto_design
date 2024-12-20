@@ -1,1 +1,25 @@
 \section{Dimensionamento della controbriglia a valle della briglia cardine}
+La controbriglia è un'opera idraulica da ereggere a valle della briglia cardine (ovvero quella a quota inferiore).\\
+L'obiettivo della controbriglia è quello di limitare l'erosione a valle della briglia (detta \textit{pool}), generata dal flusso idraulico in movimento. In questo modo, vengono limitati i rischi di scalzamento alla base, e successivo collassamento della briglia cardine.\\
+L'altezza della controbriglia dovrebbe essere molto simile alla profondità della pozza erosiva generata, e che dovrebbe limitare.
+
+\subsubsection{Dimensionamento iniziale della controbriglia}
+Il dimensionamento della controbriglia inizia andando a calcolare la portata unitaria del flusso che scorre nella sezione della gaveta trapezoidale:
+\begin{equation}
+    q = \frac{Q_{tot}}{L_{media-gav}}
+\end{equation}
+La formula restituisce un valore reale di 1.947 $m^3/s/m$.\\
+L'altezza della controbriglia (t) viene calcolata mediante una formula empirica, che tiene in considerazione il rapporto tra la larghezza della gaveta e quella del letto di valle (r), la portata unitaria e la granulometria del torrente:
+\begin{equation}
+    t= (0.7 \cdot r+0.58)(0.94 \cdot q^{2/3} - 1.6 \cdot d_{90})
+\end{equation}
+Tale formula è la stessa per calcolare la profondità della pool erosiva che si genera a valle della briglia cardine della serie di opere.\\
+Omettendo i passaggi di calcolo, la formula per il nostro caso studio, restituisce un'altezza della controbriglia pari a 1.05 m, che viene incrementato a 1.1 m per motivi di sicurezza.\\
+La distanza tra la briglia cardine e la controbriglia viene valutata in funzione della distanza tra la profondità massima della pool e la briglia, ed in funzione della profondità di velocità critica dell'acqua.\\
+La distanza minima tra la briglia e la controbriglia viene calcolata mediante la formula:
+\begin{equation}
+    L= 8.40 \cdot y_c + 0.55 \cdot z
+    \label{dist_briglia_controbriglia}
+\end{equation}
+La profondità dove si manifesta la velocità critica $y_c$ viene calcolata con $y_c = \sqrt[3]{\frac{q^2}{g}}$, che nel caso di questa relazione è 0.728 m.\\
+La formula \ref{dist_briglia_controbriglia} restituisce una distanza minima di sicurezza di 7.57 m, che per motivi pratici e di sicurezza viene portata a 8 metri.
