@@ -76,3 +76,100 @@ Prima di iniziare le verifiche dimensionali tradizionali della briglia, risulta 
     \bottomrule
     \end{tabular}
 \end{table}
+Inoltre, risulta necessario riportare le caratteristiche del terreno su cui l'opera poggia.
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Caratteristiche fisiche del terreno del tratto da sistemare, necessarie per poter iniziare la verifica sulla briglia.}}
+    \begin{tabular}{cc}
+    \toprule
+    angolo di attrito & 36.0      \\
+    2/3 ang. attrito  & 24.0      \\
+    tangente          & 0.45      \\
+    cap.portante      & 0.35 MPa \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+Dopo aver esposto le geometrie ed i coefficienti essenziali per la verifica, è necessario riportare quali sono le forze ed i momenti agenti/reagenti sul profilo della briglia.
+\begin{figure}[H]  \centering
+    \includegraphics[scale=0.5]{immagini/forze_agenti_briglia.png}
+    \caption{Rappresentazione delle forze e dei momenti agenti e reagenti sul profilo della briglia.}
+    \label{forze_agenti_briglia}
+\end{figure}
+
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Valori relativi alla verifica tradizionale del solo corpo briglia. La sottospinta idraulica viene trascurata, poiché riguarda la fondazione dell'opera.}}
+    \begin{tabular}{ccccc}
+    \toprule
+           & Forze (N) & bracci (m) & Momenti (N m)    &         \\
+    \midrule
+    P1 (N) & 75744     & 0.60       & 45446.4          &         \\
+    P2 (N) & 28404     & 1.50       & 42606            &         \\
+    P3 (N) & 9040      & 0.60       & 5424             &         \\
+    P4 (N) & 11835     & 1.80       & 21303            &         \\
+    P5 (N) & 10170     & 1.65       & 16780.5          &         \\
+    somma  & 135193.0  &            & 131559.9         & stab.   \\
+    \midrule
+    S1 (N) & 29719     & 1.32       & 39080.5        &         \\
+    S2 (N) & 34584.5   & 0.88       & 30319.1 &         \\
+    somma  & 64303.5   &            & 69399.6          & destab. \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+    \begin{table}[H] \centering
+        \caption{\textcolor{red}{Valori relativi alla verifica tradizionale del corpo briglia e della fondazione. In questo caso la sottospinta idraulica viene considerata.}}
+        \begin{tabular}{ccccc}
+            \toprule
+           & Forze (N) & bracci (m) & Momenti (N m)    &         \\
+    \midrule
+        P1 (N)        & 75744    & 0.60 & 45446.4          &         \\
+        P2 (N)        & 28404    & 1.50 & 42606            &         \\
+        P3 (N)        & 9040     & 0.60 & 5424             &         \\
+        P4 (N)        & 11835    & 1.80 & 21303            &         \\
+        P5 (N)        & 10170    & 1.65 & 16780.5          &         \\
+        P6 (N)        & 37440    & 1.20 & 44928            &         \\
+        P7 (N)        & 11280    & 2.25 & 25380            &         \\
+        ST (N) (neg.) & 9024     &      &                  &         \\
+        somma         & 174889.0 &      & 201867.9         & stab.   \\
+       \midrule
+        S1 (N)        & 29719    & 1.97 & 58397.8          &         \\
+        S2 (N)        & 34584.5  & 1.53 & 52799.0          &         \\
+        ST (N)        &          & 1.60 & 14438            &         \\
+        somma         & 64303.5  &      & 125635.2         & destab. \\
+        \bottomrule
+        \end{tabular}
+        \end{table}
+
+Avendo calcolato i valori delle spinte e dei momenti agenti nel sistema, è possibile riportare i risultati della verifica allo scorrimento ed al ribaltamento.
+\begin{table}[H] \centering
+    \caption{\textcolor{red}{Risultati della verifica a scorrimento e ribaltamento del corpo briglia e del corpo briglia con la fondazione.}}
+    \begin{tabular}{cc}
+    \toprule
+    \multicolumn{2}{c}{CORPO BRIGLIA} \\
+    $G_{scorr}$                               & 1.47                 \\
+    $G_{rib}$                              & 1.90                 \\
+    u (m)                             & 0.460                \\
+    e (m)                             & 0.590                \\
+    b/3 (m)                           & 0.700                \\
+    sigma valle (MPa)                 & 0.173                \\
+    sigma monte (MPa)                 & -0.044               \\
+    \midrule
+    \multicolumn{2}{c}{CORPO+FONDAZIONE}                     \\
+    $G_{scorr}$                       & 1.21                 \\
+    $G_{rib}$                         & 1.61                 \\
+    u (m)                             & 0.436                \\
+    e (m)                             & 0.764                \\
+    b/3 (m)                           & 0.800                \\
+    sezione reagente (m)              & 1.3                  \\
+    sigma valle (MPa)                 & 0.267                \\
+    sigma monte (MPa)                 & 0.000                \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+La verifica allo scorrimento, secondo il metodo tradizionale, è guidata dalla formula $\Sigma F_{orizz.}<f\cdot\Sigma F_{vert.}$, dove $f$ è il coefficiente di attrito corpo-fondazione o tra la fondazione ed il terreno.\\
+Con questa verifica si valuta la tendenza alla traslazione effettuata dalle forze orizzontali agenti sul sistema.\\
+Portando la sommatoria delle forze verticali a destra della disequazione, risulta che la verifica è accettata se il rapporto tra le forze (comprendente il coefficiente d'attrito) è superiore a 1. In entrambi i casi, la verifica allo scorrimento risulta soddisfatta.\\
+Per quanto riguarda la verifica al ribaltamento, secondo il metodo tradizionale, la formula generale è $G_s = \frac{\Sigma M_{O,stab.}}{\Sigma M_{O,rib.}} \ge 1.5$.\\
+Anche per questa verifica, in entrambi i casi la struttura viene considerata sicura.\\
+Infine, per quanto riguarda lo schiacciamento, che si manifesta tra corpo briglia e fondazione, e tra la fondazione ed il terreno, la formula generale è $\sigma= \frac{\Sigma F_v}{B} \cdot \left(1 \pm \frac{6 \cdot e}{B}\right)$.
