@@ -269,7 +269,7 @@ Come verrà ricordato anche successivamente, è generalmente preferito l'utilizz
 Al fine di conoscere le quantità di pioggia che si trasformano in deflusso (pioggia efficace), che vengono intercettate o che vengono assorbite, viene applicata la formula 
 \begin{equation}
 P_e = \frac{(P-I_a)^2}{P-I_a+S} 
-\label{eq_PE}
+\label{eq:eq_PE}
 \end{equation}
 che deriva dalle seguenti:
 \begin{figure}[H]
@@ -298,20 +298,20 @@ Dovendo, per questa relazione, calcolare la pioggia efficace per diversi tempi d
 
 Volendo considerare la precipitazione critica, ovvero dove la durata di pioggia eguaglia il tempo di corrivazione del bacino, l'evento pluviometrico deve durare 1.39 ore, come calcolato precedentemente mediante il metodo cinematico.\\
 Il calcolo della pioggia critica avviene mediante la sostituzione dei parametri calcolati della LSPP, nella formula $h=a\cdot t^n$.\\
-Infine, la pioggia efficace critica $Pe_{cr}$ si ricava applicando la formula \ref{eq_PE}.
+Infine, la pioggia efficace critica $Pe_{cr}$ si ricava applicando \eqref{eq:eq_PE}.
     			
 \begin{table}[H] \centering
     \caption{\textcolor{red}{Tabella contente i parametri necessari al calcolo della pioggia efficace critica.}}
     \begin{tabular}{cccc}
         \toprule
-        & $T_c$ (ore) & $P_{cr}$  & $Pe_{cr}$ (mm) \\
+       Tr (anni)& $T_c$ (ore) & $P_{cr}$  & $Pe_{cr}$ (mm) \\
         \midrule
-        Tr=2 anni   & 1.39     & 26.50 & 2.64       \\
-        Tr=5 anni   & 1.39     & 33.64 & 4.64       \\
-        Tr=30 anni  & 1.39     & 45.50 & 8.93       \\
-        Tr=50 anni  & 1.39     & 48.76 & 10.29      \\
-        Tr=100 anni & 1.39     & 53.15 & 12.23      \\
-        Tr=200 anni & 1.39     & 57.53 & 14.28      \\
+        2  & 1.39     & 26.50 & 2.64       \\
+        5    & 1.39     & 33.64 & 4.64       \\
+        30  & 1.39     & 45.50 & 8.93       \\
+        50  & 1.39     & 48.76 & 10.29      \\
+        100 & 1.39     & 53.15 & 12.23      \\
+        200 & 1.39     & 57.53 & 14.28      \\
         \bottomrule
 \end{tabular}
 \label{parametri_pioggia_efficace}
@@ -628,7 +628,7 @@ t (min) & t (ore) & P = h (mm) & $\Delta$ Pcost (mm) & P cum           (mm) & Pe
 La precipitazione $P$ è stata calcolata mediante la LSPP ricavata precedentemente.\\
 L'intensità di pioggia $\Delta P$, essendo costante, si calcola mediante il rapporto tra l'altezza di pioggia totale ed il numero di fasi temporali imposte.\\
 La pioggia cumulata viene ricavata come l'altezza totale di pioggia caduta al suolo per ogni attimo, con intensità costante.\\
-Mediante la formula \ref{eq_PE} si calcola l'altezza di pioggia efficace cumulata e successivamente anche la quantità di deflusso incrementale. 
+Mediante la formula \ref{eq:eq_PE} si calcola l'altezza di pioggia efficace cumulata e successivamente anche la quantità di deflusso incrementale. 
 \begin{figure}[H]  \centering
     \includegraphics[scale=0.7]{immagini/ietogramma_pioggia_intensità_costante.png}
     \caption{Pioggia cumulata ed efficace di un evento pluviometrico di intensità costante e tempo di ritorno di 200 anni.}
