@@ -117,7 +117,7 @@ Dal punto di vista geometrico, la quota media del bacino è il valore che, se in
 La formula è:
 \begin{equation}
     H_m = h_m - h_0 = \frac{\Sigma (\bar{h}_i - h_0) \cdot A_i}{A}
-    \label{quota_media}
+    \label{eq:quota_media}
 \end{equation}
 
 I calcoli, svolti in un foglio di calcolo elettronico, sono qui sotto riportati.
@@ -125,7 +125,7 @@ I calcoli, svolti in un foglio di calcolo elettronico, sono qui sotto riportati.
 \begin{table}[H]
     \begin{tabular}{cccccccc}
         \toprule
-    Quote (m s.l.m.) & n° celle & $A_i$ ($m^2$) & $A_i$ ($km^2$) & $Hi_{min}$ & $Hi_{max}$ & $Hi_{media}$ & $A_i \cdot Hi_{media}$ \\
+    Quote (m s.l.m.) & n° celle & $A_i$ (\unit{m^2}) & $A_i$ (\unit{km^2}) & $Hi_{min}$ & $Hi_{max}$ & $Hi_{media}$ & $A_i \cdot Hi_{media}$ \\
    \midrule
     1183-1200                 & 261      & 261     & 0.000261 & 1183   & 1200   & 1192     & 0.311         \\
     1200-1250                 & 4874     & 4874    & 0.004874 & 1200   & 1250   & 1225     & 5.971         \\
@@ -153,13 +153,13 @@ Dove:
 \begin{itemize}
     \item Quote: fasce di quota, secondo le linee di livello ortometriche;
     \item n° celle: numero di celle del raster, contenute in ogni fascia di quota;
-    \item $A_i$: area di territorio ricadente in ogni fascia di quota (sia in $m^2$ che in $km^2$);
+    \item $A_i$: area di territorio ricadente in ogni fascia di quota (sia in \unit{m^2} che in \unit{km^2});
     \item $Hi_{min}$ e $Hi_{max}$: quota minima e massima della fascia di quota;
     \item $Hi_{media}$: valore altimetrico medio per ogni fascia di quota;
     \item $A_i \cdot Hi_{media}$: altezza media di ogni fascia altimetrica, soppesata per la propria estensione.
 \end{itemize}
-Considerando che le celle hanno estensione 1 $m^2$, l'area di ogni fascia di quota equivale (in $m^2$) al proprio numero di quadrati della matrice.\\
-Essendo che l'area totale del bacino è di 2.01 $km^2$, la formula \ref{quota_media}, ricavata dal foglio di calcolo elettronico, restituisce il valore di 1646 $m$ sul livello del mare.
+Considerando che le celle hanno estensione 1 \unit{m^2}, l'area di ogni fascia di quota equivale (in \unit{m^2}) al proprio numero di quadrati della matrice.\\
+Essendo che l'area totale del bacino è di 2.01 \unit{km^2}, la formula \eqref{eq:quota_media}, ricavata dal foglio di calcolo elettronico, restituisce il valore di 1646 \unit{m} sul livello del mare.
 
 \subsection{Curva ipsometrica del bacino}
 Al fine di valutare la condizione di dinamica temporale del bacino, risulta utile valutare le curve ipsometriche dello stesso.\\
@@ -209,7 +209,7 @@ Il profilo altimetrico del torrente (che nel nostro caso è il corso principale 
     \caption{Profilo longitudinale del collettore del bacino idrografico.}
 \end{figure}
 Il grafico è stato ricavato mediante l'utilizzo di un foglio elettronico di calcolo, utilizzando i dati provenienti da Qgis.\\
-Inoltre, mediante tali dati è possibile ricavare la pendenza media del tratto principale del corso idraulico (28.94\%, oppure 16.14°) e la sua lunghezza totale (2401 $m$).
+Inoltre, mediante tali dati è possibile ricavare la pendenza media del tratto principale del corso idraulico (28.94\%, oppure 16.14°) e la sua lunghezza totale (2401 \unit{m}).
 
 
 \subsection{Caratteristiche del bacino idrografico}
@@ -220,14 +220,14 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     \begin{tabular}{ cccc } 
     \toprule
     Superficie planimetrica & A &  $\left[\si{\kilo\square\meter}\right]$ & 2.01 \\ 
-    Perimetro & P & $\left[m\right]$        &      8690       \\ 
-    Quota massima & $h_{max}$&  $\left[m s.m.\right]$       &    2084.6     \\
-    Quota della sezione di chiusura & $h_0$ & $\left[m s.m.\right]$        &       1186      \\ 
-    Quota apice del conoide &$h_{ap}$& $\left[m s.m.\right]$ & 1186\\ 
-    Quota media& $H_m$ & $\left[m s.m.\right]$ & 1646    \\ 
-    Rilievo del bacino:& $h_{max} - h_o$ & $\left[m\right]$ &   901 \\ 
-    Lunghezza del reticolo idrografico& $L_r$& $\left[m\right]$ & 5294,1 \\ 
-    Lunghezza del collettore principale& $L_{coll}$& $\left[m\right]$ & 2401 \\ 
+    Perimetro & P & [\unit{m}]        &      8690       \\ 
+    Quota massima & $h_{max}$&  [m s.m.]       &    2084.6     \\
+    Quota della sezione di chiusura & $h_0$ & [m s.m.] &    1186      \\ 
+    Quota apice del conoide &$h_{ap}$& [m s.m.]& 1186\\ 
+    Quota media& $H_m$ & [m s.m.]& 1646    \\ 
+    Rilievo del bacino:& $h_{max} - h_o$ & \unit{m} &   901 \\ 
+    Lunghezza del reticolo idrografico& $L_r$& \unit{m} & 5294,1 \\ 
+    Lunghezza del collettore principale& $L_{coll}$& \unit{m} & 2401 \\ 
     Pendenza media del bacino& $i_m$ & $\left[\%\right]$ & 54.19    \\ 
     Pendenza media del bacino& $i_m$& $\left[ ^\circ \right]$ & 28.45   \\ 
     Coefficiente di forma di Gravelius& F& $\left[0.28 \cdot P/A^{0.5} \right]$ & 1.21\\  
@@ -235,10 +235,10 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     Numero di Melton& & $\left[-\right]$ & 0.634\\ 
     Densità di drenaggio &$D_r$& $\left[\si{\km^{-1}}\right]$& 2.63 \\ 
     $N_1$& & & 12 \\ 
-    Indice di torrenzialità& &$\left[n. segmenti/km^2\right]$ & 7.96 \\  
+    Indice di torrenzialità& & [\unit{segm/km^2}] & 7.96 \\  
     Ordine di bacino& $k$ & $\left[-\right]$ & 3 \\ 
     Rapporto di biforcazione medio& $R_b$ & $\left[-\right]$ &  3.5 \\  
-    Pendenza media del collettore principale & & $\left[\frac{m}{m}\right]$ & 0.289\\  
+    Pendenza media del collettore principale & & [\unit{m/m}] & 0.289\\  
     \bottomrule
 \end{tabular}
 \end{table}

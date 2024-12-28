@@ -23,7 +23,7 @@ Successivamente, utilizzando i parametri $y$ (appena calcolato), $\alpha$ e $u$,
 \end{equation}
 \begin{equation}
     h = \frac{y}{\alpha}+u
-    \label{h_tr}
+    \label{eq:h_tr}
 \end{equation}
 Al fine di verificare visivamente la bontà degli allineamenti delle distribuzioni della serie osservata e della serie attesa (teorica), occorre creare un grafico dove, in ascissa si pone il valore del parametro $y$ ed in ordinata si pongono i valori delle relative precipitazioni teoriche. I grafici sono riportati nel successivo capitoletto.\\
 Maggiore è l'allineamento tra le due distribuzioni e migliore sarà la distribuzione della serie osservata.\\
@@ -124,7 +124,7 @@ Essendo che $y = -ln(-ln(P))$ e $P = 1-\frac{1}{T_r}$, allora
 \begin{equation}
 y = -ln\left(-ln\left(1-\frac{1}{T_r}\right)\right)
 \end{equation}
-Partendo da questo calcolo della variabile d'appoggio, è possibile ricavare l'altezza di precipitazione mediante la formula \ref{h_tr}.
+Partendo da questo calcolo della variabile d'appoggio, è possibile ricavare l'altezza di precipitazione mediante \eqref{eq:h_tr}.
 
 \begin{table}[H] \centering
     \caption{\textcolor{red}{Valori di altezza di pioggia attesa (teorica), calcolata mediante la variabile d'appoggio $y$ di Weibull o di Hazen.}}
@@ -207,17 +207,17 @@ Partendo da questo calcolo della variabile d'appoggio, è possibile ricavare l'a
 Similmente a come è stata svolta la verifica grafica (\ref{sec_plotting_position}), è necessario accertarsi che l'asimmetria ($G$) della serie osservata (storica) non differisca eccessivamente dalla serie teorica.\\
 La procedura del test statistico è:
 \begin{itemize}
-\item calcolo del coefficiente di asimmetria $G$, mediante \ref{coef_asimmetria};
+\item calcolo del coefficiente di asimmetria $G$, mediante \eqref{eq:coef_asimmetria};
 \item estrapolazione dei parametri $E(y)$ e $\sigma(y)$, in funzione di N;
-\item verifica della disequazione \ref{disequazione_matalas}.
+\item verifica della disequazione \eqref{eq:disequazione_matalas}.
 \end{itemize}
 \begin{equation}
     G = \frac{m_3}{m_2^{\frac{3}{2}}} = N^{\frac{1}{2}} \frac{\sum_{i=1,N}(x_i - x_m)^3}{\left[\sum_{i=1,N}(x_i-x_m)^2\right]^{\frac{3}{2}}}
-    \label{coef_asimmetria}
+    \label{eq:coef_asimmetria}
 \end{equation}
 \begin{equation}
     |G - E (y)| < 2 \sigma(y)
-    \label{disequazione_matalas}
+    \label{eq:disequazione_matalas}
 \end{equation}
 Dove:
 \begin{itemize}
@@ -794,7 +794,7 @@ La curva interpolatrice ha un andamento caratteristico che segue la funzione $h=
 Essendo che:
 \begin{equation}
     h=at^n \rightarrow \log h = \log a + n \log t \rightarrow H=A+nT
-    \label{formula_LSPP}
+    \label{eq:formula_LSPP}
 \end{equation}
 Mediante l'equazione $H = \log h$, possiamo calcolare il valore di H della tabella \ref{altezze_critiche_pioggia}:
 
@@ -811,7 +811,7 @@ Mediante l'equazione $H = \log h$, possiamo calcolare il valore di H della tabel
     \end{tabular}
     \end{table}
 Nel caso in cui gli assi del grafico avessero entrambi la scala logaritmica, la linea interpolatrice dei punti sarebbe una retta.\\
-Invertendo la formula della LSPP \ref{formula_LSPP}, è possibile calcolarsi i valori dei rimanenti parametri:
+Invertendo la formula della LSPP \eqref{eq:formula_LSPP}, è possibile calcolarsi i valori dei rimanenti parametri:
 \begin{table}[H] \centering
     \begin{tabular}{ccccccc}
     \toprule

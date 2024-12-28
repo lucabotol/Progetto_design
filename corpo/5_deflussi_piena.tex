@@ -9,7 +9,7 @@ Esistono diverse metodologie per calcolare il tempo di corrivazione del bacino: 
 Il metodo cinematico per il calcolo del tempo di corrivazione del bacino implica lo studio del moto dell'acqua sia nel tratto di versante e sia nel tratto di reticolo idrografico.
 \begin{equation}
     T_c = T_v + T_r
-    \label{tempo_corrivazione}
+    \label{eq:tempo_corrivazione}
 \end{equation}
 Dove:
 \begin{itemize}
@@ -30,22 +30,22 @@ Partendo dalla formula generale della velocità di un fluido:
 e svolgendo alcune semplificazioni, è possibile ottenere le formule per il calcolo della velocità nel reticolo e nel versante:
 \begin{equation}
     V_R \approx (5 - 10) \cdot i^{\frac{1}{2}}
-    \label{vel_reticolo}
+    \label{eq:vel_reticolo}
 \end{equation}
 \begin{equation}
     V_v \approx (0.1 - 0.15) i_v^{\frac{1}{2}}
-    \label{vel_versante}
+    \label{eq:vel_versante}
 \end{equation}
-La formula del tempo di corrivazione \ref{tempo_corrivazione} può essere implementata con le formule \ref{vel_versante} e \ref{vel_reticolo}:
+La formula del tempo di corrivazione \eqref{eq:tempo_corrivazione} può essere implementata con \eqref{eq:vel_versante} e \eqref{eq:vel_reticolo}:
 \begin{equation}
     T_c = \frac{L_R}{V_R}+ \frac{L_V}{V_V} \approx \frac{L_R}{(5 - 10) \cdot i^{\frac{1}{2}}} + \frac{L_V}{(0.1 - 0.15) i_v^{\frac{1}{2}}}
 \end{equation}
 
 Per il calcolo della velocità di reticolo dell'acqua nel bacino, è necessario imporre un valore di pendenza del retico; questo valore si ricava dal rapporto tra la differenza di quota del collettore principale (1883 m-1183 m) e la sua lunghezza (2401 m).\\
-Svolgendo la formula \ref{vel_reticolo}, imponendo un coefficiente medio di 7.5, il risultato è 4.05 $m/s$.\\
+Svolgendo la formula \ref{vel_reticolo}, imponendo un coefficiente medio di 7.5, il risultato è 4.05 \unit{m/s}.\\
 Conoscendo la lunghezza del collettore principale, è possibile ricavare il tempo di corrivazione della componente del reticolo idrografico.\\
 In modo analogo, il calcolo della velocità dell'acqua nel versante avviene conoscendo la pendenza del tratto di terreno, ovvero il rapporto tra la differenza di quota (2084.3 m-1883 m) e la sua distanza, ricavata dal GIS, di 445.16 m.\\
-Applicando la formula \ref{vel_versante}, applicando un coefficiente di 0.15, la velocità di versante risulta essere di 0.10 $m/s$.\\
+Applicando \eqref{eq:vel_versante}, con un coefficiente di 0.15, la velocità di versante risulta essere di 0.10 \unit{m/s}.\\
 Anche in questo caso, il tempo di corrivazione nel versante è ricavabile invertendo la formula della velocità.
 I tempi di percorrenza dell'acqua sono:
 \begin{table}[H] \centering
@@ -63,58 +63,58 @@ Il tempo di corrivazione totale, ovvero la somma dei due parziali, risulta esser
 Il metodo di Giandotti, per il calcolo del tempo di corrivazione del bacino, richiede l'applicazione della relativa formula:
 \begin{equation}
     T_c = \frac{4 \cdot \sqrt{A}+ 1.5 \cdot L}{0.8 \cdot \sqrt{H_m}}
-\label{formula_giandotti}
+\label{eq:formula_giandotti}
 \end{equation}
 Dove: 
 \begin{itemize}
     \item $T_c$: è il tempo di corrivazione, espresso in ore;
-    \item A: è l'area del bacino, espressa in $km^2$;
+    \item A: è l'area del bacino, espressa in \unit{km^2};
     \item L: è lunghezza del collettore idraulico, estesa fino allo spartiacque, espressa in km;
     \item $H_m$: è l'altezza media del bacino, riferita alla sezione di chiusura ed espressa in m.
 \end{itemize}
 Per il bacino in esame:
 \begin{itemize}
-    \item A: 2.01 $km^2$;
-    \item $L_c$: 2.846 $km$;
-    \item $H_m$: 470.9 $m$.
+    \item A: 2.01 \unit{km^2};
+    \item $L_c$: 2.846 \unit{km};
+    \item $H_m$: 470.9 \unit{m}.
 \end{itemize}
-La formula di Giandotti \ref{formula_giandotti}, con i parametri del bacino in esame, restituisce il tempo di corrivazione di 34.4 minuti (0.573 ore).\\
+La formula di Giandotti \eqref{eq:formula_giandotti}, con i parametri del bacino in esame, restituisce il tempo di corrivazione di 34.4 minuti (0.573 ore).\\
 Questa formula notoriamente restituisce valori di corrivazione molto contenuti rispetto a quelli reali.
 
 \subsubsection{Metodo empirico di Ferro (I)}
 La formula necessaria da applicare per questo metodo è la seguente:
 \begin{equation}
     T_c = 0.022 \cdot \left(\frac{L_C}{i^{0.5}}\right)^{0.8}
-    \label{formula_ferro_I}
+    \label{eq:formula_ferro_I}
 \end{equation}
 Dove: 
 \begin{itemize}
     \item $T_c$: viene espressa in minuti;
     \item $L_C$: viene espressa in metri;
-    \item i: viene espressa $m/m$.
+    \item i: viene espressa \unit{m/m}.
 \end{itemize}
 Nel caso del bacino in esame:
 \begin{itemize}
-    \item A: 2.01 $km^2$;
-    \item $L_C$: 2401 $m$;
-    \item $i_r$: 0.293 $m/m$.
+    \item A: 2.01 \unit{km^2};
+    \item $L_C$: 2401 \unit{m};
+    \item $i_r$: 0.293 \unit{m/m}.
 \end{itemize}
-La formula del metodo di Ferro (I) \ref{formula_ferro_I} restituisce il valore di 18.19 minuti.\\
+La formula del metodo di Ferro (I) \eqref{eq:formula_ferro_I} restituisce il valore di 18.19 minuti.\\
 Nel caso di bacini montani con collettore principale corto (qualche chilometro), e ripido, la formula tende a sottostimare il valore reale.
 
 \subsubsection{Metodo empirico di Ferro (II)}
 La formula di Ferro (II) richiede solamente la conoscenza dell'area del bacino:
 \begin{equation}
     T_c = 0.675 \cdot \sqrt{A}
-    \label{formula_ferro_II}
+    \label{eq:formula_ferro_II}
 \end{equation}
 Dove:
 \begin{itemize}
     \item $T_c$: viene espressa in ore;
-    \item $A$: viene espressa in $km^2$.
+    \item $A$: viene espressa in \unit{km^2}.
 \end{itemize}
-Nel caso del nostro bacino, come già riportato prima, l'area è pari a 2.01 $km^2$.\\
-La formula \ref{formula_ferro_II} restituisce un tempo di corrivazione pari a 57.42 minuti (0.96 ore).
+Nel caso del nostro bacino, come già riportato prima, l'area è pari a 2.01 \unit{km^2}.\\
+La formula \eqref{eq:formula_ferro_II} restituisce un tempo di corrivazione pari a 57.42 minuti (0.96 ore).
 
 \subsection{Comparazione dei metodi di corrivazione}
 Dopo aver applicato diversi metodi per il calcolo del tempo di corrivazione, risulta utile compararli.
@@ -161,13 +161,13 @@ Le trasformazioni tra le diverse condizioni avvengono mediante le formule:
 \end{equation}
 \begin{equation}
     AMC(III) \rightarrow CN(III) = \frac{23\cdot CN (II)}{10+0.13 \cdot CN(II)}
-    \label{amcIII}
+    \label{eq:amcIII}
 \end{equation}
 La condizione più favorevole, ovvero la AMC (III), è quella che genera il maggior deflusso, e che è quindi preferibile da utilizzare in sede di progetto.\\
 Il limite di saturazione dell'acqua nel terreno (S), ovvero la massima quantità infiltrabile, viene ricavata dal parametro CN del suolo-soprassuolo, utilizzando la formula:
 \begin{equation}
     S = 25.4 \cdot \left(\frac{1000}{CN} -10 \right)
-    \label{parametro_S}
+    \label{eq:parametro_S}
 \end{equation} 
 
 Il calcolo del CN di una qualsiasi area, avente questa caratteristiche eterogenee, avviene sommando il CN relativo di ogni area, mediante la seguente formula:
@@ -188,7 +188,7 @@ Ad ogni cella del file raster, di 10 metri di lato, sono state associati dei pre
     \begin{tabular}{ccc}
         \toprule
     \multicolumn{3}{c}{\textbf{Rio Sigismondi}}  \\
-    Valore CN & Superficie ($km^2$) & $CN \cdot Ai$   \\
+    Valore CN & Superficie (\unit{km^2}) & $CN \cdot Ai$   \\
     \midrule
     18                 & 0.29                           & 5.2344            \\
     23                 & 0.00                           & 0.0391            \\
@@ -212,14 +212,14 @@ Ad ogni cella del file raster, di 10 metri di lato, sono state associati dei pre
     85                 & 0.01                           & 0.8585            \\
     95                 & 0.01                           & 0.5795            \\
     \midrule
-          & Area del Bacino ($km^2$) & CN medio\\
+          & Area del Bacino (\unit{km^2}) & CN medio\\
    & 2.00740               & 45.74   \\
    \bottomrule
     \end{tabular}
     \end{table}
 
-Essendo il CN (II) pari a 45,74, l'applicazione della formula \ref{amcIII} permette di ricavare il CN(III), che è pari a 65.98.\\
-La quantità che porta il terreno a saturazione è calcolabile con la formula \ref{parametro_S}, e con il coefficiente CN(III): in questo caso è pari a 130.98 mm.\\
+Essendo il CN (II) pari a 45,74, l'applicazione di \eqref{eq:amcIII} permette di ricavare il CN(III), che è pari a 65.98.\\
+La quantità che porta il terreno a saturazione è calcolabile con \eqref{eq:parametro_S}, e con il coefficiente CN(III): in questo caso è pari a 130.98 mm.\\
 Successivamente, avendo il valore dello storage S, è possibile calcolare la perdita iniziale di acqua ($I_a$), che varia da 0 a $0.2\cdot S$; riguarda tutto il volume di pioggia intercettata dalla vegetazione, o dalle cavità nel terreno, che non si infiltra e che non diventa deflusso. Al fine di creare una condizione cautelativa, si è scelto di applicare il coefficiente 0.05, in modo che la perdita iniziale diventi 6.55 mm.
 
 \subsection{Calcolo del coefficiente di deflusso del bacino}
@@ -245,7 +245,7 @@ Mediante il software Qgis è possibile estrarre i relativi valori:
     \toprule
     \multicolumn{4}{c}{\textbf{Rio Sigismondi}}\\
     \midrule
-    Uso del suolo & Superficie ($km^2$)      & Valore C           & $C\cdot Ai$    \\
+    Uso del suolo & Superficie (\unit{km^2})      & Valore C           & $C\cdot Ai$    \\
     &   &  &     \\
     Boschi di conifere                               & 1.64                  & 0.3                & 0.492   \\
     Arbusteti e mugheti                              & 0.05                  & 0.3                & 0.0156  \\
@@ -257,7 +257,7 @@ Mediante il software Qgis è possibile estrarre i relativi valori:
     Reti stradali                                    & 0.01                  & 0.9                & 0.0099  \\
     Case singole                                     & 0.01                  & 0.8                & 0.0064  \\
     \midrule
-& Area del Bacino $(km^2)$ &  & C medio \\
+& Area del Bacino (\unit{km^2}) &  & C medio \\
   & 2.01400               &                    & 0.31 \\
   \bottomrule  
     \end{tabular}
@@ -322,7 +322,7 @@ Ovviamente, all'aumentare del tempo di ritorno dell'evento, oltre a crescere l'a
 Al fine di dimensionare correttamente una qualsiasi opera idraulica, è necessario conoscere il picco della portata di deflusso. In tal modo è possibile adattare qualsiasi struttura in modo che riesca a contenere la maggior portata di fluido in movimento, pur se interessa un arco di tempo piccolo.
 Esistono diversi metodi per calcolare il picco di portata, in questa relazione ne verranno utilizzati tre, in modo da analizzare le differenze di applicazione e lo scostamento dei risultati.
 \subsubsection{Metodo razionale}
-Questo metodo è affidabile per bacini di ridotta superficie (inferiore ai 2-3 $km^2$), mentre è applicabile anche a bacini più grandi (fino a 50 $km^2$).\\
+Questo metodo è affidabile per bacini di ridotta superficie (inferiore ai 2-3 \unit{km^2}), mentre è applicabile anche a bacini più grandi (fino a 50 \unit{km^2}).\\
 Al fine di applicare questo metodo, è necessario imporre alcune ipotesi:
 \begin{itemize}
     \item la pioggia è di intensità costante e distribuita uniformemente sul bacino;
@@ -341,33 +341,33 @@ Unendo le formule, risulta che $Q_t \cdot T_c = P_e \cdot A$ ed infine $Q_t \fra
 
 Nel caso in cui si utilizzassero le seguenti unità di misura:
 \begin{itemize}
-    \item $Q_t$ = $m^3/s$;
+    \item $Q_t$ = \unit{m^3/s};
     \item $T_c$ = ore;
     \item $P_e$ = mm;
-    \item A = $km^2$;
+    \item A = \unit{km^2};
 \end{itemize}
 è possibile trasformare la formula del picco in:
 \begin{equation}
     Q_t = \frac{P_e \cdot A}{3.6 \cdot T_c} + Q_{base}
-    \label{picco_deflusso_Qt}
+    \label{eq:picco_deflusso_Qt}
 \end{equation}
 Generalmente, la portata di base $Q_{base}$ viene considerata pari al 10\% della portata di picco.
 
 \subsubsection{Metodo razionale utilizzando il CN}
-Il calcolo della portata di picco di deflusso, utilizzando il metodo razionale ed il valore CN medio, avviene applicando la formula del calcolo di picco \ref{picco_deflusso_Qt} ai valori di pioggia efficace \ref{parametri_pioggia_efficace}.
+Il calcolo della portata di picco di deflusso, utilizzando il metodo razionale ed il valore CN medio, avviene applicando la formula del calcolo di picco \eqref{eq:picco_deflusso_Qt} ai valori di pioggia efficace \ref{parametri_pioggia_efficace}.
 
 \begin{table}[H] \centering
     \caption{\textcolor{red}{Risultati delle portate di picco, di base e totali per diversi tempi di ritorno.}}
-    \begin{tabular}{ccccccc}
+    \begin{tabular}{cccc}
     \toprule
-         & \multicolumn{2}{c}{Qt} & \multicolumn{2}{c}{Qbase} & \multicolumn{2}{c}{Qt+Qbase} \\
+         & \multicolumn{1}{c}{Qt [\unit{m^3/s}]} & \multicolumn{1}{c}{Qbase [\unit{m^3/s}]} & \multicolumn{1}{c}{Qt+Qbase [\unit{m^3/s}]} \\
     \midrule
-    Q2   & 1.06       & m3/s      & 0.11        & m3/s        & 1.17          & m3/s         \\
-    Q5   & 1.87       & m3/s      & 0.19        & m3/s        & 2.05          & m3/s         \\
-    Q30  & 3.59       & m3/s      & 0.36        & m3/s        & 3.95          & m3/s         \\
-    Q50  & 4.13       & m3/s      & 0.41        & m3/s        & 4.55          & m3/s         \\
-    Q100 & 4.91       & m3/s      & 0.49        & m3/s        & 5.40          & m3/s         \\
-    Q200 & 5.74       & m3/s      & 0.57        & m3/s        & 6.31          & m3/s  \\
+    Q2   & 1.06 &  0.11 & 1.17 \\
+    Q5   & 1.87        & 0.19         & 2.05        \\
+    Q30  & 3.59   & 0.36        & 3.95         \\
+    Q50  & 4.13     & 0.41       & 4.55         \\
+    Q100 & 4.91      & 0.49     & 5.40           \\
+    Q200 & 5.74      & 0.57  & 6.31     \\
     \bottomrule      
     \end{tabular}
     \end{table}
@@ -378,7 +378,7 @@ Al fine di vedere graficamente come varia la portata alla sezione di chiusura, �
     \caption{\textcolor{red}{Portate di deflusso alla sezione di chiusura, a seconda dell'attimo considerato.}}
     \begin{tabular}{ccccccc}
         \toprule
-    tempo & \multicolumn{6}{c}{Qt+Qbase}           \\
+    tempo & \multicolumn{6}{c}{Qt+Qbase [\unit{m^3/s}]}           \\
     \midrule
 & Tr=2anni & Tr=5anni & Tr=30anni & Tr=50anni & Tr=100anni & Tr=200anni \\
 0 & 0.11  & 0.19     & 0.36      & 0.41      & 0.49       & 0.57       \\ 1.39 & 1.17  & 2.05  & 3.95      & 4.55      & 5.40       & 6.31       \\
@@ -400,30 +400,30 @@ Avendo già riportato i passaggi precedentemente, verranno solamente riportati i
     \caption{\textcolor{red}{Calcolo della pioggia efficace, mediante l'utilizzo del coefficiente di deflusso, calcolato in precedenza}}
     \begin{tabular}{cccc}
         \toprule
-                & Tc (ore) & P cr  & Pe cr (mm) \\
+        Tr (anni)        & Tc (ore) & P cr  & Pe cr (mm) \\
         \midrule
-    Tr=2 anni   & 1.39     & 26.50 & 2.64       \\
-    Tr=5 anni   & 1.39     & 33.64 & 4.64       \\
-    Tr=30 anni  & 1.39     & 45.50 & 8.93       \\
-    Tr=50 anni  & 1.39     & 48.76 & 10.29      \\
-    Tr=100 anni & 1.39     & 53.15 & 12.23      \\
-    Tr=200 anni & 1.39     & 57.53 & 14.28      \\
+    2   & 1.39     & 26.50 & 2.64       \\
+    5    & 1.39     & 33.64 & 4.64       \\
+    30   & 1.39     & 45.50 & 8.93       \\
+    50   & 1.39     & 48.76 & 10.29      \\
+    100 & 1.39     & 53.15 & 12.23      \\
+    200 & 1.39     & 57.53 & 14.28      \\
     \bottomrule
     \end{tabular}
     \end{table}
 
 \begin{table}[H] \centering
         \caption{\textcolor{red}{Risultati delle portate di picco, di base e totali per diversi tempi di ritorno.}}
-        \begin{tabular}{ccccccc}
+        \begin{tabular}{cccc}
             \toprule
-        & \multicolumn{2}{c}{Qt} & \multicolumn{2}{c}{Qbase} & \multicolumn{2}{c}{Qt+Qbase} \\
+        & \multicolumn{1}{c}{Qt [\unit{m^3/s}]} & \multicolumn{1}{c}{Qbase [\unit{m^3/s}]} & \multicolumn{1}{c}{Qt+Qbase [\unit{m^3/s}]} \\
         \midrule
-        Q2   & 1.06       & m3/s      & 0.11        & m3/s        & 1.17          & m3/s         \\
-        Q5   & 1.87       & m3/s      & 0.19        & m3/s        & 2.05          & m3/s         \\
-        Q30  & 3.59       & m3/s      & 0.36        & m3/s        & 3.95          & m3/s         \\
-        Q50  & 4.13       & m3/s      & 0.41        & m3/s        & 4.55          & m3/s         \\
-        Q100 & 4.91       & m3/s      & 0.49        & m3/s        & 5.40          & m3/s         \\
-        Q200 & 5.74       & m3/s      & 0.57        & m3/s        & 6.31          & m3/s    \\
+        Q2   & 1.06    & 0.11   & 1.17         \\
+        Q5   & 1.87  & 0.19  & 2.05  \\
+        Q30  & 3.59     & 0.36 & 3.95        \\
+        Q50  & 4.13  & 0.41   & 4.55  \\
+        Q100 & 4.91  & 0.49    & 5.40     \\
+        Q200 & 5.74 & 0.57 & 6.31    \\
         \bottomrule    
         \end{tabular}
 \end{table}
@@ -432,7 +432,7 @@ Avendo già riportato i passaggi precedentemente, verranno solamente riportati i
     \caption{\textcolor{red}{Portate di deflusso alla sezione di chiusura, a seconda dell'attimo considerato.}}
     \begin{tabular}{ccccccc}
         \toprule
-    tempo & \multicolumn{6}{c}{Qt+Qbase}    \\
+    tempo & \multicolumn{6}{c}{Qt+Qbase [\unit{m^3/s}]}    \\
     \midrule
 & Tr=2anni & Tr=5anni & Tr=30anni & Tr=50anni & Tr=100anni & Tr=200anni \\
     0                      & 0.11     & 0.19     & 0.36      & 0.41      & 0.49       & 0.57       \\
@@ -465,7 +465,7 @@ Per il solo fine di esempio, si è deciso di applicare la formula di Forti (II):
     q = 2.35 \cdot \frac{500}{A+125}+0.5
 \end{equation}
 Questo metodo prevede che l'evento pluviometrico che genera il deflusso abbia apportato al suolo un'altezza di precipitazione di 200-250 mm, per la durata di 24 ore.\\
-Essendo che la superficie del bacino in analisi è di 2.01 $km^2$, l'applicazione della precedente formula restituisce un valore di portata unitaria pari a 9.75 $\frac{m^3}{s \cdot km^2}$; di conseguenza, la portata di picco Q del bacino è pari a 19.60 $m^3/s$.\\
+Essendo che la superficie del bacino in analisi è di 2.01 \unit{km^2}, l'applicazione della precedente formula restituisce un valore di portata unitaria pari a 9.75 $\frac{m^3}{s \cdot km^2}$; di conseguenza, la portata di picco Q del bacino è pari a 19.60 \unit{m^3/s}.\\
 Confrontando tale valore con quelli precedenti, ne risulta che quello calcolato con il metodo empirico tende a sovrastimare eccessivamente l'evento idraulico uscente dal bacino.
 
 \subsection{Studio del deflusso con tempo di pioggia superiore a quello di corrivazione (metodo razionale)}
@@ -506,7 +506,7 @@ Invertendo gli assi della curva ipsografica è possibile ricavare altre due impo
 \begin{figure}[H]
 \begin{equation}
     h \rightarrow t= T_c \cdot \frac{h - h_0}{h_{max} - h_0}
-    \label{h_tcontribuzione}
+    \label{eq:h_tcontribuzione}
 \end{equation}
 \caption*{Ad ogni quota $h$ corrisponde un tempo di contribuzione $t$.}
 \end{figure}
@@ -514,7 +514,7 @@ Invertendo gli assi della curva ipsografica è possibile ricavare altre due impo
 \begin{figure}[H]
 \begin{equation}
     A(h) \rightarrow A_{TOTALE} - A(h) = A(t)
-    \label{Acontribuzione_tprecipitazione}
+    \label{eq:Acontribuzione_tprecipitazione}
 \end{equation}
 \caption*{Area contribuente alla quota $h$ e dopo un tempo $t$ dall'inizio della precipitazione.}
 \end{figure}
@@ -540,12 +540,12 @@ Mediante l'utilizzo di questo metodo, si assume che:
 
 \subsubsection{Calcolo delle aree contribuenti}
 Al fine di svolgere i calcoli di stima del deflusso alla sezione di chiusura (qualsiasi sia la tipologia di metodo cinematico), occorre conoscere le aree contribuenti del bacino, mediante la curva ipsometrica.\\
-Infatti, conoscendo la superficie contribuente cumulata e la quota inferiore di ogni area (ovvero l'isoipsa minore), tramite le formule \ref{h_tcontribuzione} e \ref{Acontribuzione_tprecipitazione} è possibile calcolare il tempo di corrivazione corrispondente a qualsiasi quota e l'area contribuente dopo un certo tempo di precipitazione.
+Infatti, conoscendo la superficie contribuente cumulata e la quota inferiore di ogni area (ovvero l'isoipsa minore), tramite \eqref{eq:h_tcontribuzione} e \eqref{eq:Acontribuzione_tprecipitazione} è possibile calcolare il tempo di corrivazione corrispondente a qualsiasi quota e l'area contribuente dopo un certo tempo di precipitazione.
 \begin{table}[H] \centering
 \caption{\textcolor{red}{Tempi di contribuzione per ogni area contribuente del bacino idrografico ed area contribuente relativa alla quota altimetrica.}}
     \begin{tabular}{cccc}
 \toprule
-Aree cum. [$km^2$]& Quota inf. isocorr. [m s.l.m.] &  T contrib. (min) & Area contrib. A(t) [$km^2$] \\
+Aree cum. [\unit{km^2}]& Quota inf. isocorr. [m s.l.m.] &  T contrib. (min) & Area contrib. A(t) [\unit{km^2}] \\
 \midrule
     0.00          & 2050                       & 83.00                       & 2.01                   \\
     0.02          & 2000                       & 78.21                       & 1.99                   \\
@@ -581,7 +581,7 @@ Utilizzando la funzione che il programma di calcolo restituisce, è necessario c
     \caption{\textcolor{red}{Risultati numerici delle aree contribuenti cumulate ed incrementali, in funzione del tempo di precipitazione.}}
     \begin{tabular}{ccc}
     \toprule
-    t (min) & A contrib. (t) $[km^2]$& A contrib. increm. $[km^2]$\\
+    t (min) & A contrib. (t) [\unit{km^2}]& A contrib. increm. [\unit{km^2}]\\
 \midrule
     0       & 0.00               & 0.000                       \\
     10      & 0.01               & 0.009                       \\
@@ -672,7 +672,7 @@ Infine, il calcolo del deflusso totale termina con la somma degli effetti di tut
     \begin{tabular}{cccc}
         \toprule
         Tempo    & Q(t)   & Q(t) + Qb           & V                 \\
-        (minuti) & $(m^3/s)$ & $(m^3/s)$ & $(m^3)$              \\
+        (minuti) & \unit{m^3/s}& \unit{m^3/s} & \unit{m^3}    \\
         \midrule
         0.00     & 0.00   & 0.72                & 433.31            \\
         10.00    & 0.00   & 0.72                & 433.33            \\
@@ -693,7 +693,7 @@ Infine, il calcolo del deflusso totale termina con la somma degli effetti di tut
         160.00   & 0.00   & 0.72                & 433.31            \\
         170.00   & 0.00   & 0.72                & 433.31            \\
         \bottomrule
-                 &        & Volume tot & 35907.91 $m^3$
+                 &        & Volume tot & 35907.91 \unit{m^3}
         \end{tabular}
         \end{table}
 
@@ -767,7 +767,7 @@ Al contrario del metodo precedente, in questo tabella i valori di differenza di 
         \begin{tabular}{cccc}
         \toprule
         tempo        & Q(t)       & Q(t) + Qb  & V        \\
-        (minuti)     & $(m^3/s)$  & $(m^3/s)$   & $(m^3)$     \\
+        (minuti)     & \unit{m^3/s}  & \unit{m^3/s} & \unit{m^3}\\
         \midrule
         0.00         & 0.00       & 0.78       & 470.13   \\
         10.00        & 0.00       & 0.78       & 470.13   \\
@@ -787,7 +787,7 @@ Al contrario del metodo precedente, in questo tabella i valori di differenza di 
         150.00       & 0.27       & 1.05       & 630.79   \\
         160.00       & 0.00       & 0.78       & 470.13   \\
         170.00       & 0.00       & 0.78       & 470.13   \\
-                     &            & Volume tot & 36570.73 $m^3$ \\
+                     &            & Volume tot & 36570.73 \unit{m^3} \\
         \bottomrule
         \end{tabular}
         \end{table}
@@ -859,7 +859,7 @@ Essendo i procedimenti uguali ai due casi precedenti, verranno riportati solamen
         \begin{tabular}{cccc}
         \toprule
         tempo    & Q(t)   & Q(t) + Qb  & V        \\
-        (minuti) & $(m^3/s)$ & $(m^3/s)$     & $(m^3)$     \\
+        (minuti) & \unit{m^3/s}& \unit{m^3/s} & \unit{m^3}  \\
         \midrule
         0.00     & 0.00   & 0.85       & 507.24   \\
         10.00    & 0.00   & 0.85       & 507.24   \\
@@ -879,7 +879,7 @@ Essendo i procedimenti uguali ai due casi precedenti, verranno riportati solamen
         150.00   & 3.46   & 4.30       & 2581.12  \\
         160.00   & 0.00   & 0.85       & 507.24   \\
         170.00   & 0.00   & 0.85       & 507.24   \\
-                 &        & Volume tot & 37238.59 $m^3$\\
+                 &        & Volume tot & 37238.59 \unit{m^3}\\
         \bottomrule
         \end{tabular}
         \end{table}
@@ -897,7 +897,7 @@ Essendo i procedimenti uguali ai due casi precedenti, verranno riportati solamen
         \begin{tabular}{cccc}
         \toprule
         Metodo di calcolo & Q(t) di picco  & Q(t) + Qb  di picco & V totale    \\
-         & $(m^3/s)$ & $(m^3/s)$  & $(m^3)$     \\
+         & \unit{m^3/s}& \unit{m^3/s} & \unit{m^3} \\
          \midrule
 Intensità costante & 7.22 & 7.94 & 35907.91 \\
 Intensità a bl. alterni & 7.84 & 8.62 & 36570.73\\

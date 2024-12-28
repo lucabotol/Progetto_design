@@ -22,7 +22,7 @@ Questo concetto può essere compreso considerando la ``Bilancia di Lane" (1955),
 Matematicamente, il comportamento di un torrente al fine di ottenere l'equilibrio può essere riportato con questa formula:
 \begin{equation}
     Q_L \cdot S \overset{=}{\propto} Q_S \cdot D_{50}
-    \label{bilancia_lane}
+    \label{eq:bilancia_lane}
 \end{equation}
 Dove:
 \begin{itemize}
@@ -31,7 +31,7 @@ Dove:
     \item $Q_S$ indica la portata solida di sedimenti trasportata;
     \item $D_{50}$ indica il valore mediano della serie granulometrica rilevata nell'alveo.
 \end{itemize}
-La formula \ref{bilancia_lane} può anche essere considerata come se al primo membro fosse rappresentata la ``stream power" del fiume ed al secondo membro fosse riportato l'attrito al movimento.\\
+La formula \eqref{eq:bilancia_lane} può anche essere considerata come se al primo membro fosse rappresentata la ``stream power" del fiume ed al secondo membro fosse riportato l'attrito al movimento.\\
 Secondo la ``Classificazione di Horatiis" (1930), i tratti fluviali di montagna possono essere suddivisi in:
 \begin{itemize}
     \item torrenti di trasporto: l'energia della corrente è tale da essere completamente impegnata nel trasporto di materiale solido a valle; il letto tende a non abbassarsi o ad alzarsi. Le opere progettate per questi tratti hanno l'obiettivo di trattenere il sedimento;
@@ -127,7 +127,7 @@ Mentre, per quanto riguarda lo sforzo agente sulle sponde, il calcolo avviene me
 Secondo le ricerche Shields (1936), e successive semplificazioni, la relazione tra sforzo al fondo e grandezza dei sedimenti è regolata dalla formula:
 \begin{equation}
     \tau_c \approx 1000 \cdot D
-    \label{tau_cr_shields}
+    \label{eq:tau_cr_shields}
 \end{equation}
 \subsubsection{Approccio deterministico per la stima di $i_c$}
 Secondo Shields (1936), la formula per il calcolo dello sforzo tangenziale critico è:
@@ -158,17 +158,17 @@ K_s \approx \frac{26}{D_{90}^{1/6}}
 Essendo che la portata $Q$ è calcolabile come il prodotto dell'area per la velocità, è possibile esplicitare tutte e due le componenti della formula, che diventa:
 \begin{equation}
     Q = (Ks \cdot Rh^{2/3} \cdot \sqrt{i_c}) \cdot (B \cdot h)
-    \label{portata_sez_rett}
+    \label{eq:portata_sez_rett}
 \end{equation}
 Dove:
 \begin{itemize}
     \item Ks è il coefficiente di scabrezza del fondo $\left[\frac{m^{1/3}}{s^{-1}}\right]$;
-    \item Rh indica il raggio idraulico $[m]$;
-    \item $i_c$ è la pendenza di correzione $\left[m/m\right]$;
-    \item B è la larghezza dell'alveo $[m]$;
-    \item h è la profondità del tirante idraulico $[m]$.
+    \item Rh indica il raggio idraulico [\unit{m}];
+    \item $i_c$ è la pendenza di correzione [\unit{m/m}];
+    \item B è la larghezza dell'alveo [\unit{m}];
+    \item h è la profondità del tirante idraulico [\unit{m}].
 \end{itemize}
-Sostituendo alla formula \ref{portata_sez_rett} il raggio idraulico, la formula diventa:
+Sostituendo a \eqref{eq:portata_sez_rett} il raggio idraulico, la formula diventa:
 \begin{equation}
     Q = (Ks \cdot h^{2/3} \cdot \sqrt{i_c}) \cdot (B \cdot h)
 \end{equation}
@@ -180,7 +180,7 @@ Che diventa:
 Il procedimento prosegue mediante il calcolo della pendenza di correzione:
 \begin{equation}
     i_c = \left(\frac{0.1 \cdot D_{90} \cdot ks^{0.6} \cdot B^{0.6}}{Q^{0.6}_{30}} \right) ^{1.43}
-    \label{pend_critica_iterativo}
+    \label{eq:pend_critica_iterativo}
 \end{equation}
 La profondità del tirante relativo alla condizione critica è calcolabile mediante la formula:
 \begin{equation}
@@ -189,9 +189,9 @@ La profondità del tirante relativo alla condizione critica è calcolabile media
 Nel caso in cui il rapporto tra $h_c$ e $D_{84}$ è minore a 3.5, è possibile iniziare il procedimento di calcolo iterattivo mediante la formula di Barhurst (1985):
 \begin{equation}
     Ks= \frac{\sqrt{g}}{h^{1/6}} \left[5.62 \cdot \log \left(\frac{h}{D_{84}}\right)+4\right]
-    \label{ks_scabrezza_barhurst}
+    \label{eq:ks_scabrezza_barhurst}
 \end{equation}
-Dal valore di scabrezza calcolato è possibile ricavare il valore di pendenza critica, sempre mediante la formula \ref{pend_critica_iterativo}. Il procedimento iterativo termina quando il valore di scabrezza ks non si discosta molto da quello ricavato precedentemente.
+Dal valore di scabrezza calcolato è possibile ricavare il valore di pendenza critica, sempre mediante \eqref{eq:pend_critica_iterativo}. Il procedimento iterativo termina quando il valore di scabrezza ks non si discosta molto da quello ricavato precedentemente.
 
 \subsection{Determinazione di altezza e numero di briglie di consolidamento}
 Successivamente ad aver calcolato la pendenza di correzione più ottimale per il caso di studio, è necessario valutare le misure di massima delle briglie, quali altezza, numero ed interdistanza tra ciascuna.\\
@@ -237,8 +237,8 @@ Mediante dei semplici passaggi matematici, svolti nel programma di calcolo, è p
 
 Successivamente ad aver svolto per due volte i calcoli iterativi, al fine di ottenere i valori di scabrezza e di pendenza maggiormente ottimali, si è giunti ai seguenti risultati:
 \begin{itemize}
-    \item ks = 17.0 $m^{1/3}/s$;
-    \item $i_c$ = 0.110 $m/m$.
+    \item ks = 17.0 \unit{m^{1/3}/s};
+    \item $i_c$ = 0.110 \unit{m/m}.
 \end{itemize}
 
 Infine, si procede al calcolo del numero di opere in serie da ereggere e le relative interdistanze, imponendo l'altezza del livello inferiore della gaveta.\\
@@ -270,7 +270,7 @@ La scelta del numero e delle altezze delle briglie verrà fatta successivamente,
 \subsection{Calcolo preliminare del trasporto solido}
 Al fine di studiare la quantità di sedimenti trasportati durante un qualsiasi evento di piena, occorre riuscire a calcolare la relativa capacità massima di trasporto di materiale solido al fondo del corso d'acqua.\\
 Shields (1936), grazie ai suoi studi effettuati sul trasporto solido, riuscì a ricavare empiricamente la formula dello sforzo tangenziale critico (necessario a muovere i sedimenti nel letto di un fiume), in funzione del peso specifico dell'acqua, dei sedimenti e della grandezza delle particelle granulometriche.\\
-Tale formula, già riportata precedentemente, è la \ref{tau_cr_shields}.\\
+Tale formula, già riportata precedentemente, è la \eqref{eq:tau_cr_shields}.\\
 Da tale formula è possibile calcolare l'altezza del tirante idraulico che genera lo sforzo tangenziale in grado di muovere i sedimenti, conoscendo il peso volumetrico dell'acqua in movimento e della pendenza del corso:
 \begin{equation}
     h_c = \frac{\tau_c}{\gamma \cdot i} 
@@ -281,13 +281,13 @@ Mediante la conoscenza delle pendenze del tratto precedentemente e successivamen
     \caption{\textcolor{red}{Trasporto solido di fondo calcolato nelle condizioni precedenti e posteriori alla sistemazione idraulica del tratto di corso studiato.}}
     \begin{tabular}{cccclccccl}
     \toprule
-    \multicolumn{4}{c}{Situazione ANTE SISTEMAZIONE} & & \multicolumn{4}{c}{Situazione POST SISTEMAZIONE} &      \\
+    \multicolumn{4}{c}{Sit. ANTE SISTEMAZIONE} & & \multicolumn{4}{c}{Sit. POST SISTEMAZIONE} &      \\
     i0 = & 0.205 & & & &ic = & 0.110 & & &      \\
     \midrule
     & $D_{50}$ & $D_{84}$ & $D_{90}$ & & & $D_{50}$ & $D_{84}$ & $D_{90}$ & \\
     \midrule
     & 0.089 & 0.215 & 0.256 & m & & 0.089 & 0.215 & 0.256  & m  \\
-    $\tau_c$ & 89 & 215 & 256 & $\frac{N}{m^2}$ & $\tau_c$ & 89 & 215 & 256 & $\frac{N}{m^2}$\\
+    $\tau_c$ & 89 & 215 & 256 & \unit{N/m^2} & $\tau_c$ & 89 & 215 & 256 & \unit{N/m^2}\\
     $h_c$ & 0.04 & 0.11 & 0.13 & m & $h_c$ & 0.08 & 0.20 & 0.24 & m  \\
    % $Q_c$ & 0.015 & 0.898 & 1.378 & $\frac{m^3}{s}$ & $Q_c$ & 0.32 & 2.71 & 3.90 & $\frac{m^3}{s}$\\
     \bottomrule
@@ -297,7 +297,7 @@ Come previsto, mediante le opere di sistemazione idraulica dei tratti, si increm
 In questo caso, come osservabile nella tabella precedente, il tirante idraulico critico post sistemazione è molto superiore (quasi il doppio) rispetto a quello pre-sistemazione.
 
 \subsection{Calcolo della portata critica di trasporto}
-Successivamente ad aver calcolato la profondità del tirante idraulico critico, ovvero necessario a muovere i sedimenti nel letto del corso d'acqua, si procede a calcolare la relativa portata critica, valutando nuovamente la scabrezza, mediante la formula \ref{ks_scabrezza_barhurst}.\\
+Successivamente ad aver calcolato la profondità del tirante idraulico critico, ovvero necessario a muovere i sedimenti nel letto del corso d'acqua, si procede a calcolare la relativa portata critica, valutando nuovamente la scabrezza, mediante \eqref{eq:ks_scabrezza_barhurst}.\\
 Il valore di flusso critico si ricava applicando la formula generale della portata idraulica:
 \begin{equation}
     Q_c = v_c \cdot A
@@ -308,7 +308,7 @@ Per la condizione precedente alla costruzione delle opere idrauliche, con penden
 \caption{\textcolor{red}{Valori di portata critica del trasporto solido, nelle condizioni precedenti alla costruzione delle opere idrauliche di correzione della pendenza.}}
 \begin{tabular}{ccccccccccc}
 \toprule
-& h (m) & A $(m^2)$ & C (m) & R (m) & $h/d_{84}$ & Ks& v (m/s)& Qc $(m^3/s)$ \\
+& h (m) & A (\unit{m^2})& C (m) & R (m) & $h/d_{84}$ & Ks& v (m/s)& Qc (\unit{m^3/s}) \\
 \midrule
 $D_{50}$& 0.04 & 0.355 & 8.09  & 0.044 & 0.206 & 0.8  & 0.043 & 0.015 \\
 $D_{84}$ & 0.11 & 0.857 & 8.21 & 0.104 & 0.498 & 10.4 & 1.048   & 0.898 \\
@@ -322,7 +322,7 @@ Per quanto riguarda i calcoli nelle condizioni successive alla costruzione delle
 \caption{\textcolor{red}{Valori di portata critica del trasporto solido, nelle condizioni successive alla costruzione delle opere idrauliche di correzione della pendenza.}}
 \begin{tabular}{ccccccccccc}
 \toprule
-& h (m) & A $(m^2)$ & C (m) & R (m) & $h/d_{84}$ & Ks& v (m/s)& Qc $(m^3/s)$ \\
+& h (m) & A (\unit{m^2}) & C (m) & R (m) & $h/d_{84}$ & Ks& v (m/s)& Qc (\unit{m^3/s})\\
 \midrule
 $D_{50}$& 0.08  & 0.658  & 8.16  & 0.081 & 0.383 & 7.9 & 0.487 & 0.320\\
 $D_{84}$ & 0.20 & 1.590  & 8.40  & 0.189 & 0.924 & 15.6 & 1.707 & 2.715 \\
@@ -346,7 +346,7 @@ Il calcolo della portata critica verrà svolta mediante la formula $q_s=2.5 \cdo
 & \multicolumn{2}{c}{Sit. ANTE SISTEM.} & \multicolumn{2}{c}{Sit. POST SISTEM.} \\
 \midrule
 tempo  & $Qs(i_0)$ & $Vs(i_0)$ & $Qs(i_c)$  & $Vs(i_c)$  \\
-(minuti) & $(m^3/s)$ & $(m^3)$ & $(m^3/s)$ & $(m^3)$  \\
+(minuti) & (\unit{m^3/s}) & (\unit{m^3}) & (\unit{m^3/s})&(\unit{m^3})  \\
 \midrule
     0     & 0.00 & 0.00 & 0.00 & 0.00   \\
     10    & 0.00 & 0.00  & 0.00  & 0.00                   \\
@@ -370,8 +370,8 @@ tempo  & $Qs(i_0)$ & $Vs(i_0)$ & $Qs(i_c)$  & $Vs(i_c)$  \\
     \end{tabular}
     \end{table}
 
-Il volume totale dei materiale solido trasportato, nelle condizioni pre-sistemazione è pari a 6675.57 $m^3$, mentre nelle condizioni post-sistemazioni è pari a 2195.65 $m^3$.\\
-Essendo il volume liquido transitato pari a 36100.60 $m^3$, è possibile ricavare la concentrazione di materiale solido: nel caso delle condizioni precedenti alla costruzione dell'opera idraulica è pari a 15.61\%, mentre nelle condizioni successive all'intervento idraulico è pari a 5.73\%. La riduzione di trasporto solido, tra le due condizioni di analisi, è del 63.26\% di volume.
+Il volume totale dei materiale solido trasportato, nelle condizioni pre-sistemazione è pari a 6675.57 \unit{m^3}, mentre nelle condizioni post-sistemazioni è pari a 2195.65 \unit{m^3}.\\
+Essendo il volume liquido transitato pari a 36100.60 \unit{m^3}, è possibile ricavare la concentrazione di materiale solido: nel caso delle condizioni precedenti alla costruzione dell'opera idraulica è pari a 15.61\%, mentre nelle condizioni successive all'intervento idraulico è pari a 5.73\%. La riduzione di trasporto solido, tra le due condizioni di analisi, è del 63.26\% di volume.
 
 \begin{figure}[H] \centering
     \includegraphics[scale=0.75]{immagini/sedimentogramma.png}
@@ -413,7 +413,7 @@ Infine, dal valore della tensione agente sul fondo si termina lo studio del tras
 & \multicolumn{3}{c}{Sit. ANTE SISTEM.} & \multicolumn{3}{r}{Sit. POST SISTEM.} \\
 \midrule
     tempo & $\tau(i_o)$ & $Q_s(i_o)$ & $V_s(i_o)$ & $\tau(i_c)$ & $Q_s(i_c)$ & $V_s(i_c)$ \\
-    (minuti) & ($N/m^2$) & $(m^3/s)$ & $(m^3)$ & $N/m^2$ & $(m^3/s)$ & $(m^3)$ \\
+    (minuti) & (\unit{N/m^2}) & (\unit{m^3/s}) & (\unit{m^3}) & (\unit{N/m^2}) & (\unit{m^3/s}) & (\unit{m^3}) \\
 \midrule
     0 & 0.00 & 0.00   & 0.00 & 0.00     & 0.00   & 0.00   \\
     10 & 214.33 & 0.12   & 74.75 & 129.82      & 0.02   & 14.85  \\
@@ -436,8 +436,8 @@ Infine, dal valore della tensione agente sul fondo si termina lo studio del tras
     \bottomrule
     \end{tabular}
     \end{table}
-La portata solida totale trasporta precedentemente alla realizzazione dell'opera è pari a 7764.51 $m^3$, mentre per quella successiva alla sistemazione idraulica è di 2403.49 $m^3$.\\
-Essendo la portata liquida totale pari a 36100.60 $m^3$, la concentrazione solida antecedente al miglioramento idraulico è di 17.70\%, mentre per quella successiva è di 6.24\%. La riduzione del trasporto solido, in presenza o in assenza delle briglie, è del 64.74\%.\\
+La portata solida totale trasporta precedentemente alla realizzazione dell'opera è pari a 7764.51 \unit{m^3}, mentre per quella successiva alla sistemazione idraulica è di 2403.49 \unit{m^3}.\\
+Essendo la portata liquida totale pari a 36100.60 \unit{m^3}, la concentrazione solida antecedente al miglioramento idraulico è di 17.70\%, mentre per quella successiva è di 6.24\%. La riduzione del trasporto solido, in presenza o in assenza delle briglie, è del 64.74\%.\\
 \begin{figure}[H] \centering
     \includegraphics[scale=0.75]{immagini/sedimentogramma_smart_jaeggy.png}
     \caption{Sedimentogramma dell'evento di piena, per tempo di ritorno pari a 200 anni, calcolata mediante il metodo di Smart e Jaeggy.}
