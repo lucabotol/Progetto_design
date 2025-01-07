@@ -15,7 +15,8 @@ Dove:
     \item $k$ è l'ordine del bacino, nel caso di quello preso in considerazione il valore è 3;
     \item $u$ è l'ordine del tratto di reticolo considerato.
 \end{itemize}
-La prima legge di Horton inoltre, evidenzia come all'aumentare dell'ordine dei tratti, la lunghezza dei segmenti e le aree dei sottobacini aumentino, mentre cala la loro numerosità.\\
+La prima legge di Horton inoltre, evidenzia come all'aumentare dell'ordine dei tratti, la lunghezza dei segmenti e le aree dei sottobacini aumentino, mentre cala la loro numerosità.
+
 \paragraph{Reticolo idrografico, secondo la CTP} Nel caso del reticolo idrografico della CTP preso da noi in esame, i parametri sono: 
 
 \begin{table}[H] \centering
@@ -32,11 +33,11 @@ La prima legge di Horton inoltre, evidenzia come all'aumentare dell'ordine dei t
 \end{tabular}
 \end{table}
 Il rapporto di biforcazione medio $\bar{R}_b$, secondo il ragionamento svolto sulla CTP è pari a \num{2.3}.\\
-Interpolando i valori degli ordini dei segmenti, con la loro numerosità e con il parametro ricavato dalla prima legge di Horton, si ottiene un grafico caratteristico:
+Interpolando i valori degli ordini dei segmenti, con la loro numerosità e con il parametro ricavato dalla prima legge di Horton, si ottiene un grafico caratteristico \eqref{figure:legge_horton}.
 \begin{figure}[H]\centering
     \includegraphics[scale=.75]{immagini/legge_horton.png}
-    \caption{Relazione tra l'ordine del tratto, la sua numerosità e la funzione di Horton.}
-    \label{legge_horton}
+    \caption{Relazione tra l'ordine del tratto, la sua numerosità e la funzione di Horton (secondo la CTP).}
+    \label{figure:legge_horton}
 \end{figure}
 
 \paragraph{Reticolo idrografico, secondo il DTM} Nel caso dello studio del reticolo idrografico mediante l'utilizzo di Qgis e del relativo file DTM, i parametri estratti sono i seguenti:
@@ -55,11 +56,11 @@ Interpolando i valori degli ordini dei segmenti, con la loro numerosità e con i
 \end{table}
 
 Il rapporto di biforcazione medio $\bar{R}_b$, secondo il ragionamento svolto sul DTM è pari a \num{3.5}.\\
-Interpolando i valori degli ordini dei segmenti, con la loro numerosità e con il parametro ricavato dalla prima legge di Horton, si ottiene un grafico caratteristico:
+Interpolando i valori degli ordini dei segmenti, con la loro numerosità e con il parametro ricavato dalla prima legge di Horton, si ottiene un grafico caratteristico \eqref{figure:legge_horton_qgis}.
 \begin{figure}[H]\centering
     \includegraphics[scale=.75]{immagini/legge_horton_qgis.png}
-    \caption{Relazione tra l'ordine del tratto, la sua numerosità e la funzione di Horton.}
-    \label{legge_horton_qgis}
+    \caption{Relazione tra l'ordine del tratto, la sua numerosità e la funzione di Horton (secondo il DTM).}
+    \label{figure:legge_horton_qgis}
 \end{figure}
 
 \vspace{1cm}
@@ -120,9 +121,10 @@ La formula è:
     \label{eq:quota_media}
 \end{equation}
 
-I calcoli, svolti in un foglio di calcolo elettronico, sono qui sotto riportati.
+I calcoli, svolti in un foglio di calcolo elettronico, sono riportati nella tabella \eqref{table:valori_caratt_altimetria}.
 
 \begin{table}[H]
+    \caption{\textcolor{red}{Valori caratteristici del bacino idrografico, suddivisi per fascia altimetrica.}}
     \begin{tabular}{cccccccc}
         \toprule
     Quote (m s.l.m.) & n° celle & $A_i$ (\unit{m^2}) & $A_i$ (\unit{km^2}) & $Hi_{min}$ & $Hi_{max}$ & $Hi_{media}$ & $A_i \cdot Hi_{media}$ \\
@@ -148,6 +150,7 @@ I calcoli, svolti in un foglio di calcolo elettronico, sono qui sotto riportati.
     2050-2085                 & 1317     & 1317    & 0.001317 & 2050   & 2085   & 2067     & 2.723        \\
     \bottomrule
 \end{tabular}
+\label{table:valori_caratt_altimetria}
     \end{table}
 Dove:
 \begin{itemize}
@@ -163,15 +166,17 @@ Essendo che l'area totale del bacino è di 2.01 \unit{km^2}, la formula \eqref{e
 
 \subsection{Curva ipsometrica del bacino}
 Al fine di valutare la condizione di dinamica temporale del bacino, risulta utile valutare le curve ipsometriche dello stesso.\\
-Osservando l'andamento della curva che lega l'area del bacino e la quota ortometrica (siano queste dimensionali o adimensionali), è possibile capire se l'ara studiata è in una condizione giovanile (dove prevale l'erosione), maturità (equilibrio) o senilità.
+Osservando l'andamento della curva che lega l'area del bacino e la quota ortometrica (siano queste dimensionali o adimensionali), è possibile capire se l'ara studiata è in una condizione giovanile (dove prevale l'erosione), maturità (equilibrio) o senilità \eqref{figure:curva_ipsometrica_dimensionale}\eqref{figure:curva_ipsometrica_adimensionale}.
 \begin{figure}[H] \centering
           \includegraphics[scale=0.7]{immagini/curva_ipsografica_dimens.png}
         \caption{Curva ipsografica dimensionale del bacino. In ascissa è indicato il valore di area cumulata, ed in ordinata la relativa quota ortometrica.}
-\label{curva_ipsometrica_dimensionale}
+\label{figure:curva_ipsometrica_dimensionale}
 \end{figure}    
+
 \begin{figure}[H] \centering
         \includegraphics[scale=0.8]{immagini/curva_ipsografica_adimens.png}
         \caption{Curva ipsografica adimensionale del bacino. Al contrario dell'altro grafico, i valori degli assi sono adimensionali, ovvero rapportati con i massimi della serie.}
+\label{figure:curva_ipsometrica_adimensionale}
 \end{figure}
 Mediante entrambi i grafici è possibile osservare come il bacino si trovi in uno stato di equilibrio.\\
 Mediante la bisettrice, nel secondo grafico, si può apprezzare maggiormente come, verso monte del bacino, l'erosione sia stata maggiore rispetto che a valle.
@@ -189,17 +194,19 @@ dove:
 \end{itemize}
 
 \subsection{Distribuzione della pendenza lungo il bacino}
-Conoscendo la pendenza di ogni singola fascia di quota, è possibile raffigurare in un grafico la pendenza media di ogni sezione di bacino, avente quote altimetriche simili.
+Conoscendo la pendenza di ogni singola fascia di quota, è possibile raffigurare in un grafico \eqref{figure:distr_pendenza_bacino} la pendenza media di ogni sezione di bacino, avente quote altimetriche simili.
 \begin{figure}[H] \centering
 \includegraphics[scale=0.8]{immagini/istogramma_distribuzione_pendenze.png}
     \caption{Istogramma indicante le distribuzioni delle pendenze del bacino.}
+    \label{figure:distr_pendenza_bacino}
 \end{figure}
 
 \subsection{Distribuzione delle aree del bacino}
-Il seguente grafico indica come l'area del bacino idrografico venga suddivisa in base alla fascia altimetrica.
+Il grafico \eqref{figure:distr_aree_bacino} indica come l'area del bacino idrografico venga suddivisa in base alla fascia altimetrica.
 \begin{figure}[H] \centering
     \includegraphics[scale=0.8]{immagini/istogramma_distribuzione_aree.png}
     \caption{Istogramma indicante le distribuzioni delle aree del bacino.}
+\label{figure:distr_aree_bacino}
 \end{figure}
 
 \subsection{Profilo altimetrico del torrente}
@@ -207,13 +214,15 @@ Il profilo altimetrico del torrente (che nel nostro caso è il corso principale 
 \begin{figure}[H] \centering
     \includegraphics[scale=0.8]{immagini/prof_coll_princ.png}
     \caption{Profilo longitudinale del collettore del bacino idrografico.}
+\label{figure:coll_princ}
 \end{figure}
-Il grafico è stato ricavato mediante l'utilizzo di un foglio elettronico di calcolo, utilizzando i dati provenienti da Qgis.\\
+
+Il grafico \eqref{figure:coll_princ} è stato ricavato mediante l'utilizzo di un foglio elettronico di calcolo, utilizzando i dati provenienti da Qgis.\\
 Inoltre, mediante tali dati è possibile ricavare la pendenza media del tratto principale del corso idraulico (28.94\%, oppure 16.14°) e la sua lunghezza totale (2401 \unit{m}).
 
 
 \subsection{Caratteristiche del bacino idrografico}
-Successivamente ad aver analizzato in modo completo il bacino idrografico, è possibile redigere una tabella riassuntiva.
+Successivamente ad aver analizzato in modo completo il bacino idrografico, è possibile redigere una tabella riassuntiva \eqref{table:valori_globali}.
 \begin{table}[H] \centering
     \caption{\textcolor{red}{Caratteristiche del bacino idrografico  del torrente Sigismondi chiuso alla confluenza con il torrente Fersina.}}
     \label{tab:caratteristiche_bacino}
@@ -241,4 +250,5 @@ Successivamente ad aver analizzato in modo completo il bacino idrografico, è po
     Pendenza media del collettore principale & & [\unit{m/m}] & 0.289\\  
     \bottomrule
 \end{tabular}
+\label{table:valori_globali}
 \end{table}
