@@ -109,7 +109,18 @@ Secondo Heede (1960), il calcolo di $i_c$ avviene mediante:
 \begin{equation}
     i_c = (0.6 - 0.7) \cdot i_0
 \end{equation}
-
+\subsubsection{Approccio del confronto}
+Questo metodo è applicabile ogni qual volta sia necessario svolgere una sistemazione idraulica, in un torrente dov'è già presente una o pù briglie di consolidamento.\\
+Infatti, mediante il confronto con l'opera pre-esistente, è possibile applicare la formula di Thiery:
+\begin{equation}
+    i'_c = i_c \cdot \frac{Q}{Q'} \cdot \frac{B'}{B}
+\end{equation}
+Dove:
+\begin{itemize}
+    \item \unit{i_c} è riferito al tratto già sistemato;
+    \item \unit{i'_c} è riferito al tratto da sistemare;
+    \item viene ipotizzata che la velocità di passaggio nelle due briglie sia uguale.
+\end{itemize}
 \subsubsection{Approccio mediante lo sforzo tangenziale medio}
 Considerando le condizioni di moto uniforme ($i_F=i_E=i$), la corrente esercita sul contorno uno sforzo tangenziale medio, con formula:
 \begin{equation}
@@ -144,7 +155,10 @@ Tale formula può anche essere riscritta, diventando:
 \begin{equation}
     i_c = \frac{\tau_c^* \cdot (\gamma_s-\gamma) \cdot D}{\gamma \cdot Rh}
 \end{equation}
-
+Questa formula coincide con quella ipotizzata da Valentini (1895), in seguito allo studio delle sistemazioni idrauliche in Valtellina:
+\begin{equation}
+    i_c = 0.1 \cdot \frac{D}{Rh}
+\end{equation}
 \subsubsection{Soluzione esplicita semplificata per sezioni rettangolari molto larghe}
 Nel caso in cui il corso d'acqua dovesse passare attraverso una sezione rettangolare ampia e con un tirante idraulico ridotto, è possibile adottare alcune approssimazioni e semplificazioni.\\
 Data una sezione rettangolare, potendo trascurare l'altezza del tirante idraulico $h$, il raggio idraulico $Rh$ risulta essere:
